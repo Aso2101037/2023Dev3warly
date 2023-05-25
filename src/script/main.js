@@ -1,11 +1,9 @@
-Vue.component('component-hedder',{
-    templete:
-    `<div class="header">
-        <div class="header-logo"></div>
-        <div class="header-button"></div>
+Vue.component('header-componet',{
+    template:
+    `<div>
+        
     </div>`
-});
-
+    })
 const app = new Vue({
     el:'#app',
 })
