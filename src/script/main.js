@@ -8,7 +8,7 @@ Vue.component('header-componet',{
             <img src="./images/profile.svg" alt="">
             <img src="./images/search.svg" alt="">
             <img src="./images/square-plus.svg" alt="">
-            <div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div>
+            <a href="./login.html"><div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div></a>
         </div>
      </div>`
     })

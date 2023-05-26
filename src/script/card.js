@@ -6,25 +6,25 @@ Vue.component('card-component',{
                  <div class="text-body">
                      <p class="text">テキストが入ります</p>
                 </div>
-     </div>
-    <div class="card" style="width:100%;">
-             <img src="./images/homeback.png" class="card-img-top" alt="...">
-                 <div class="card-body">
-                     <p class="card-text">テキストが入ります</p>
+        </div>
+         <div class="card-ele" style="width:100%;">
+             <img src="./images/homeback.png" class="img-top" alt="...">
+                <div class="text-body">
+                 <p class="text">テキストが入ります</p>
                 </div>
-    </div>
-    <div class="card" style="width:100%;">
-             <img src="./images/homeback.png" class="card-img-top" alt="...">
-                 <div class="card-body">
-                     <p class="card-text">テキストが入ります</p>
+        </div>
+         <div class="card-ele" style="width:100%;">
+            <img src="./images/homeback.png" class="img-top" alt="...">
+                <div class="text-body">
+                    <p class="text">テキストが入ります</p>
                 </div>
-    </div>
-    <div class="card" style="width:100%;">
-             <img src="./images/homeback.png" class="card-img-top" alt="...">
-                 <div class="card-body">
-                     <p class="card-text">テキストが入ります</p>
+        </div>
+        <div class="card-ele" style="width:100%;">
+            <img src="./images/homeback.png" class="img-top" alt="...">
+                <div class="text-body">
+                    <p class="text">テキストが入ります</p>
                 </div>
-    </div>
+        </div>
 </div>`
     })
 const card = new Vue({
