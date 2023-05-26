@@ -10,7 +10,7 @@ Vue.component('header-componet',{
             <img src="./images/square-plus.svg" alt="">
             <div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div>
         </div>
-     </div>`,
+     </div>`
     })
 const app = new Vue({
     el:'#app',
