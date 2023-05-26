@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.form-signin{
+    text-align: center;
+}
+.img-error{
+    text-align: center;
+}
+.icon{
+    width: 15vh;
+    height: 20vh;
+    text-align: center;
+}
+
+#inputEmail{
+    background: #E4DCCF;
+    width: 80vh;
+    text-align: center;
+
+}
+#inputPassword{
+    margin-top: 2vh;
+    background: #E4DCCF;
+    width: 80vh;
+    text-align: center;
+}
+.back{
+    margin-top: 7vh;
+    width:25vh;
+    height: 8vh;
+    background: #E4DCCF;
+}
+.sign-up{
+    margin-left: 30vh;
+    width: 25vh;
+    height: 8vh;
+    background:#EA5455;
+}
