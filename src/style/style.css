@@ -45,17 +45,14 @@
 .header-button > img:nth-child(1):hover{
     transition: all 0.7s linear;
     transform: scale(1.4);
-    transform: translateX(-200px);
 }
 .header-button > img:nth-child(2):hover{
     transition: all 0.7s linear;
     transform: scale(1.4);
-    transform: translateX(200px);
 }
 .header-button > img:nth-child(3):hover{
     transition: all 0.7s linear;
     transform: scale(1.4);
-    transform:translateY(200px);
 }
 .login-div{
     display: flex;
@@ -79,11 +76,61 @@
 }
 /* ↑↑　header部分 ↑↑*/
 .img-div{
+    position: relative;
     width: 100%;
+    height: 400px;
 }
 .homeback-img{
-    width: 100%;
+    opacity: 0;
+animation:change-img-anim 12s linear infinite;
 }
+.homeback-img:nth-child(1){
+    width:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 400px;
+    object-fit:fill;
+    object-position: 20% 0%;
+    animation:change-img-anim-first 12s infinite ;
+    animation-delay: 0s;
+}
+.homeback-img:nth-child(2){
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    object-fit: cover;
+    object-position: 30% 30%;
+    animation-delay: 4s;
+}
+.homeback-img:nth-child(3){
+    width:100%;
+    position:absolute ;
+    top: 0;
+    left: 0;
+    height: 400px;
+    object-fit:fill;
+    object-position: 20% 0%;
+    animation-delay: 8s;
+}
+
+@keyframes change-img-anim-first {
+	0%{ opacity:1;}
+  30%{ opacity: 1;}
+  36%{ opacity: 1;}
+  45%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+@keyframes change-img-anim {
+  0%{ opacity: 0;}
+  30%{ opacity: 1;}
+  36%{ opacity: 1;}
+  45%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+
 /* ホームの大きい画像のやつ↑↑ */
 .post-select{
     display: flex;
@@ -145,6 +192,7 @@
     margin:0 10px;
 }
 .favorite-font{
+    margin: 3rem 3rem;
     color: #002B5B;
 }
 .img-top{
@@ -156,4 +204,6 @@
 }
 .text-body{
     height: 20vh;
+    background-color:#F9F5EB;
+    border-radius: 0 0 20px 20px;
 }
