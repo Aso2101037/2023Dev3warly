@@ -18,18 +18,19 @@ class DBManager{
     // }
 
     //新規追加(ユーザー)
-    public function insertUserTbl($pass,$name,$namek,$address,$telephone_number,$birthday,$gender,$email_address){
+    public function insertUserTbl($user_id,$password,$user_name,$user_mailaddress,$user_age,$gender_id,$user_title_id,$user_one_thing,$user_profile){
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO hosapo_user_tbl(password,full_name,japan_name,address,telephone_number,birthday,gender,email_address)VALUES(?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$pass,PDO::PARAM_STR);
-        $ps->bindValue(2,$name,PDO::PARAM_STR);
-        $ps->bindValue(3,$namek,PDO::PARAM_STR);
-        $ps->bindValue(4,$address,PDO::PARAM_STR);
-        $ps->bindValue(5,$telephone_number,PDO::PARAM_STR);
-        $ps->bindValue(6,$birthday,PDO::PARAM_STR);
-        $ps->bindValue(7,$gender,PDO::PARAM_STR);  
-        $ps->bindValue(8,$email_address,PDO::PARAM_STR);    
+        $ps->bindValue(1,$user_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$password,PDO::PARAM_STR);
+        $ps->bindValue(3,$user_name,PDO::PARAM_STR);
+        $ps->bindValue(4,$user_mailaddress,PDO::PARAM_STR);
+        $ps->bindValue(5,$user_age,PDO::PARAM_STR);
+        $ps->bindValue(6,$gender_id,PDO::PARAM_STR);
+        $ps->bindValue(7,$user_title_id,PDO::PARAM_STR);  
+        $ps->bindValue(8,$user_title_id,PDO::PARAM_STR);   
+        $ps->bindValue(9,$user_profile,PDO::PARAM_STR);  
         $ps->execute();
     }
 
