@@ -5,6 +5,8 @@ class LoginSession{
         // ハッシュ化したパスワードを引数として与えてください
         $_SESSION['email'] = $email;
         $_SESSION['pass'] = $pass;
+        header("Location: home.php");
+        exit();
     }
 }
 ?>
