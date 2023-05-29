@@ -1,9 +1,9 @@
 Vue.component('header-componet',{
     template:
     `<div class="header">
-       <div class="title-logo">
+       <a href="./home.html" style="textDecoration: none"><div class="title-logo">
             <span class="title">トラスタ</span><img src="./images/plean-log.svg" class="logo" alt="飛行機のロゴ">
-        </div>
+        </div></a>
         <div class="header-button">
             <img src="./images/profile.svg" alt="">
             <img src="./images/search.svg" alt="">
