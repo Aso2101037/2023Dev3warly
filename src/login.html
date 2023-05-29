@@ -17,7 +17,7 @@
     <div class="img-error">
                 <img src="images/icon.svg" class="icon">
                 <h2>login</h2>
-                <div class="error"></div>
+                <div class="error">メールアドレスまたはパスワードが間違っています。</div>
     </div>
     <form class="form-signin">
         <div class="email">
