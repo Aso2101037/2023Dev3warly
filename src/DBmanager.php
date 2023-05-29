@@ -20,7 +20,7 @@ class DBManager{
     //新規追加(ユーザー)
     public function insertUserTbl($user_id,$password,$user_name,$user_mailaddress,$user_age,$gender_id,$user_title_id,$user_one_thing,$user_profile){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO hosapo_user_tbl(password,full_name,japan_name,address,telephone_number,birthday,gender,email_address)VALUES(?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO user(user_id,password,user_name,user_mailaddress,user_age,gender_id,user_title_id,email_one_thing,user_profile)VALUES(?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_STR);
         $ps->bindValue(2,$password,PDO::PARAM_STR);
@@ -29,7 +29,7 @@ class DBManager{
         $ps->bindValue(5,$user_age,PDO::PARAM_STR);
         $ps->bindValue(6,$gender_id,PDO::PARAM_STR);
         $ps->bindValue(7,$user_title_id,PDO::PARAM_STR);  
-        $ps->bindValue(8,$user_title_id,PDO::PARAM_STR);   
+        $ps->bindValue(8,$user_one_thing,PDO::PARAM_STR);   
         $ps->bindValue(9,$user_profile,PDO::PARAM_STR);  
         $ps->execute();
     }
