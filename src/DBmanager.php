@@ -1,10 +1,16 @@
 <?php
 class DBManager{
-    //接続のメソッド
+    // //接続のメソッド(xampp)
+    // private function dbConnect(){
+    //     $pdo = new PDO('mysql:host=localhost;dbname=webdb;charset=utf8','webuser','abccsd2');
+    //     return $pdo;     
+    // }
+    //接続のメソッド（lolipop）
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=webdb;charset=utf8','webuser','abccsd2');
+        $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
         return $pdo;     
     }
+    
 
     // public function getUserTblByword($pass,$email){
     //     $pdo = $this->dbConnect();
