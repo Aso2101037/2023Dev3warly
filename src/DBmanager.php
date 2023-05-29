@@ -53,7 +53,7 @@ class DBManager{
         $ps->execute();
     }
 
-    //hosapo_hospital_tblを名前で取得するメソッド
+    //userを名前で取得するメソッド
     public function getUserTblByword($kensaku_word){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_name LIKE ?";
