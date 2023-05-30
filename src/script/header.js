@@ -1,7 +1,7 @@
 Vue.component('header-componet',{
     template:
     `<div class="header">
-       <a href="./home.html" style="textDecoration: none"><div class="title-logo">
+       <a href="./home.php" style="textDecoration: none"><div class="title-logo">
             <span class="title">トラスタ</span><img src="./images/plean-log.svg" class="logo" alt="飛行機のロゴ">
         </div></a>
         <div class="header-button">

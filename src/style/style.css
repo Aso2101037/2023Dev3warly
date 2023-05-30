@@ -20,12 +20,13 @@
     height: 15vh;
 }
 .title{
- font-size: 3.5rem;
+ font-size: 2.0rem;
  color: #002B5B;
+ margin-left: 1rem;
 }
 .logo{
-    width: 60px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 .header-button{
     display: flex;
@@ -35,8 +36,8 @@
     height: 15vh;
 }
 .header-button > img{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     margin: 0 1rem;
 }
 .header-button > a{
@@ -65,12 +66,12 @@
     animation: back-color 5s linear infinite;
 }
 .login-div > img{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     margin:0 0 0 1rem;
 }
 .login-div > span{
-    font-size: 3.5rem;
+    font-size: 2.0rem;
     color: #002B5B;
     margin-right: 20px;
 }
@@ -141,7 +142,7 @@
 .img-div{
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 300px;
 }
 .homeback-img{
     opacity: 0;
@@ -152,7 +153,7 @@ animation:change-img-anim 12s linear infinite;
     position: absolute;
     top:0;
     left: 0;
-    height: 400px;
+    height: 300px;
     object-fit:fill;
     object-position: 20% 0%;
     animation:change-img-anim-first 12s infinite ;
@@ -160,7 +161,7 @@ animation:change-img-anim 12s linear infinite;
 }
 .homeback-img:nth-child(2){
     width: 100%;
-    height: 400px;
+    height: 300px;
     position: absolute;
     top: 0;
     left: 0 ;
@@ -173,7 +174,7 @@ animation:change-img-anim 12s linear infinite;
     position:absolute ;
     top: 0;
     left: 0;
-    height: 400px;
+    height: 300px;
     object-fit:fill;
     object-position: 20% 0%;
     animation-delay: 8s;
