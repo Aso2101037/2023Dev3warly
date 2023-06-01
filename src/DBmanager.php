@@ -161,5 +161,8 @@ class DBManager{
     //     $searchArray = $ps->fetchAll();
     //     return $searchArray;
     // }
+
+
+    ///できてるか確認
 }
 ?>
