@@ -6,7 +6,7 @@ Vue.component('header-componet',{
         </div></a>
         <div class="header-button">
             <img src="./images/profile.svg" alt="">
-            <img src="./images/search.svg" alt="">
+            <img src="./images/search.svg"　alt="">
             <img src="./images/square-plus.svg" alt="">
             <a href="./login.php"><div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div></a>
         </div>
