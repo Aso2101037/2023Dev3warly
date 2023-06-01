@@ -10,6 +10,14 @@ class DBManager{
         $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
         return $pdo;     
     }
+    public function session_email_pass($pass,$email){
+        session_start();
+        // ハッシュ化したパスワードを引数として与えてください
+        $_SESSION['email'] = $email;
+        $_SESSION['pass'] = $pass;
+        header("Location: home.php");
+        exit();
+    }
     
 
     // public function getUserTblByword($pass,$email){
@@ -163,6 +171,6 @@ class DBManager{
     // }
 
 
-    ///できてるか確認 ‐できてる
+    ///できてるか確認
 }
 ?>
