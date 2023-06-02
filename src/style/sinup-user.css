@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+h5{
+    margin-right: 40%;
+}
+
+.iconselect{
+    text-align: center;
+}
+.icon{
+    width: 15vw;
+    height: 20vh;
+}
+.icon-sele{
+    width:4vw;
+    height:4vh;
+    margin-left: 10%;
+    background: #002B5B;
+    font-size:1.2em;
+    border-radius:10px;
+    color:#FFFFFF;
+    border: none;
+}
+
+.seibetu{
+    text-align: center;
+}
+.radiobtn{
+    font-size: 1.5em;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.seibetumei{
+    background-color: #E4DCCF;
+    padding: 0.5% 2% 0.5% 2%;
+    border-radius:10px;
+}
+.birthday{
+    text-align: center;
+    
+}
+select{
+    width: 7vw;
+    height: 7vh;
+    background-color: #E4DCCF;
+    border:none;
+    
+}
+.birth{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.back{
+    margin-top: 5%;
+    width:13vw;
+    height: 10vh;
+    background: #E4DCCF;
+    font-size:2.3em;
+    padding-right: 1%;
+    border-radius:10px;
+    color:#002B5B;
+    border: none;
+}
+.sign-up{
+    margin-left: 15%;
+    width: 13vw;
+    height: 10vh;
+    background:#EA5455;
+    font-size:2.0em;
+    border-radius:10px;
+    color:#FFFFFF;
+    border: none;
+}
