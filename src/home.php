@@ -15,7 +15,7 @@
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
-                <div class="modal-plan">
+                <div class="modal-plan" onclick="location.href='./seach-plan.php'">
                      <p>旅行プラン検索</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
       <!-- 画像の部分↓↓ -->
         <div class="img-div">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">

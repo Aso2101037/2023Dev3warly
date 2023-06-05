@@ -42,10 +42,9 @@
         <span class="radiobtn"><input type="radio" name="sei" value="others">  <span class="seibetumei">その他</span></span>
     </div>
 
-
-    
-    <h5>生年月日</h5>
-        <div class="birthday">
+    <!-- foreach検討 -->
+        <div class="komokumei">生年月日</div>
+            <div class="birthday">
             <span class="birth">
                 <select name="year">
                     <option value="">---</option>

@@ -113,7 +113,7 @@
     background-color:#F9F5EB;
 }
 .modal-plan{
-    width: 20%;
+    width: 24%;
     height:30vh;
     display: flex;
     align-items: center;
@@ -128,7 +128,7 @@
     margin-bottom: 10%;
 }
 .modal-kankou{
-    width: 20%;
+    width: 23%;
     height:30vh;
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@
     margin: 15% 0 0 0;
 }
 .modal-food{
-    width: 20%;
+    width: 23%;
     height:30vh;
     display: flex;
     align-items: center;
@@ -198,7 +198,6 @@ animation:change-img-anim 12s linear infinite;
     object-position: 20% 0%;
     animation-delay: 8s;
 }
-
 @keyframes change-img-anim-first {
 	0%{ opacity:1;}
   30%{ opacity: 1;}
@@ -213,7 +212,6 @@ animation:change-img-anim 12s linear infinite;
   45%{ opacity: 0;}
   100%{ opacity: 0;}
 }
-
 /* ホームの大きい画像のやつ↑↑ */
 .post-select{
     display: flex;
@@ -268,7 +266,6 @@ animation:change-img-anim 12s linear infinite;
     width: 100%;
     height: 40vh;
 }
-/* cardのデザインのやつ */
 .card-ele{
     width: 100%;
     height: 40vh;
@@ -290,3 +287,6 @@ animation:change-img-anim 12s linear infinite;
     background-color:#F9F5EB;
     border-radius: 0 0 20px 20px;
 }
+/* cardのデザインのやつ ↑↑*/
+
+/* 検索系のやつ ↑↑*/
