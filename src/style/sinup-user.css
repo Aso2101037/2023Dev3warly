@@ -3,8 +3,10 @@
     padding:0;
     box-sizing: border-box;
 }
-h5{
-    margin-right: 40%;
+.komokumei{
+    font-size: 2.0em;
+    color: red;
+
 }
 
 .iconselect{
@@ -21,7 +23,7 @@ h5{
     background: #002B5B;
     font-size:1.2em;
     border-radius:10px;
-    color:#FFFFFF;
+    color:red;
     border: none;
 }
 
@@ -40,18 +42,69 @@ h5{
 }
 .birthday{
     text-align: center;
-    
+    margin-right: -2%;
+    margin-top: 2%;
 }
 select{
     width: 7vw;
     height: 7vh;
     background-color: #E4DCCF;
+    text-align: center;
     border:none;
-    
+    border-radius:10px;
+    -webkit-appearance: none;
+    appearance: none; 
 }
+
+
 .birth{
     margin-right: 2%;
     margin-left: 2%;
+    font-size: 1.3em;
+}
+
+
+.nickname{
+    text-align: center;
+    margin-right: -2%;
+    margin-top: 2%;
+}
+.mailaddress{
+    text-align: center;
+    margin-right: -2%;
+    margin-top: 2%;
+}
+.password{
+    text-align: center;
+    margin-right: -2%;
+    margin-top: 2%;
+}
+.hitokoto{
+    text-align: center;
+    margin-right: -2%;
+    margin-top: 2%;
+}
+.textbox{
+    font-size: 1.5em;
+    height: 8vh;
+    width: 35vw;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius:10px;
+}
+.hito{
+    height: 40vh;
+    width: 35vw;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius:10px;
+    
+}
+.btn{
+    text-align: center;
+}
+button{
+    display:inline-block;
 }
 .back{
     margin-top: 5%;
@@ -73,4 +126,5 @@ select{
     border-radius:10px;
     color:#FFFFFF;
     border: none;
+
 }
