@@ -12,39 +12,39 @@
 <body>
     <!-- header部分↓↓ -->
     <div id="app">
-        <header-componet></header-componet>
-    </div>
-    <!-- 画像の部分↓↓ -->
-    <div class="img-div">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
-        <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
-        <img src="images/homeback.png" class="homeback-img">
-    </div>
-    <!-- 投稿選択の部分↓↓ -->
-    <div class="post-select">
-        <div class="plan-div">
-            <img src="./images/post-plan.svg" alt=""><span class="post-font">旅行プランの投稿</span>
-        </div>
-        <div class="kankou-div">
-            <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
-        </div>
-        <div class="food-div">
-            <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
-        </div>
-    </div>
-    <div class="modal-div">
-        <div class="modal-body">
-            <div class="modal-plan">
-                <p>旅行プラン検索</p>
-                <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
+        <header-component @clicksearch="ModalSeach"></header-component>
+        <div :class="{'is-active': isActive }" class="modal-div">
+            <div class="modal-body">
+                <div class="modal-plan">
+                     <p>旅行プラン検索</p>
+                     <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
+                </div>
+                <div class="modal-kankou">
+                     <p>観光名所検索</p>
+                     <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
+                </div>
+                 <div class="modal-food">
+                     <p>飲食店検索</p>
+                    <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
+                </div>
             </div>
-            <div class="modal-kankou">
-                <p>観光名所検索</p>
-                <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
+        </div>
+</div>
+      <!-- 画像の部分↓↓ -->
+        <div class="img-div">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
+            <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
+            <img src="images/homeback.png" class="homeback-img">
+        </div>
+        <div class="post-select">
+            <div class="plan-div">
+                <img src="./images/post-plan.svg" alt=""><span class="post-font">旅行プランの投稿</span>
             </div>
-            <div class="modal-food">
-                <p>飲食店検索</p>
-                <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
+            <div class="kankou-div">
+                <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
+            </div>
+            <div class="food-div">
+                <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
             </div>
         </div>
     </div>

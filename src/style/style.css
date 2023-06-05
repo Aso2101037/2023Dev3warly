@@ -87,6 +87,22 @@
     height:50vh;
     background-color:#F9F5EB;
     border-radius: 20px;
+    z-index: 1;
+    visibility: hidden;
+}
+.modal-div.is-active{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: inherit;
 }
 .modal-body{
     display: flex;
@@ -153,7 +169,7 @@ animation:change-img-anim 12s linear infinite;
 }
 .homeback-img:nth-child(1){
     width:100%;
-    position: absolute;
+    position: relative;
     top:0;
     left: 0;
     height: 300px;
@@ -174,7 +190,7 @@ animation:change-img-anim 12s linear infinite;
 }
 .homeback-img:nth-child(3){
     width:100%;
-    position:absolute ;
+    position:absolute;
     top: 0;
     left: 0;
     height: 300px;
