@@ -3,28 +3,37 @@
     padding:0;
     box-sizing: border-box;
 }
-
+body{
+    overflow-x: hidden;
+}
 
 .iconselect{
-    text-align: center;
+    width: 100%;
+    margin: 1.3em 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 }
 .icon{
-    width: 15vw;
-    height: 20vh;
+    width: 15%;
+    height: 15vh;
 }
 .icon-sele{
-    width:4vw;
-    height:4vh;
-    margin-left: 10%;
+    position: relative;
+    right:-5%;
+    padding: 0.4% 0.8%;
     background: #002B5B;
     font-size:1.2em;
     border-radius:10px;
     color: #ffffff;;
     border: none;
 }
-
-h5{
-    margin:20% 0;
+.item-name{
+    position: relative;
+    left: 27%;
+    font-size: 1.1rem;
+    margin: 1rem;
 }
 .seibetu{
     text-align: center;
@@ -93,14 +102,18 @@ select{
 }
 .hito{
     height: 40vh;
-    width: 35vw;
+    width: 35%;
     background-color: #E4DCCF;
     border:none;
     border-radius:10px;
     
 }
 .btn{
-   
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .back{

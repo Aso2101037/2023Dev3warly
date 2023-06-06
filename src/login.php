@@ -12,7 +12,23 @@
 </head>
 <body>
     <div id="app">
-        <header-componet></header-componet>
+    <header-component @clicksearch="ModalSeach"></header-component>
+        <div :class="{'is-active': isActive }" class="modal-div">
+            <div class="modal-body">
+                <div class="modal-plan" onclick="location.href='./seach-plan.php'">
+                     <p>旅行プラン検索</p>
+                     <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
+                </div>
+                <div class="modal-kankou">
+                     <p>観光名所検索</p>
+                     <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
+                </div>
+                 <div class="modal-food">
+                     <p>飲食店検索</p>
+                    <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="img-error">
                 <img src="images/icon.svg" class="icon">
@@ -27,7 +43,7 @@
             <input type="password" id="inputPassword" class="form-control mx-auto" placeholder="パスワードを入力してください" required>
         </div>
         <button class="back" type="submit">＜戻る</button>
-        <button class="sign-up" type="submit">Sign up</button>
+        <a href="./user-signup.php"><button class="sign-up" type="button">Sign up</button></a>
         
       </form>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">

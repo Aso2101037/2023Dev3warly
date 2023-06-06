@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style/user-sinup-style.css">
 </head>
 <body>
-<div id="app">
+    <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
@@ -29,21 +29,21 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
+
     <div class="iconselect">
-        <img src="images/icon.svg" class="icon"><br>
+        <img src="images/icon.svg" class="icon">
         <button class="icon-sele" type="submit">選択</button>
     </div>
-    
-    <h5>性別</h5>
+
+    <div class="item-name">性別</div>
     <div class="seibetu">
         <span class="radiobtn"><input type="radio" name="sei" value="men"checked>  <span class="seibetumei">男性</span></span>
         <span class="radiobtn"><input type="radio" name="sei" value="woman">  <span class="seibetumei">女性</span></span>
         <span class="radiobtn"><input type="radio" name="sei" value="others">  <span class="seibetumei">その他</span></span>
     </div>
-
     <!-- foreach検討 -->
-        <div class="komokumei">生年月日</div>
+        <div class="item-name">生年月日</div>
             <div class="birthday">
             <span class="birth">
                 <select name="year">
@@ -238,25 +238,22 @@
             </span>
         </div>
 
-        <h5>ニックネーム</h5>
+        <div class="item-name">ニックネーム</div>
         <div class="nickname">
             <input type="text"class="textbox">
         </div>
 
-        
-        <h5>メールアドレス</h5>
+        <div class="item-name">メールアドレス</div>
         <div class="mailaddress">
             <input type="text"class="textbox">
         </div>
 
-        
-        <h5>パスワード</h5>
+        <div class="item-name">パスワード</div>
         <div class="password">
             <input type="texx"class="textbox">
-        </div>
+        </div>    
 
-        
-        <h5>ひとこと</h5>
+        <div class="item-name">ひとこと</div>
         <div class="hitokoto">
             <input type="text"class="hito">
         </div>
@@ -264,6 +261,7 @@
         <button class="back" type="submit">＜戻る</button>
         <button class="sign-up" type="submit">登録</button>
     </div>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
