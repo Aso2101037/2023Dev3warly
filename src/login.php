@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,7 @@
         <div class="password">
             <input type="password" id="inputPassword" class="form-control mx-auto" placeholder="パスワードを入力してください" required>
         </div>
-        <button class="back" type="submit">＜戻る</button>
+        <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
         <a href="./user-signup.php"><button class="sign-up" type="button">Sign up</button></a>
         
       </form>

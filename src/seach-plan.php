@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
+    <title>旅行プラン検索</title>
+    <!-- 作成者：梶原 -->
 </head>
 <body>
 <div id="app">
@@ -26,7 +27,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
 </body>

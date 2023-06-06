@@ -114,10 +114,10 @@ select{
    display: flex;
    justify-content: center;
    align-items: center;
+   margin: 2rem 0;
 }
 
 .back{
-    margin-top: 5%;
     width:13vw;
     height: 10vh;
     background: #E4DCCF;

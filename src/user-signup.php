@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/user-sinup-style.css">
+    <!-- 作成者：梶原・山中 -->
 </head>
 <body>
     <div id="app">
@@ -258,10 +259,10 @@
             <input type="text"class="hito">
         </div>
     <div class="btn">
-        <button class="back" type="submit">＜戻る</button>
+        <button class="back" type="button">＜戻る</button>
         <button class="sign-up" type="submit">登録</button>
     </div>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
