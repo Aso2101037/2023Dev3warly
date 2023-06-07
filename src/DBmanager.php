@@ -2,12 +2,12 @@
 class DBManager{
     // //接続のメソッド(xampp)
     // private function dbConnect(){
-    //     $pdo = new PDO('mysql:host=localhost;dbname=webdb;charset=utf8','webuser','abccsd2');
+    //     $pdo = new PDO('mysql:host=localhost;dbname=(各自で作ったDB名を入れて)b;charset=utf8','root','root');
     //     return $pdo;     
     // }
     //接続のメソッド（lolipop）
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
+        $pdo = new PDO('mysql:host=mysql215.phy.lolipop.lan;dbname=LAA1417815-torasuta;charset=utf8','LAA1417815','Pass0411');
         return $pdo;     
     }
     public function session_email_pass($pass,$email){
