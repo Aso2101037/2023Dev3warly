@@ -259,7 +259,7 @@
             <input type="text"class="hito">
         </div>
     <div class="btn">
-        <button class="back" type="button">＜戻る</button>
+        <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
         <button class="sign-up" type="submit">登録</button>
     </div>
 
