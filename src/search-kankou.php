@@ -17,11 +17,11 @@
                      <p>旅行プラン検索</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
-                <div class="modal-kankou">
+                <div class="modal-kankou" onclick="location.href='./search-kankou.php'">
                      <p>観光名所検索</p>
                      <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
-                 <div class="modal-food">
+                 <div class="modal-food" onclick="location.href='./search-food.php'">
                      <p>飲食店検索</p>
                     <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
@@ -33,13 +33,20 @@
 </div>
 <div class="check-container">
     <div class="check-div">
-    <label for="" class="label-style"><input type="checkbox" name="都市" id="1"><span><img src="./images/search.svg" alt="">都市</span></label>
-    <label for=""class="label-style"><input type="checkbox" name="温泉" id="2"><span><img src="./images/search.svg" alt="">温泉</span></label>
-    <label for=""class="label-style"><input type="checkbox" name="映え" id="3"><span><img src="./images/search.svg" alt="">映え</span></label>
-        <input type="checkbox" name="神社・寺" id="4"><label for=""class="label-style"><span><img src="./images/search.svg" alt=""></span>神社・寺</label>
-        <input type="checkbox" name="自然風景" id="5"><label for=""class="label-style"><span><img src="./images/search.svg" alt=""></span>自然風景</label>
-        <input type="checkbox" name="ぶらり" id="6"><label for=""class="label-style"><span><img src="./images/search.svg" alt=""></span>ぶらり</label>
+        <input type="checkbox" name="kankou" id="city"><label for="city" id="city"  class="label-style"><span><img src="./images/city.svg" alt="">都市</span></label>
+        <input type="checkbox" name="kankou" id="onsen"><label for="onsen" id="onsen"  class="label-style"><span><img src="./images/onsen.svg" alt="">温泉</span></label>
     </div>
+    <div class="check-div">
+        <input type="checkbox" name="kankou" id="shine"><label for="shine" id="shine"  class="label-style"><span><img src="./images/shine.svg" alt="">映え</span></label>
+        <input type="checkbox" name="kankou" id="temple"><label for="temple" id="temple"  class="label-style"><span><img src="./images/temple.svg" alt="">神社・寺</span></label>
+    </div>
+    <div class="check-div">
+        <input type="checkbox" name="kankou" id="scenery"><label for="scenery" id="scenery"  class="label-style"><span><img src="./images/scenery.svg" alt="">自然風景</span></label>
+        <input type="checkbox" name="kankou" id="aimlessly"><label for="aimlessly" id="aimlessly"  class="label-style"><span><img src="./images/aimlessly.svg" alt="">ぶらり</span></label>
+    </div>
+</div>
+<div class="back-div">
+    <button class="back-button" type="button" onclick="history.back(-1);">＜戻る</button>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
