@@ -12,11 +12,11 @@
     <!-- 作成者：梶原・山中 -->
 </head>
 <body>
-    <div id="app">
+<div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
-                <div class="modal-plan">
+                <div class="modal-plan" onclick="location.href='./search-plan.php'">
                      <p>旅行プラン検索</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
 
     <div class="iconselect">
         <img src="images/icon.svg" class="icon">

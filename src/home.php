@@ -16,15 +16,15 @@
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
-                <div class="modal-plan" onclick="location.href='./seach-plan.php'">
+                <div class="modal-plan" onclick="location.href='./search-plan.php'">
                      <p>旅行プラン検索</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
-                <div class="modal-kankou">
+                <div class="modal-kankou" onclick="location.href='./search-kankou.php'">
                      <p>観光名所検索</p>
                      <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
-                 <div class="modal-food">
+                 <div class="modal-food" onclick="location.href='./search-food.php'">
                      <p>飲食店検索</p>
                     <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>

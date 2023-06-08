@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./style/login-out.css">
 </head>
 <body>
-    <div id="app">
-    <header-component @clicksearch="ModalSeach"></header-component>
+<div id="app">
+        <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
-                <div class="modal-plan" onclick="location.href='./seach-plan.php'">
+                <div class="modal-plan" onclick="location.href='./search-plan.php'">
                      <p>旅行プラン検索</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
     <div class="img-error">
                 <img src="images/icon.svg" class="icon">
                 <h2>login</h2>
