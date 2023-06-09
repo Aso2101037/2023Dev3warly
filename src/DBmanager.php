@@ -1,16 +1,16 @@
 <?php
 class DBManager{
-    // //接続のメソッド(xampp)
-    // private function dbConnect(){
-    //     $pdo = new PDO('mysql:host=localhost;dbname=(各自で作ったDB名を入れて)b;charset=utf8','root','root');
-    //     return $pdo;     
-    // }
-    //接続のメソッド（lolipop）
-    private function dbConnect(){
-        $pdo = new PDO('mysql:host=mysql215.phy.lolipop.lan;dbname=LAA1417815-torasuta;charset=utf8','LAA1417815','Pass0411');
-        return $pdo;     
+     //接続のメソッド(xampp)
+     private function dbConnect(){
+         $pdo = new PDO('mysql:host=localhost;dbname=mytorasuta;charset=utf8','root','root');
+         return $pdo;     
     }
-    public function session_email_pass($pass,$email){
+    //接続のメソッド（lolipop）
+    //private function dbConnect(){
+    //    $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
+    //    return $pdo;     
+    //}
+    private function session_email_pass($pass,$email){
         session_start();
         // ハッシュ化したパスワードを引数として与えてください
         $_SESSION['email'] = $email;
@@ -33,11 +33,13 @@ class DBManager{
 
     //新規追加(ユーザー)
     public function insertUserTbl($user_id,$password,$user_name,$user_mailaddress,$user_age,$gender_id,$user_title_id,$user_one_thing,$user_profile){
+        //パスワードハッシュ化
+        $hash_pass = password_hash($password, PASSWORD_DEFAULT);
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO user(user_id,password,user_name,user_mailaddress,user_age,gender_id,user_title_id,email_one_thing,user_profile)VALUES(?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO user(user_id,password,user_name,user_mailaddress,user_age,gender_id,user_title_id,user_one_thing,user_profile)VALUES(?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$user_id,PDO::PARAM_STR);
-        $ps->bindValue(2,$password,PDO::PARAM_STR);
+        $ps->bindValue(2,$hash_pass,PDO::PARAM_STR);
         $ps->bindValue(3,$user_name,PDO::PARAM_STR);
         $ps->bindValue(4,$user_mailaddress,PDO::PARAM_STR);
         $ps->bindValue(5,$user_age,PDO::PARAM_STR);
@@ -46,6 +48,33 @@ class DBManager{
         $ps->bindValue(8,$user_one_thing,PDO::PARAM_STR);   
         $ps->bindValue(9,$user_profile,PDO::PARAM_STR);  
         $ps->execute();
+    }
+
+    //ユーザー検索
+    public function serchUser($user_logid,$user_logpassword){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_mailaddress = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$user_logid,PDO::PARAM_STR);
+        $ps->execute();
+        $searchArray = $ps->fetch();
+        if($searchArray['user_mailaddress'] === $user_logid){
+            if (password_verify((string)$user_logpassword,(string)$searchArray['password'], 
+            )) {
+                // パスワードが一致する場合の処理
+                echo "ログイン完了";
+                $this->session_email_pass($user_logid, $searchArray['password']);
+            } else {
+                // パスワードが一致しない場合の処理
+                echo "パスワードが違います";
+                echo $user_logpassword;
+                echo "<br>";
+                echo $searchArray['password'];
+            }
+        }else{
+            echo "ユーザー名が違います";
+        }
+        
     }
 
     //新規追加(予約{appointment})
@@ -62,11 +91,11 @@ class DBManager{
     }
 
     //hosapo_hospital_tblを名前で取得するメソッド
-    public function getUserTblByword($user){
+    public function getUserTblByword($kensaku_word){
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM user WHERE user_name LIKE ?";
+        $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_name LIKE ?";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,"%".$user."%",PDO::PARAM_STR);
+        $ps->bindValue(1,"%".$kensaku_word."%",PDO::PARAM_STR);
 
         $ps->execute();
         $searchArray = $ps->fetchAll();
@@ -123,8 +152,8 @@ class DBManager{
             $ps->execute();
             $searchArray = $ps->fetchAll();
             return $searchArray;
-        
-            }
+            
+        }
 
     /*新規追加(予約状況)
     public function insertapp($){
