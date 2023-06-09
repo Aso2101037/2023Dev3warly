@@ -29,20 +29,20 @@
         </div>
 </div>
 <div class="search">
-    <input type="text" name="search-name" class="search-text" placeholder="福岡県"><button type="submit" class="search-button">検索</button>
+    <input type="text" name="search-name" class="search-text" placeholder="福岡県"><button type="submit" class="search-button" onclick="location.href='./result-food.php'">検索</button>
 </div>
 <div class="check-container">
     <div class="check-div">
-        <input type="checkbox" name="kankou" id="city"><label for="city" id="city"  class="label-style"><span><img src="./images/breakfast.svg" alt="">朝食</span></label>
-        <input type="checkbox" name="kankou" id="onsen"><label for="onsen" id="onsen"  class="label-style"><span><img src="./images/lunch.svg" alt="">昼食</span></label>
+        <input type="checkbox" name="kankou" id="breakfast"><label for="breakfast" id="breakfast"  class="label-style"><span><img src="./images/breakfast.svg" alt="">朝食</span></label>
+        <input type="checkbox" name="kankou" id="lunch"><label for="lunch" id="lunch"  class="label-style"><span><img src="./images/lunch.svg" alt="">昼食</span></label>
     </div>
     <div class="check-div">
-        <input type="checkbox" name="kankou" id="shine"><label for="shine" id="shine"  class="label-style"><span><img src="./images/dinner.svg" style="width:25px; height=:25px;" alt="">夕食</span></label>
-        <input type="checkbox" name="kankou" id="temple"><label for="temple" id="temple"  class="label-style"><span><img src="./images/snack.svg" alt="">軽食</span></label>
+        <input type="checkbox" name="kankou" id="dinner"><label for="dinner" id="dinner"  class="label-style"><span><img src="./images/dinner.svg" style="width:25px; height=:25px;" alt="">夕食</span></label>
+        <input type="checkbox" name="kankou" id="snack"><label for="snack" id="snack"  class="label-style"><span><img src="./images/snack.svg" alt="">軽食</span></label>
     </div>
     <div class="check-div">
-        <input type="checkbox" name="kankou" id="scenery"><label for="scenery" id="scenery"  class="label-style"><span><img src="./images/specialty.svg" alt="">名物</span></label>
-        <input type="checkbox" name="kankou" id="aimlessly"><label for="aimlessly" id="aimlessly"  class="label-style"><span><img src="./images/local-food.svg" alt="">地元飯</span></label>
+        <input type="checkbox" name="kankou" id="specialty"><label for="specialty" id="specialty"  class="label-style"><span><img src="./images/specialty.svg" alt="">名物</span></label>
+        <input type="checkbox" name="kankou" id="local-food"><label for="local-food" id="local-food"  class="label-style"><span><img src="./images/local-food.svg" alt="">地元飯</span></label>
     </div>
 </div>
 <div class="back-div">

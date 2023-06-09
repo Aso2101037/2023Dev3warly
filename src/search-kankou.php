@@ -29,7 +29,7 @@
         </div>
 </div>
 <div class="search">
-    <input type="text" name="search-name" class="search-text" placeholder="福岡県"><button type="submit" class="search-button">検索</button>
+    <input type="text" name="search-name" class="search-text" placeholder="福岡県"><button type="submit" class="search-button" onclick="location.href='./result-kankou.php'">検索</button>
 </div>
 <div class="check-container">
     <div class="check-div">

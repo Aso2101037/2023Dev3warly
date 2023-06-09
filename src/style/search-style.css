@@ -248,36 +248,73 @@ input[type="checkbox"][id="city"]:checked ~#city{
     transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
 }
 input[type="checkbox"][id="onsen"]:checked ~#onsen{
  transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
 }
 input[type="checkbox"][id="shine"]:checked ~#shine{
  transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
 }
 input[type="checkbox"][id="temple"]:checked ~#temple{
  transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
 }
 input[type="checkbox"][id="scenery"]:checked ~#scenery{
  transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
 }
 input[type="checkbox"][id="aimlessly"]:checked ~#aimlessly{
  transition: all 0.5s linear;
     transform: translateY(-5px);
     box-shadow: 2px 2px 10px #444;
-    background-color: #EA5455;
+    border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="breakfast"]:checked ~#breakfast{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="lunch"]:checked ~#lunch{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="dinner"]:checked ~#dinner{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="snack"]:checked ~#snack{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="specialty"]:checked ~#specialty{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       border: 2px solid #002B5B;
+}
+input[type="checkbox"][id="local-food"]:checked ~#local-food{
+    transition: all 0.5s linear;
+       transform: translateY(-5px);
+       box-shadow: 2px 2px 10px #444;
+       /* background-color: #EA5455; */
+       border: 2px solid #002B5B;
 }
 /* 検索部分↑↑*/
