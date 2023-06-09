@@ -90,12 +90,12 @@ class DBManager{
         $ps->execute();
     }
 
-    //hosapo_hospital_tblを名前で取得するメソッド
-    public function getUserTblByword($kensaku_word){
+    //userテーブルを読み込むメソッド
+    public function getUserTblByword($username){
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_name LIKE ?";
+        $sql = "SELECT * FROM user WHERE user_name LIKE ?";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,"%".$kensaku_word."%",PDO::PARAM_STR);
+        $ps->bindValue(1,"%".$username."%",PDO::PARAM_STR);
 
         $ps->execute();
         $searchArray = $ps->fetchAll();
