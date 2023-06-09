@@ -35,16 +35,26 @@
                 <h2>login</h2>
                 <div class="error">メールアドレスまたはパスワードが間違っています。</div>
     </div>
+<<<<<<< Updated upstream
     <a href="./user-signup.php"><button class="sign-up" type="button">Sign up</button></a>
     <form class="form-signin">
         <div class="email">
             <input type="email" id="inputEmail" class="form-control mx-auto" placeholder="メールアドレスを入力してください" required autofocus>
+=======
+    <form  class = "form-signin" action="login_kakunin.php" method="post">
+        <div class="inputEmail">
+            <input type="email" name = "inputEmail" id="inputEmail" class="form-control mx-auto" placeholder="メールアドレスを入力してください" required autofocus>
+>>>>>>> Stashed changes
         </div>
-        <div class="password">
-            <input type="password" id="inputPassword" class="form-control mx-auto" placeholder="パスワードを入力してください" required>
+        <div class="inputPassword">
+            <input type="password" name = "inputPassword" id="inputPassword" class="form-control mx-auto" placeholder="パスワードを入力してください" required>
         </div>
         <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
+<<<<<<< Updated upstream
         <button class="sign-up" type="button">Login</button>
+=======
+        <button class="sign-up" type="submit">Sign up</button>
+>>>>>>> Stashed changes
         
       </form>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
