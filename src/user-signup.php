@@ -31,7 +31,7 @@
             </div>
         </div>
 </div>
-
+<form  class = "form-signup" action="signup_kakunin.php" method="post">
     <div class="iconselect">
         <img src="images/icon.svg" class="icon">
         <button class="icon-sele" type="submit">選択</button>
@@ -39,15 +39,15 @@
 
     <div class="item-name">性別</div>
     <div class="seibetu">
-        <span class="radiobtn"><input type="radio" name="sei" value="men"checked>  <span class="seibetumei">男性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" value="woman">  <span class="seibetumei">女性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" value="others">  <span class="seibetumei">その他</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="men"checked>  <span class="seibetumei">男性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="woman">  <span class="seibetumei">女性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="others">  <span class="seibetumei">その他</span></span>
     </div>
     <!-- foreach検討 -->
         <div class="item-name">生年月日</div>
             <div class="birthday">
             <span class="birth">
-                <select name="year">
+                <select name="year" id="year">
                     <option value="">---</option>
                     <option value="1900">1900</option>
                     <option value="1901">1901</option>
@@ -184,7 +184,7 @@
             </span>
 
             <span class="birth">
-                <select name="month">
+                <select name="month" id="month">
                 <option value="">---</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -202,7 +202,7 @@
             </span>
 
             <span class="birth">
-                <select name="day">
+                <select name="day" id="day">
                 <option value="">---</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -241,27 +241,28 @@
 
         <div class="item-name">ニックネーム</div>
         <div class="nickname">
-            <input type="text"class="textbox">
+            <input type="text"class="textbox"name="nickname" id="nickname">
         </div>
 
         <div class="item-name">メールアドレス</div>
         <div class="mailaddress">
-            <input type="text"class="textbox">
+            <input type="text"class="textbox"name="mailaddress" id="mailaddress">
         </div>
 
         <div class="item-name">パスワード</div>
         <div class="password">
-            <input type="texx"class="textbox">
+            <input type="texx"class="textbox"name="password" id="password">
         </div>    
 
         <div class="item-name">ひとこと</div>
         <div class="hitokoto">
-            <input type="text"class="hito">
+            <input type="text"class="hito" name ="hito" id="hito">
         </div>
     <div class="btn">
         <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
         <button class="sign-up" type="submit">登録</button>
     </div>
+</form>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
