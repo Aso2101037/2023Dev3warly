@@ -188,6 +188,27 @@ class DBManager{
 
     ///できてるか確認
     //できた
+
+    //ボタンを押下してデータベース内の投稿削除する
+public function deletePostTbl($getid){
+    $pdo = $this->dbConnect();
+    // 削除対象のIDを取得
+    $id = $_POST['id'];
+
+    // データを削除するクエリを実行
+    $sql = "DELETE FROM post WHERE posts_id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    if ($stmt->execute()) {
+        // 削除成功時の処理
+        echo "<script>alert('削除が成功しました。');</script>";
+    } else {
+        // 削除失敗時の処理
+        echo "<script>alert('削除に失敗しました。');</script>";
+    }
+}
 }
 ?>
 
