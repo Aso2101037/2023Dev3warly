@@ -1,0 +1,134 @@
+
+html{
+     height: 150%;
+}
+.flex{
+    display: flex;
+}
+.left{
+    width: 60%;
+    margin-left: 4%;
+}
+.right{
+    width: 40%;
+    margin-top: 2%;
+}
+.koukai-img{
+    text-align: center;
+}
+.koukai_check{
+    transform:scale(2.5);
+    margin-right: 2%;
+}
+
+.koukai{
+    font-size: 1.5em;
+}
+
+.title-text{
+    width: 50%;
+    height: 3.0rem;
+    font-size: 2.0em;
+    background-color: #E4DCCF;
+    margin-left: 20%;
+    border-radius: 1.0px;
+    border :none;
+}
+.title-text::placeholder{
+    text-align:center;
+}
+
+.img-post{
+    margin-left: 5%;
+    width: 600px;
+    height: 600px;
+    background-color: #E4DCCF;
+    margin-top: 3%;
+    text-align: center;
+}
+.img-select{
+    position: relative;
+    top:200px
+}
+.photo-img{
+    width: 150px;
+    height: 150px;
+}
+.img-link{
+    font-size:1.5em;
+    text-decoration: none;
+}
+
+
+
+.icon-nickname{
+    display: flex;
+    margin-left:10%
+}
+.icon{
+    width: 10%;
+    height: 10%;
+}
+.nickname{
+    font-size: 2.5em;
+    margin-left: 3%;
+}
+
+.komokumei{
+    font-size: 1.5em;
+    margin-top: 1%;
+}
+.tourist_text{
+    width: 80%;
+    height: 5%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+.comment_text{
+    width: 80%;
+    height: 25%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.0em;
+}
+
+select{
+    width: 7vw;
+    height: 5vh;
+    background-color: #E4DCCF;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+   font-size: 1.0em;
+}
+.address_text{
+    height: 5vh;
+    width:60%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.0em;
+    margin-left: 1%;
+}
+
+.time_text{
+    width: 80%;
+    height: 5%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+.radiobtn{
+    font-size:1.5em;
+    margin-top: 10%;
+}
+.categorymei{
+    height: 5vh;
+    background-color: #E4DCCF;
+    padding :1% 2% 1% 2% ;
+}
