@@ -196,10 +196,14 @@ public function deletePostTbl($getid){
     $id = $_POST['id'];
 
     // データを削除するクエリを実行
+    //$sql = "DELETE FROM post WHERE posts_id = id";
+    //$stmt = $pdo->prepare($sql);
+    //$stmt->bindParam('id', $id, PDO::PARAM_INT);
+    //$stmt->execute();
+
     $sql = "DELETE FROM post WHERE posts_id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
+    $stmt->bindParam(':id', $id, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
         // 削除成功時の処理
