@@ -22,7 +22,7 @@
             $yearDiff = $diff->y;
             $monthDiff = $diff->m;
             $dayDiff = $diff->d;
-            echo "差分: {$yearDiff}歳";
+            echo "年齢　　　　　: {$yearDiff}歳"."<br>";
             // 受け取った値を画面に出力
             
          };
@@ -39,7 +39,7 @@
         }else{
             $username = "未定義";
         }
-        echo "ニックネーム　　:" . $username . "<br>";
+        echo "ニックネーム　:" . $username . "<br>";
         if(isset($_POST['mailaddress'])){
             $user_mailaddress = $_POST['mailaddress'];
         }else{

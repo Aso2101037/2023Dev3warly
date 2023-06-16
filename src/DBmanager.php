@@ -2,7 +2,7 @@
 class DBManager{
      //接続のメソッド(xampp)
      private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=mytorasuta;charset=utf8','root','root');
+        $pdo = new PDO('mysql:host=localhost;dbname=torasuta;charset=utf8','root','root');
          return $pdo;     
     }
     //接続のメソッド（lolipop）
