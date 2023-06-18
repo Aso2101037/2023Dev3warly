@@ -1,6 +1,6 @@
 
 html{
-     height: 150%;
+     height: 120%;
 }
 .flex{
     display: flex;
@@ -39,8 +39,7 @@ html{
 }
 
 .img-post{
-    margin-left: 5%;
-    width: 600px;
+    width: 700px;
     height: 600px;
     background-color: #E4DCCF;
     margin-top: 3%;
@@ -63,11 +62,12 @@ html{
 
 .icon-nickname{
     display: flex;
-    margin-left:10%
+    margin-left: 15%;
 }
 .icon{
     width: 10%;
     height: 10%;
+    
 }
 .nickname{
     font-size: 2.5em;
@@ -125,10 +125,16 @@ select{
 
 .radiobtn{
     font-size:1.5em;
-    margin-top: 10%;
 }
+
+    
 .categorymei{
-    height: 5vh;
-    background-color: #E4DCCF;
-    padding :1% 2% 1% 2% ;
+    background-color: #A4DCCF;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    border-radius: 10px;
+}
+.radio-flex{
+    display: inline;
 }

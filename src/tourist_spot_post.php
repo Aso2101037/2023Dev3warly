@@ -109,14 +109,10 @@
             <input type="text"class="time_text">
 
             <div class="komokumei">カテゴリー</div>
-                <span class="radiobtn"><input type="radio" name="category" checked>  <span class="categorymei">都市</span></span>
-                <span class="radiobtn"><input type="radio" name="category">  <span class="categorymei">温泉</span></span><br>
-
-                <span class="radiobtn"><input type="radio" name="category">  <span class="categorymei">映え</span></span>
-                <span class="radiobtn"><input type="radio" name="category">  <span class="categorymei">神社・寺</span></span><br>
-
-                <span class="radiobtn"><input type="radio" name="category" >  <span class="categorymei">自然風景</span></span>
-                <span class="radiobtn"><input type="radio" name="category">  <span class="categorymei"> ぶらり </span></span><br>
+                <div class="radio-flex">
+                    <div class="radiobtn"><input type="radio" name="category" checked> <label class="categorymei">都市</label></div>
+                    <div class="radiobtn"><input type="radio" name="category" checked> <label class="categorymei">温泉</label></div>
+                </div>
                 
             </div>
         
