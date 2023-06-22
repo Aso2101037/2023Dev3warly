@@ -290,3 +290,281 @@ animation:change-img-anim 12s linear infinite;
 /* cardのデザインのやつ ↑↑*/
 
 /* 検索系のやつ ↑↑*/
+/* ↑↑モーダル検索の部分↑↑ */
+.modal-div-post{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: hidden;
+}
+.modal-div-post.post-active{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: inherit;
+}
+.modal-body-post{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 30vh;
+    background-color:#F9F5EB;
+}
+.modal-plan-post{
+    width: 24%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-plan-post > p{
+    font-size: 1.5rem;
+}
+.modal-plan-post >img{
+    margin-bottom: 10%;
+}
+.modal-kankou-post{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-kankou-post > p{
+    font-size: 1.5rem;
+}
+.modal-kankou-post > img{
+    margin: 15% 0 0 0;
+}
+.modal-food-post{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-food-post > p{
+    font-size: 1.8rem;
+}
+.modal-food-post >img{
+    margin:0% 0 0 15%;
+}
+/* ↑↑モーダル投稿の部分↑↑ */
+.img-div{
+    position: relative;
+    width: 100%;
+    animation:change-img-anim 12s linear infinite;
+    border-radius: 0 0 20px 20px;
+}
+/* cardのデザインのやつ ↑↑*/
+
+/* 検索系のやつ ↑↑*/
+.public-title-div{
+    margin-top: 2%;
+    width: 100%;
+    height:10vh;
+    display: flex;
+    align-items: center;
+}
+.check{
+    margin-left: 2%;
+    width: 10%;
+    font-size:1.3rem;
+    color: #002B5B;
+}
+.box{
+    width:1.1rem;
+    height:1.1rem;
+}
+.post-title{
+    width: 40%;
+    height:10vh;
+    font-size: 1.5rem;
+    position: relative;
+    left: 17.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#E4DCCF;
+    border-radius: 10px;
+    border: none;
+}
+.post-title::placeholder{
+    text-align: center;
+}
+.post-container{
+    margin-top:2%;
+    width: 100%;
+    height:60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-color{
+    width: 70%;
+    height:55vh;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+    display: flex;
+}
+.left-container{
+    width: 60%;
+    height:50vh;
+}
+.left-container >div:not(:first-child){
+    margin-top: 5px;
+    margin-left: 3%;
+}
+.left-container >div:first-child{
+    margin-bottom: 0;
+    margin-left: 3%;
+}
+.logo-img{
+    margin-right: 2%;
+}
+.comment-text{
+    width: 60%;
+    margin:2% 2%;
+    padding:3% 0;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+}
+.comment-text::placeholder{
+    padding-left: 3%;
+}
+.place-div > select{
+    width: 30%;
+    margin:2% 2%;
+    padding:1% 0;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+    text-align: center;
+}
+.place-text{
+    margin:2% 2%;
+    padding:1% 6%;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+}
+.traffic-div > select{
+    width: 30%;
+    margin:2% 2%;
+    padding:1% 0;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+    text-align: center;
+}
+.number-text{
+    width: 30%;
+    margin:2% 2%;
+    padding:1% 0;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+}
+.traffic-div > span{
+    font-size: 1.2rem;
+}
+.time-div > input[type="time"]{
+    width: 30%;
+    margin:2% 2%;
+    padding:1% 0;
+    border: 1px solid #F9F5EB;
+    background-color: #F9F5EB;
+    border-radius: 10px;
+    text-align: center;
+}
+.file-div >label > input[type="file"]{
+    display: none;
+}
+.file-div > label{
+    width: 30%;
+    margin:2% 2%;
+    padding:1% 0;
+    text-align: center;
+    color: #002B5B;
+    font-size:1.2rem ;
+}
+.file-div > label:hover{
+    text-decoration: underline dashed #002B5B;
+}
+.right-container{
+    width: 40%;
+    height:50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#img-div{
+    width: 80%;
+    height:40vh;
+    border:2px dashed #002B5B;
+}
+.add-container{
+    width: 100%;
+    height:5vh;
+}
+.add-post{
+    position: relative;
+    left: 14%;
+    font-size: 1.3rem;
+    color: #002B5B;
+    width: 10%;
+    border: none;
+    background-color: white;
+}
+.add-post::before{
+    content: "+";
+    font-size: 1.3rem;
+    color: #002B5B;
+}
+.button-container{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 2% 0;
+}
+.back-button{
+    font-size: 1.2rem;
+    color: #002B5B;
+    padding: 1% 4%;
+    background-color: #E4DCCF;
+    border: 2px solid #E4DCCF;
+    border-radius: 20px;
+}
+.share-button{
+    font-size: 1.2rem;
+    color: #F9F5EB;
+    padding: 1% 4%;
+    background-color: #EA5455;
+    border: 2px solid #EA5455;
+    border-radius: 20px;
+}
+/* 旅行プラン投稿*/

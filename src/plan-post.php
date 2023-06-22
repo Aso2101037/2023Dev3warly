@@ -13,7 +13,8 @@
 <body>
     <!-- header部分↓↓ -->
     <div id="app">
-    <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
+        <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
+        <!-- 検索のモーダル -->
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
                 <div class="modal-plan" onclick="location.href='./search-plan.php'">
@@ -30,8 +31,8 @@
                 </div>
             </div>
         </div>
-             <!-- 投稿のモーダル -->
-             <div :class="{'post-active': postActive }" class="modal-div-post">
+        <!-- 投稿のモーダル -->
+        <div :class="{'post-active': postActive }" class="modal-div-post">
             <div class="modal-body-post">
                 <div class="modal-plan-post" onclick="location.href='./search-plan.php'">
                      <p>旅行プラン投稿</p>
@@ -48,37 +49,28 @@
             </div>
         </div>
     </div>
-      <!-- 画像の部分↓↓ -->
-        <div class="img-div">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
-            <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
-            <img src="images/homeback.png" class="homeback-img">
-        </div>
-        <div class="post-select">
-            <div class="plan-div">
-                <img src="./images/post-plan.svg" alt=""><span class="post-font">旅行プランの投稿</span>
-            </div>
-            <div class="kankou-div">
-                <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
-            </div>
-            <div class="food-div">
-                <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
-            </div>
-        </div>
+    <div class="public-title-div">
+        <label for="public" class="check"><input type="checkbox" class="box"  name="public" id="public">公開</label>
+        <input type="text" class="post-title" placeholder="タイトル">
     </div>
-    <!-- 旅行プランのカード↓↓ -->
-    <div id="card">
-        <h1 class="favorite-font">人気の旅行プラン</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の観光名所</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の飲食店</h1>
-        <card-component></card-component>
+    <div id="post">
+        <post-component></post-component>
+    </div>
+    <div class="add-container">
+            <button class="add-post" onclick = "addele()">場所の追加</button>
+    </div>
+    <div class="button-container">
+        <button class="back-button">＜戻る</button>    
+        <button class="share-button">Share</button>
+    </div>
+    <div id="kari">
+            <button onclick = "tag()">click</button>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/script.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
+    <script src="./script/plan-post.js"></script>
 </body>
 </html>
