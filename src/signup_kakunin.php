@@ -1,5 +1,44 @@
-<?php
-        $date = date("y-m-d");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    try{
+        $opt = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                                PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
+                                PDO::ATTR_EMULATE_PREPARES => false);
+
+        $db = new PDO("mysql:host=localhost;dbname=torasuta;charset=utf8",
+                                    "root", "root", $opt);
+
+    //画像がアップロードされたか確認
+    if (!empty($_FILES['imagedata']['name'])) {
+        
+        //SQLを生成　テーブル名：Imagetbl　カラム名：id, image
+        $sql = "INSERT INTO user(user_profile) VALUES (?)";
+        $ps = $db->prepare($sql);
+
+        //POSTで受け取った画像をバイナリデータにする
+        $image = file_get_contents($_FILES['imagedata']['tmp_name']);
+
+
+        //画像をバイナリデータとしてバインド
+        $ps->bindValue(1, $image, PDO::PARAM_LOB);
+
+        //SQLを実行
+        $ps->execute();
+
+        echo "画像のアップロードが完了しました。";
+    }
+}catch(PDOException $e){
+    echo "Error : " . $e->getMessage() . "\n";
+}
+
+    $date = date("y-m-d");
         
         if((isset($_POST["year"]))&&(isset($_POST["month"]))&&(isset($_POST["day"]))) {
             // セレクトボックスで選択された値を受け取る
@@ -57,10 +96,35 @@
         }else{
             $user_one_thing = "未定義";
         }
+
         echo "ひとこと　　　:" . $user_one_thing . "<br>";
         $dbm = new DBManager();
-        $userList = $dbm->insertUserTbl(null, $password,$username,$user_mailaddress,$dateString,$gender_id,null,$user_one_thing,null);
 
-
-
+        $userList = $dbm->insertUserTbl(null, $password,$username,$user_mailaddress,$dateString,$gender_id,"0",$user_one_thing,$image);
+        //DBに接続
+        try{
+            $opt = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                                     PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
+                                     PDO::ATTR_EMULATE_PREPARES => false);                         
+        
+            //Imagetblから画像を取得
+            $sql = "SELECT * FROM user";
+            $ps = $db->prepare($sql);
+            $ps->execute();
+        
+            //画像をimgタグに表示
+            while($row = $ps->fetch()){
+                echo "<img src='data:image/jpeg;base64," . base64_encode($row['user_profile']) . "' />";
+            }     
+        }catch(PDOException $e){
+            echo "Error : " . $e->getMessage() . "\n";
+        }
+        
     ?>
+    <!--画像 -->
+    <div class="icon-image">
+        <img src="data:<?php echo $image['image_type'] ?>;base64,<?php echo $img; ?>">
+    </div>
+
+</body>
+</html>
