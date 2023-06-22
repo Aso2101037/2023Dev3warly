@@ -90,7 +90,14 @@
         }else{
             $gender_id = "未定義";
         }
-        echo "性別　　　　　:" . $gender_id . "<br>";
+        echo "性別　　　　　:";
+        if($gender_id == 0){
+            echo "男性";
+        }else if($gender_id == 1){
+            echo "女性";
+        }else{
+            echo "それ以外";
+        }
         if(isset($_POST['hito'])){
             $user_one_thing = $_POST['hito'];
         }else{
