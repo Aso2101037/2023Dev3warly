@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-             <!-- 投稿のモーダル -->
+             <!-- -投稿のモーダル -->
              <div :class="{'post-active': postActive }" class="modal-div-post">
             <div class="modal-body-post">
                 <div class="modal-plan-post" onclick="location.href='./search-plan.php'">
