@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/tourist_spot_post-style.css">
+    <link rel="stylesheet" href="./style/tourist_spot_post_style.css">
 </head>
 <body>
 <div id="app">
@@ -32,11 +32,11 @@
 </div>
     <div class="flex">
         <div class="left">
-            <div class="sinkisakusei"><h2>新規投稿を作成</h2></div>
+            <div class="sinkisakusei">新規投稿を作成</div>
             <input type="checkbox"class="koukai_check"> <span class="koukai">公開</span>
             <input type="text"class="title-text"placeholder="ここにタイトルを入力">
             <div class="img-post">
-                <span class="img-select"><img src="images/photoimg.png"class="photo-img"><br>
+                <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>
                     <a href=""class="img-link">写真を選択</a>
                 </span>
             </div>
@@ -109,15 +109,26 @@
             <input type="text"class="time_text">
 
             <div class="komokumei">カテゴリー</div>
-                <div class="radio-flex">
-                    <div class="radiobtn"><input type="radio" name="category" checked> <label class="categorymei">都市</label></div>
-                    <div class="radiobtn"><input type="radio" name="category" checked> <label class="categorymei">温泉</label></div>
+                <div class="radios">
+                    <input type="radio" name="category" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
+                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
                 </div>
-                
+                <div class="radios">
+                    <input type="radio" name="category" > <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
+                    <input type="radio" name="category"class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
+                </div>
+                <div class="radios">
+                    <input type="radio" name="category" > <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
+                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
+                </div>
             </div>
         
     </div>
-      
+    
+    <div class="btn">
+        <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
+        <button class="sign-up" type="submit">Share</button>
+    </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
