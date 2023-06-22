@@ -57,7 +57,7 @@ window.onload=function(){
     document.getElementById("prefectures").appendChild(op);
   }
   // 交通量のセレクトボックス用
-  let traffic =[
+  var traffic =[
     {id:"",label:"▼交通機関"},
     {id:"1",label:"徒歩"},
     {id:"2",label:"自転車"},
@@ -83,87 +83,6 @@ var count = 1;
 
  const addele = ()=>{
   console.log(count);
-
-// 都道府県のセレクトボックス用
-window.onload=function(){
-  var prefectures = [
-    {cd:"", label:"▼都道府県"},
-    {cd:"1", label:"北海道"},
-    {cd:"2", label:"青森県"},
-    {cd:"3", label:"岩手県"},
-    {cd:"4", label:"宮城県"},
-    {cd:"5", label:"秋田県"},
-    {cd:"6", label:"山形県"},
-    {cd:"7", label:"福島県"},
-    {cd:"8", label:"茨城県"},
-    {cd:"9", label:"栃木県"},
-    {cd:"10", label:"群馬県"},
-    {cd:"11", label:"埼玉県"},
-    {cd:"12", label:"千葉県"},
-    {cd:"13", label:"東京都"},
-    {cd:"14", label:"神奈川県"},
-    {cd:"15", label:"新潟県"},
-    {cd:"16", label:"富山県"},
-    {cd:"17", label:"石川県"},
-    {cd:"18", label:"福井県"},
-    {cd:"19", label:"山梨県"},
-    {cd:"20", label:"長野県"},
-    {cd:"21", label:"岐阜県"},
-    {cd:"22", label:"静岡県"},
-    {cd:"23", label:"愛知県"},
-    {cd:"24", label:"三重県"},
-    {cd:"25", label:"滋賀県"},
-    {cd:"26", label:"京都府"},
-    {cd:"27", label:"大阪府"},
-    {cd:"28", label:"兵庫県"},
-    {cd:"29", label:"奈良県"},
-    {cd:"30", label:"和歌山県"},
-    {cd:"31", label:"鳥取県"},
-    {cd:"32", label:"島根県"},
-    {cd:"33", label:"岡山県"},
-    {cd:"34", label:"広島県"},
-    {cd:"35", label:"山口県"},
-    {cd:"36", label:"徳島県"},
-    {cd:"37", label:"香川県"},
-    {cd:"38", label:"愛媛県"},
-    {cd:"39", label:"高知県"},
-    {cd:"40", label:"福岡県"},
-    {cd:"41", label:"佐賀県"},
-    {cd:"42", label:"長崎県"},
-    {cd:"43", label:"熊本県"},
-    {cd:"44", label:"大分県"},
-    {cd:"45", label:"宮崎県"},
-    {cd:"46", label:"鹿児島県"},
-    {cd:"47", label:"沖縄県"}
-  ];
-  for(var i=0;i<prefectures.length;i++){
-    let op = document.createElement("option");
-    op.value = prefectures[i].cd;
-    op.text = prefectures[i].label;
-    document.getElementById("prefectures"+[count]).appendChild(op);
-  }
-  // 交通量のセレクトボックス用
-  let traffic =[
-    {id:"",label:"▼交通機関"},
-    {id:"1",label:"徒歩"},
-    {id:"2",label:"自転車"},
-    {id:"3",label:"車"},
-    {id:"4",label:"バス"},
-    {id:"5",label:"電車"},
-    {id:"",label:"タクシー"},
-    {id:"",label:"フェリー"},
-    {id:"",label:"地下鉄"},
-    {id:"",label:"路面電車"},
-    {id:"",label:"モノレール"},
-    {id:"",label:"バイク"},
-];
-for(var i=0;i<traffic.length;i++){
-    let op = document.createElement("option");
-    op.value = traffic[i].cd;
-    op.text = traffic[i].label;
-    document.getElementById("traffic"+[count]).appendChild(op);
-  }
-};
 
   // <div class="post-container">の部分
   const postId = document.getElementById("post");
@@ -325,5 +244,83 @@ const  RightImgDiv = document.createElement("div");
 RightImgDiv.id = "img-div";
 getRightContainerId.appendChild(RightImgDiv);
 
+// 都道府県のセレクトボックス用
+  var prefectures = [
+    {cd:"", label:"▼都道府県"},
+    {cd:"1", label:"北海道"},
+    {cd:"2", label:"青森県"},
+    {cd:"3", label:"岩手県"},
+    {cd:"4", label:"宮城県"},
+    {cd:"5", label:"秋田県"},
+    {cd:"6", label:"山形県"},
+    {cd:"7", label:"福島県"},
+    {cd:"8", label:"茨城県"},
+    {cd:"9", label:"栃木県"},
+    {cd:"10", label:"群馬県"},
+    {cd:"11", label:"埼玉県"},
+    {cd:"12", label:"千葉県"},
+    {cd:"13", label:"東京都"},
+    {cd:"14", label:"神奈川県"},
+    {cd:"15", label:"新潟県"},
+    {cd:"16", label:"富山県"},
+    {cd:"17", label:"石川県"},
+    {cd:"18", label:"福井県"},
+    {cd:"19", label:"山梨県"},
+    {cd:"20", label:"長野県"},
+    {cd:"21", label:"岐阜県"},
+    {cd:"22", label:"静岡県"},
+    {cd:"23", label:"愛知県"},
+    {cd:"24", label:"三重県"},
+    {cd:"25", label:"滋賀県"},
+    {cd:"26", label:"京都府"},
+    {cd:"27", label:"大阪府"},
+    {cd:"28", label:"兵庫県"},
+    {cd:"29", label:"奈良県"},
+    {cd:"30", label:"和歌山県"},
+    {cd:"31", label:"鳥取県"},
+    {cd:"32", label:"島根県"},
+    {cd:"33", label:"岡山県"},
+    {cd:"34", label:"広島県"},
+    {cd:"35", label:"山口県"},
+    {cd:"36", label:"徳島県"},
+    {cd:"37", label:"香川県"},
+    {cd:"38", label:"愛媛県"},
+    {cd:"39", label:"高知県"},
+    {cd:"40", label:"福岡県"},
+    {cd:"41", label:"佐賀県"},
+    {cd:"42", label:"長崎県"},
+    {cd:"43", label:"熊本県"},
+    {cd:"44", label:"大分県"},
+    {cd:"45", label:"宮崎県"},
+    {cd:"46", label:"鹿児島県"},
+    {cd:"47", label:"沖縄県"}
+  ];
+  for(var i=0;i<prefectures.length;i++){
+    let op = document.createElement("option");
+    op.value = prefectures[i].cd;
+    op.text = prefectures[i].label;
+    document.getElementById("prefectures"+[count]).appendChild(op);
+  }
+  // 交通量のセレクトボックス用
+  var traffic =[
+    {id:"",label:"▼交通機関"},
+    {id:"1",label:"徒歩"},
+    {id:"2",label:"自転車"},
+    {id:"3",label:"車"},
+    {id:"4",label:"バス"},
+    {id:"5",label:"電車"},
+    {id:"",label:"タクシー"},
+    {id:"",label:"フェリー"},
+    {id:"",label:"地下鉄"},
+    {id:"",label:"路面電車"},
+    {id:"",label:"モノレール"},
+    {id:"",label:"バイク"},
+];
+for(var i=0;i<traffic.length;i++){
+    let op = document.createElement("option");
+    op.value = traffic[i].cd;
+    op.text = traffic[i].label;
+    document.getElementById("traffic"+[count]).appendChild(op);
+  }
 count = count+1;
 };
