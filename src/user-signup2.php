@@ -31,12 +31,12 @@
             </div>
         </div>
 </div>
-<form  class = "form-signup" action="test2_kakunin.php" method="post" enctype="multipart/form-data">
+<form  class = "form-signup" action="signup_kakunin.php" method="post" enctype="multipart/form-data">
 <div class="iconselect">
         <img src="images/icon.svg" class="icon">
         <!-- <button class="icon-sele" type="submit">選択</button> -->
         <!-- <button class="icon-sele" type="file"name="image">選択</button> -->
-        <input class="icon-sele" type="file"name="image" value="選択">
+        <input class="icon-sele" type="file"name="imagedata" value="選択">
     </div>
 
     <div class="item-name">性別</div>
