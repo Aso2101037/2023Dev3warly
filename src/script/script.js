@@ -80,9 +80,10 @@ for(var i=0;i<traffic.length;i++){
 };
 
 var count = 1;
-
- const addele = ()=>{
-  console.log(count);
+// 投稿カードが増えていくやつ
+ const addele = () =>{
+  
+  // console.log(count);
 
   // <div class="post-container">の部分
   const postId = document.getElementById("post");
@@ -228,7 +229,7 @@ getFileDiv.appendChild(FileLabel);
 const getFileLabelId = document.getElementById("FileLabel"+[count]);
 const FileType = document.createElement("input");
 FileType.setAttribute("type","file");
-FileType.id = "up-load";
+FileType.id = "up-load"+[count];
 FileType.className = "img-file";
 getFileLabelId.appendChild(FileType);
 
@@ -238,11 +239,11 @@ RightContainer.id = "RightContainerId"+[count];
 RightContainer.className = "right-container";
 getBackColorId.appendChild(RightContainer);
 
-// <div id="img-div"></div>の部分
+// <img id="img-file">の部分
 const getRightContainerId = document.getElementById("RightContainerId"+[count]);
-const  RightImgDiv = document.createElement("div");
-RightImgDiv.id = "img-div";
-getRightContainerId.appendChild(RightImgDiv);
+const  RightImgFile = document.createElement("img");
+RightImgFile.id = "image-add"+[count];
+getRightContainerId.appendChild(RightImgFile);
 
 // 都道府県のセレクトボックス用
   var prefectures = [
@@ -322,5 +323,56 @@ for(var i=0;i<traffic.length;i++){
     op.text = traffic[i].label;
     document.getElementById("traffic"+[count]).appendChild(op);
   }
-count = count+1;
+count++;
 };
+
+
+//   ImgFile.addEventListener("change", function (e) {
+//   const file = e.target.files[0];//複数ファイルはfiles配列をループで回す
+//   const reader = new FileReader();
+//   const image = document.getElementById("image-add");
+//   reader.addEventListener("load", function () {
+//     image.src = reader.result;
+//   }, true);
+
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   }
+// })
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (count == 1) {
+    document.getElementById('up-load').addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      // ファイルリーダー作成
+      var fileReader = new FileReader();
+      fileReader.onload = function() {
+        // Data URIを取得
+        var dataUri = this.result;
+        // img要素に表示
+        var img = document.getElementById('image-add');
+        img.src = dataUri;
+      };
+      // ファイルをData URIとして読み込む
+      fileReader.readAsDataURL(file);
+    });
+  } else if (count >= 2) {
+    document.getElementById('up-load' + count-1).addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      var blob = file instanceof Blob ? file : file.blob;
+
+      // ファイルリーダー作成
+      var fileReader = new FileReader();
+      fileReader.onload = function() {
+        // Data URIを取得
+        var dataUri = this.result;
+        console.log(dataUri);
+        // img要素に表示
+        var img = document.getElementById('image-add' + count-1);
+        img.src = dataUri;
+      };
+      // ファイルをData URIとして読み込む
+      fileReader.readAsDataURL(file);
+    });
+  }
+});

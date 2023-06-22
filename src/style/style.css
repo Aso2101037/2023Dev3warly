@@ -502,7 +502,7 @@ animation:change-img-anim 12s linear infinite;
     text-align: center;
 }
 .file-div >label > input[type="file"]{
-    display: none;
+    display:none;
 }
 .file-div > label{
     width: 30%;
@@ -522,7 +522,7 @@ animation:change-img-anim 12s linear infinite;
     justify-content: center;
     align-items: center;
 }
-#img-div{
+.right-container > img{
     width: 80%;
     height:40vh;
     border:2px dashed #002B5B;

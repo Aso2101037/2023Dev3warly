@@ -57,7 +57,7 @@
         <post-component></post-component>
     </div>
     <div class="add-container">
-            <button class="add-post" onclick = "addele()">場所の追加</button>
+            <button class="add-post"  onclick = "addele()">場所の追加</button>
     </div>
     <div class="button-container">
         <button class="back-button">＜戻る</button>    
@@ -66,8 +66,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./script/script.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/plan-post.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
