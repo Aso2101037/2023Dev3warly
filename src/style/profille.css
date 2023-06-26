@@ -432,7 +432,8 @@
     flex-direction: column;
 }
 .post-type{
-
+    font-size: 1.4rem;
+    color: #002B5B;
 }
 .new-img{
     width: 70%;
@@ -462,3 +463,68 @@
     box-shadow: 9px 9px 10px #aaa;
 }
 /* ↑↑プロ―フィール画面↑↑*/
+.stamp-container{
+    margin: 3rem 0;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-stamp{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.triplog-post{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trip-font{
+    margin-left: 5%;
+    color: #002B5B;
+}
+.total-font{
+    margin-right: 5%;
+    color: #002B5B;
+}
+.region-post{
+    width: 80%;
+    height:70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.kanto-div{
+    width: 100%;
+    height:20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hokkaido{
+    width: 40%;
+    height: 15vh;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kanto{
+    width: 40%;
+    height: 15vh;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*スタンプラリー地方画面↑↑ */
