@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>旅行プラン検索結果画面</title>
 </head>
-
+<!-- 作成者：梶原 -->
 <body>
     <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>

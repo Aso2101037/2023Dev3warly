@@ -488,6 +488,7 @@ animation:change-img-anim 12s linear infinite;
     border: 1px solid #F9F5EB;
     background-color: #F9F5EB;
     border-radius: 10px;
+    text-align: center;
 }
 .traffic-div > span{
     font-size: 1.2rem;

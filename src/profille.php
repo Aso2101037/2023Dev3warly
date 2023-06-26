@@ -7,7 +7,7 @@
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/profille.css">
     <!-- 作成者：梶原 -->
 </head>
 <body>
@@ -48,37 +48,63 @@
             </div>
         </div>
     </div>
-      <!-- 画像の部分↓↓ -->
-        <div class="img-div">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
-            <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
-            <img src="images/homeback.png" class="homeback-img">
-        </div>
-        <div class="post-select">
-            <div class="plan-div" onclick="location.href='./plan-post.php'">
-                <img src="./images/post-plan.svg"  alt=""><span class="post-font">旅行プランの投稿</span>
+    <!-- プロフィール部分 -->
+    <div class="profille-container">
+        <div class="center-profille">
+            <div class="profille-left">
+                <img src="./images/icon.svg" class="top-img" alt="トプ画">
+                <div class="like-list"><span>いいね一覧</span></div>
             </div>
-            <div class="kankou-div">
-                <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
-            </div>
-            <div class="food-div">
-                <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
+            <div class="profille-right">
+                <div class="titles-name">
+                    <div class="nickname"><span>ニックネーム</span></div>
+                    <div class="title-holder"><span>称号名</span></div>
+                </div>
+                <div class="comment-div"><span>コメント</span></div>
             </div>
         </div>
     </div>
-    <!-- 旅行プランのカード↓↓ -->
-    <div id="card">
-        <h1 class="favorite-font">人気の旅行プラン</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の観光名所</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の飲食店</h1>
-        <card-component></card-component>
+    <!-- 旅行日記部分 -->
+    <div class="trip-container">
+        <div class="center-trip">
+            <div class="trip-left">
+                <img src="./images/trip-memory.svg" alt=""><span>旅行日記</span>
+            </div>
+            <div class="trip-right">
+                <div class="total-post"><span>総投稿数<span>～</span>件</span></div>
+                <div class="place-visite"><span>訪れた場所<span>～</span>カ所</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- 最近の投稿を表示する部分 -->
+    <div class="new-container">
+        <div class="center-post">
+            <div class="new-title-delete">
+                <div class="new-post"><span>最新の投稿</span></div>
+                <div class="post-delete"><span>投稿削除</span></div>
+            </div>
+            <div class="new-posts">
+                <div class="post-card">
+                    <div class="post-type">旅行プラン</div>
+                    <div class="new-img"></div>
+                </div>
+                <div class="post-card">
+                    <div class="post-type">観光名所</div>
+                    <div class="new-img"></div>
+                </div>
+                <div class="post-card">
+                    <div class="post-type">飲食店</div>
+                    <div class="new-img"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <button class="back"onclick="history.back(-1);" >＜戻る</button>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
 </body>
 </html>
