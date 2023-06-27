@@ -55,14 +55,71 @@
                 <h2 class="total-font">総投稿数数<span>~</span>件</h2>
             </div>
             <div class="region-post">
-                <div class="kanto-div">
-                    <div class="hokkaido"><span>北海道</span></div>
-                    <div class="kanto"><span>関東</span></div>
+                <div class="tohoku-div">
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>北海道・東北</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>関東</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
                 </div>
-                <div class="kinki-div"></div>
-                <div class="kyushu-div"></div>
+                <div class="tohoku-div">
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>中部</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>近畿</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="tohoku-div">
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>中国・四国</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="div-flex">
+                       <div class="region-div"> 
+                            <div><img src="./images/trip-memory.svg"></div>
+                            <div class="flex-colum">
+                                <div>九州・沖縄</div>
+                                <div><p>投稿数<span>~</span>件</p></div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
             </div>    
         </div>
+    </div>
+    <div class="back-button">
+        <button class="back"onclick="history.back(-1);" >＜戻る</button>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />

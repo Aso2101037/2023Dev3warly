@@ -67,7 +67,7 @@
     <!-- 旅行日記部分 -->
     <div class="trip-container">
         <div class="center-trip">
-            <div class="trip-left">
+            <div class="trip-left" onclick="location.href='./stamp-region.php'">
                 <img src="./images/trip-memory.svg" alt=""><span>旅行日記</span>
             </div>
             <div class="trip-right">
