@@ -63,11 +63,31 @@
     color:#002B5B;
     border: none;
 }
+<<<<<<< Updated upstream:src/style/login_out.css
 .log-in{
     margin-left: 15%;
     width: 13vw;
     height: 10vh;
     background:#002B5B;
+=======
+.login{
+    margin-left: 15%;
+    width: 13vw;
+    height: 10vh;
+    background-color: #002B5B;
+    font-size:2.0em;
+    border-radius:10px;
+    color:#FFFFFF;
+    border: none;
+}
+.sign-up{
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    width: 13vw;
+    height: 10vh;
+    background-color: #EA5455;
+>>>>>>> Stashed changes:src/style/login-out.css
     font-size:2.0em;
     border-radius:10px;
     color:#FFFFFF;
