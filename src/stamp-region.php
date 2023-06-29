@@ -48,76 +48,22 @@
             </div>
         </div>
     </div>
-    <div class="stamp-container">
-        <div class="center-stamp">
-            <div class="triplog-post">
-                <h2 class="trip-font">Trip Log</h2>
-                <h2 class="total-font">総投稿数数<span>~</span>件</h2>
-            </div>
-            <div class="region-post">
-                <div class="tohoku-div">
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>北海道・東北</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>関東</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-                <div class="tohoku-div">
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>中部</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>近畿</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-                <div class="tohoku-div">
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>中国・四国</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="div-flex">
-                       <div class="region-div"> 
-                            <div><img src="./images/trip-memory.svg"></div>
-                            <div class="flex-colum">
-                                <div>九州・沖縄</div>
-                                <div><p>投稿数<span>~</span>件</p></div>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
+    <div id="memory">
+        <region-component :class="{'is-none':regionChange}" class="region-com"
+        @click-kyushu="kyushuChange" 
+        @click-tohoku="tohokuChange" 
+        @click-kanto="kantoChange" 
+        @click-tyubu="tyubuChange"
+        @click-kinki="kinkiChange"
+        @click-shikoku="shikokuChange"></region-component>
+        <kyushu-component :class="{'is-kyushu':isKyushu}" class="kyushu-com"></kyushu-component>
+        <tohoku-component :class="{'is-tohoku':isTohoku}" class="tohoku-com"></tohoku-component>
+        <kanto-component :class="{'is-kanto':isKanto}" class="kanto-com"></kanto-component>
+        <tyubu-component :class="{'is-tyubu':isTyubu}" class="tyubu-com"></tyubu-component>
+        <kinki-component :class="{'is-kinki':isKinki}" class="kinki-com"></kinki-component>
+        <shikoku-component :class="{'is-shikoku':isShikoku}" class="shikoku-com"></shikoku-component>
     </div>
+    
     <div class="back-button">
         <button class="back"onclick="history.back(-1);" >＜戻る</button>
     </div>
@@ -125,5 +71,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
+    <script src="./script/memory.js"></script>
 </body>
 </html>

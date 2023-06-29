@@ -201,7 +201,7 @@ animation:change-img-anim 12s linear infinite;
 @keyframes change-img-anim-first {
 	0%{ opacity:1;}
   30%{ opacity: 1;}
-  36%{ opacity: 1;}
+  36%{ opacity: 0;}
   45%{ opacity: 0;}
   100%{ opacity: 0;}
 }

@@ -51,7 +51,7 @@
     <!-- プロフィール部分 -->
     <div class="profille-container">
         <div class="center-profille" >
-            <div class="profille-left"  onclick="location.href='./stamp-region.php'">
+            <div class="profille-left">
                 <img src="./images/icon.svg" class="top-img" alt="トプ画">
                 <div class="like-list"><span>いいね一覧</span></div>
             </div>

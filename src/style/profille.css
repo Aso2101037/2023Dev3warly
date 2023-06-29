@@ -496,7 +496,7 @@
 }
 .region-post{
     width: 80%;
-    height:70vh;
+    height:80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -519,7 +519,7 @@
 .region-div{
     margin: 2rem 0;
     width: 100%;
-    height: 15vh;
+    height: 13.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -542,5 +542,47 @@
     flex-direction: column;
     font-size: 1.4rem;
     color: #002B5B;
+}
+.back-span:hover{
+    text-decoration: underline #002B5B;
+}
+.kyushu-com{
+    display: none;
+} 
+.tohoku-com{
+    display: none;
+}
+.kanto-com{
+    display: none;
+}
+.tyubu-com{
+    display: none;
+}
+.kinki-com{
+    display: none;
+}
+.shikoku-com{
+    display: none;
+}
+.region-com.is-none{
+    display: none;
+}
+.kyushu-com.is-kyushu{
+    display: block;
+}
+.tohoku-com.is-tohoku{
+    display: block;
+}
+.kanto-com.is-kanto{
+    display: block;
+}
+.tyubu-com.is-tyubu{
+    display: block;
+}
+.kinki-com.is-kinki{
+    display: block;
+}
+.shikoku-com.is-shikoku{
+    display: block;
 }
 /*スタンプラリー地方画面↑↑ */
