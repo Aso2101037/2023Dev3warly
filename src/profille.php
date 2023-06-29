@@ -48,6 +48,19 @@
             </div>
         </div>
     </div>
+    <?php
+        session_start();
+        $email = $_SESSION['email'];
+        echo $email;
+        require_once "DBmanager.php";
+        $dbm = new DBManager();
+        $getdata = $dbm->getUser($email);
+        if ($getdata !== false) {
+            echo $getdata['user_name'];
+        } else {
+            echo "ユーザーデータが取得できませんでした。";
+        }
+    ?>
     <!-- プロフィール部分 -->
     <div class="profille-container">
         <div class="center-profille" >
