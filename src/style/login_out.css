@@ -14,6 +14,16 @@
     width: 15vw;
     height: 20vh;
 }
+.sign-up{
+    width: 13vw;
+    height: 10vh;
+    background:#EA5455;
+    font-size:2.0em;
+    border-radius:10px;
+    color:#FFFFFF;
+    border: none;
+    float:right
+}
 .error{
     font-size: 1.5em;
     color: #EA5455;
@@ -53,11 +63,11 @@
     color:#002B5B;
     border: none;
 }
-.sign-up{
+.log-in{
     margin-left: 15%;
     width: 13vw;
     height: 10vh;
-    background:#EA5455;
+    background:#002B5B;
     font-size:2.0em;
     border-radius:10px;
     color:#FFFFFF;

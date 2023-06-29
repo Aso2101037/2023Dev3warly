@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/login-out.css">
+    <link rel="stylesheet" href="./style/login_out.css">
 </head>
 <body>
 <div id="app">
@@ -44,7 +44,7 @@
             <input type="password" name = "inputPassword" id="inputPassword" class="form-control mx-auto" placeholder="パスワードを入力してください" required>
         </div>
         <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
-        <button class="sign-up" type="submit">Sign up</button>
+        <button class="log-in" type="submit">Login</button>
 
         
       </form>

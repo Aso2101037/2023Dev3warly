@@ -82,7 +82,7 @@ html{
 
 .komokumei{
     font-size: 1.5em;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 .tourist_text{
     width: 85%;
@@ -100,15 +100,14 @@ html{
     border-radius: 10px;
     font-size: 1.0em;
 }
-
-select{
+.select-todou{
     width: 8vw;
     height: 5vh;
     background-color: #E4DCCF;
     text-align: center;
     border:none;
     border-radius:10px;
-   font-size: 1.5em;
+   font-size: 1.0em;
    font-weight: 500;
 }
 .address_text{
@@ -130,43 +129,30 @@ select{
     font-size: 1.5em;
 }
 
-.radios{
-    margin: 1% 0% 1% 0%;
+.yosan-kategory{
+    display: flex;
 }
-
-    
-.categorymei{
-    background-color: #E4DCCF;
-    width: 35%; 
+.kategory{
+    margin-left: 10%;
+}
+.yosan-text{
+    width: 15vw;
     height: 5vh;
-    font-size: 1.5em;
-    border-radius: 20px;
+    background-color: #E4DCCF;
     text-align: center;
-    
+    border:none;
+    border-radius:10px;
+    font-size: 1.5em;
 }
-.komoku-img{
-    float: left;
-    margin-top: 2%;
-    width: 25px;
-    height:25px;
-    margin-left: 5%;
+.select-kategory{
+    width: 15vw;
+    height: 5vh;
+    background-color: #E4DCCF;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+   font-size: 1.5em;
 }
-.komoku-img-burari{
-    float: left;
-    width: 30px;
-    height:30px;
-    margin-left: 5%
-}
-   
-    
-.categorymei-moji{
-   margin-left: -15%;
-}
-.radio-right{
-    margin-left: 8%
-}
-
-
 .btn{
     width: 100%;
     height: 10vh;
