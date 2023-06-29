@@ -37,7 +37,7 @@
         <input type="checkbox" name="kankou" id="lunch"><label for="lunch" id="lunch"  class="label-style"><span><img src="./images/lunch.svg" alt="">昼食</span></label>
     </div>
     <div class="check-div">
-        <input type="checkbox" name="kankou" id="dinner"><label for="dinner" id="dinner"  class="label-style"><span><img src="./images/dinner.svg" style="width:25px; height=:25px;" alt="">夕食</span></label>
+        <input type="checkbox" name="kankou" id="dinner"><label for="dinner" id="dinner"  class="label-style"><span><img src="./images/dinner.svg" style="width:25px; height:25px;" alt="">夕食</span></label>
         <input type="checkbox" name="kankou" id="snack"><label for="snack" id="snack"  class="label-style"><span><img src="./images/snack.svg" alt="">軽食</span></label>
     </div>
     <div class="check-div">
