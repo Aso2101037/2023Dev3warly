@@ -144,7 +144,7 @@ class DBManager{
     }
 
     //パスワード再設定するメソッド
-    public function changeUserTblByword($pass,$email){
+    public function changeUserTblByword($email,$pass){
         $pdo = $this->dbConnect();
         $sql = "UPDATE hosapo_user_tbl SET password=:password , email_address = :email_address WHERE  email_address = :email_address";
         $ps = $pdo->prepare($sql);
