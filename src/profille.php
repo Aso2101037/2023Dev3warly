@@ -51,7 +51,6 @@
     <?php
         session_start();
         $email = $_SESSION['email'];
-        echo $email;
         require_once "DBmanager.php";
         $dbm = new DBManager();
         $getdata = $dbm->getUser($email);
@@ -71,7 +70,7 @@
                     <div class="nickname"><span><?php echo $getdata['user_name']?></span></div>
                     <div class="title-holder"><span>称号名</span></div>
                 </div>
-                <div class="comment-div"><span>コメント</span></div>
+                <div class="comment-div"><span><?php echo $getdata['user_one_thing']?></span></div>
             </div>
         </div>
     </div>
