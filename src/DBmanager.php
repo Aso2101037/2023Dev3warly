@@ -120,6 +120,15 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+    public function getUser($email) {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_mailaddress = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $email, PDO::PARAM_STR);
+        $ps->execute();
+        $getdata = $ps->fetch();
+        return $getdata;
+    }
 
     //hosapo_hospital_tblをidで取得するメソッド
     public function getHospitalTblByid($hospitalid){
