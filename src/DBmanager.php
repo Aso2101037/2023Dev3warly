@@ -10,7 +10,7 @@ class DBManager{
     //    $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
     //    return $pdo;     
     //}
-    private function session_email_pass($pass,$email){
+    private function session_email_pass($email,$pass){
         session_start();
         // ハッシュ化したパスワードを引数として与えてください
         $_SESSION['email'] = $email;
