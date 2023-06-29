@@ -55,9 +55,7 @@
         require_once "DBmanager.php";
         $dbm = new DBManager();
         $getdata = $dbm->getUser($email);
-        if ($getdata !== false) {
-            echo $getdata['user_name'];
-        } else {
+        if ($getdata == false) {
             echo "ユーザーデータが取得できませんでした。";
         }
     ?>
@@ -70,7 +68,7 @@
             </div>
             <div class="profille-right">
                 <div class="titles-name">
-                    <div class="nickname"><span>ニックネーム</span></div>
+                    <div class="nickname"><span><?php $getdata['user_name']?></span></div>
                     <div class="title-holder"><span>称号名</span></div>
                 </div>
                 <div class="comment-div"><span>コメント</span></div>
