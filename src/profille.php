@@ -50,6 +50,10 @@
     </div>
     <?php
         session_start();
+        if($_session['email']===null){
+            header("Location: login.php");
+            exit();
+        }
         $email = $_SESSION['email'];
         require_once "DBmanager.php";
         $dbm = new DBManager();
