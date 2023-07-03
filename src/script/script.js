@@ -85,6 +85,8 @@ function imageChange(){
   console.log(count);
   // alert(count);
   if (count == 1) {
+    console.log("aaa");
+
     document.getElementById('up-load').addEventListener('change', function(e) {
       var file = e.target.files[0];
       // ファイルリーダー作成

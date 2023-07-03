@@ -586,3 +586,66 @@
     display: block;
 }
 /*スタンプラリー地方画面↑↑ */
+.detail-container{
+    margin: 3rem 0;
+    width: 100%;
+    height:60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detail{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaa;
+}
+.detail-left{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.detail-circle{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(#f2f2f2 65%, transparent 61%), conic-gradient(#d5525f 0% 100%, #d9d9d9  100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail-liked{
+    width: 30%;
+    height:12%;
+    border-radius: 10px;
+    background-color: #E4DCCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detail-liked > p{
+    margin-top: 7%;
+}
+.detail-log{
+    color: #002B5B;
+}
+.detail-right{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* スタンプラリー都道府県別詳細画面 */

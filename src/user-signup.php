@@ -34,7 +34,8 @@
 <form  class = "form-signup" action="signup_kakunin.php" method="post" enctype="multipart/form-data">
     <div class="iconselect">
         <img src="images/icon.svg" class="icon">
-        <button class="icon-sele" type="submit">選択</button>
+        <!-- 写真選択が出来ないから修正 -->
+        <input type="file" name="" class="icon-sele" id="">選択
     </div>
 
     <div class="item-name">性別</div>

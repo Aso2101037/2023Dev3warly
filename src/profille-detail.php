@@ -7,7 +7,7 @@
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/profille.css">
     <!-- 作成者：梶原 -->
 </head>
 <body>
@@ -48,74 +48,53 @@
             </div>
         </div>
     </div>
-      <!-- 画像の部分↓↓ -->
-        <div class="img-div">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
-            <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
-            <img src="images/homeback.png" class="homeback-img">
-        </div>
-        <div class="post-select">
-            <div class="plan-div" onclick="location.href='./plan-post.php'">
-                <img src="./images/post-plan.svg"  alt=""><span class="post-font">旅行プランの投稿</span>
+    <!-- スタンプ表示する部分 -->
+    <div class="detail-container">
+        <div class="detail">
+            <div class="detail-left">
+                <h3 class="detail-log"><span class="back-span" onclick="location.href='./stamp-region.php'">Trip Log</span> - 北海道・東北</h3>
+                <div class="detail-circle">
+                    <div class="circle">
+                        <p>次の<br>グレードまで<br><span>6</span>/<span>10</span></p>
+                    </div>
+                    <p class="circle-post">投稿数<span>~</span>件</p>
+                </div>
+                <div class="detail-liked"><p >いいね済み投稿<spna>~</spna>件</p></div>
             </div>
-            <div class="kankou-div">
-                <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
-            </div>
-            <div class="food-div">
-                <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
+            <div class="detail-right">
+                <img src="" class="detail-img" alt="">
             </div>
         </div>
     </div>
-    <!-- 旅行プランのカード↓↓ -->
-    <div id="card">
-        <h1 class="favorite-font">人気の旅行プラン</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の観光名所</h1>
-        <card-component></card-component>
-        <h1 class="favorite-font">人気の飲食店</h1>
-        <card-component></card-component>
+    <!-- 最近の投稿を表示する部分 -->
+    <div class="new-container">
+        <div class="center-post">
+            <div class="new-title-delete">
+                <div class="new-post"><span>最新の投稿</span></div>
+                <div class="post-delete"><span>投稿削除</span></div>
+            </div>
+            <div class="new-posts">
+                <div class="post-card">
+                    <div class="post-type">旅行プラン</div>
+                    <div class="new-img"></div>
+                </div>
+                <div class="post-card">
+                    <div class="post-type">観光名所</div>
+                    <div class="new-img"></div>
+                </div>
+                <div class="post-card">
+                    <div class="post-type">飲食店</div>
+                    <div class="new-img"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <button class="back"onclick="history.back(-1);" >＜戻る</button>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
-    <script>
-        if(f==true){
-
-        }else{
-            Vue.component('header-component',{
-    template:
-    `<div class="header">
-       <a href="./home.php" style="textDecoration: none"><div class="title-logo">
-            <span class="title">トラスタ</span><img src="./images/plean-log.svg" class="logo" alt="飛行機のロゴ">
-        </div></a>
-        <div class="header-button">
-            <img src="./images/profile.svg" onclick="location.href='./profille.php'" alt="">
-            <img src="./images/search.svg" @click="$emit('clicksearch')" alt="">
-            <img src="./images/square-plus.svg" @click="$emit('clickpost')" alt="">
-            <a href="./login.php"><div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div></a>
-        </div>
-     </div>`
-    });
-const app = new Vue({
-    el:'#app',
-    data(){
-        return{
-            isActive:false,
-            postActive:false
-        };
-    },
-    methods:{
-        ModalSeach(){
-            this.isActive = !this.isActive;
-        },
-        ModalPost(){
-            this.postActive = !this.postActive;
-        }
-    }
-})
-        }
-    </script>
 </body>
 </html>
