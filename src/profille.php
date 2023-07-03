@@ -11,6 +11,13 @@
     <!-- 作成者：梶原 -->
 </head>
 <body>
+    <?php
+            session_start();
+            if($_SESSION['email'] === null){
+                header("Location: login.php");
+                exit();
+            }
+    ?>
     <!-- header部分↓↓ -->
     <div id="app">
     <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
@@ -49,7 +56,6 @@
         </div>
     </div>
     <?php
-        session_start();
         $email = $_SESSION['email'];
         require_once "DBmanager.php";
         $dbm = new DBManager();
