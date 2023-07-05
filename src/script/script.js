@@ -80,53 +80,8 @@ for(var i=0;i<traffic.length;i++){
 };
 
 var count = 1;
-
-function imageChange(){
-  console.log(count);
-  // alert(count);
-  if (count == 1) {
-    console.log("aaa");
-
-    document.getElementById('up-load').addEventListener('change', function(e) {
-      var file = e.target.files[0];
-      // ファイルリーダー作成
-      var fileReader = new FileReader();
-      fileReader.onload = function() {
-        // Data URIを取得
-        var dataUri = this.result;
-        console.log(dataUri);
-        // img要素に表示
-        var img = document.getElementById('image-add');
-        img.src = dataUri;
-      };
-      // ファイルをData URIとして読み込む
-      fileReader.readAsDataURL(file);
-    });
-  } else if (count >= 2) {
-    console.log("AAa");
-    document.getElementById('up-load' + count-1).addEventListener('change', function(e) {
-      var file = e.target.files[0];
-      // ファイルリーダー作成
-      var fileReader = new FileReader();
-      fileReader.onload = function() {
-        // Data URIを取得
-        var dataUri = this.result;
-        console.log(dataUri);
-        // img要素に表示
-        var img = document.getElementById('image-add' + count-1);
-        img.src = dataUri;
-      };
-      // ファイルをData URIとして読み込む
-      fileReader.readAsDataURL(file);
-    });
-  }
-}
-
 // 投稿カードが増えていくやつ
  const addele = () =>{
-  
-  // console.log(count);
-
   // <div class="post-container">の部分
   const postId = document.getElementById("post");
   const PostContainer = document.createElement("div");
@@ -262,7 +217,7 @@ getFileDiv.appendChild(FileImg);
 
 // <div class="time-div">の子要素<label for="up-load">写真を選択</label>の部分
 const FileLabel = document.createElement("label");
-FileLabel.setAttribute("for","up-load");
+FileLabel.setAttribute("for","up-load"+[count]);
 FileLabel.id = "FileLabel"+[count];
 FileLabel.innerHTML = "写真を選択";
 getFileDiv.appendChild(FileLabel);
@@ -353,12 +308,12 @@ getRightContainerId.appendChild(RightImgFile);
     {id:"3",label:"車"},
     {id:"4",label:"バス"},
     {id:"5",label:"電車"},
-    {id:"",label:"タクシー"},
-    {id:"",label:"フェリー"},
-    {id:"",label:"地下鉄"},
-    {id:"",label:"路面電車"},
-    {id:"",label:"モノレール"},
-    {id:"",label:"バイク"},
+    {id:"6",label:"タクシー"},
+    {id:"7",label:"フェリー"},
+    {id:"8",label:"地下鉄"},
+    {id:"9",label:"路面電車"},
+    {id:"10",label:"モノレール"},
+    {id:"11",label:"バイク"},
 ];
 for(var i=0;i<traffic.length;i++){
     let op = document.createElement("option");
@@ -367,12 +322,48 @@ for(var i=0;i<traffic.length;i++){
     document.getElementById("traffic"+[count]).appendChild(op);
   }
 count++;
-
-
 };
 
+function imageChange() {
+    var num = count-1; // countの初期値を設定（必要に応じて変更してください）
 
+    if (num == 0) {
+        // ファイルの情報を取得
+        var fileInput = document.getElementById('up-load');
+        var file = fileInput.files[0];
 
-// document.addEventListener('DOMContentLoaded', function() {
-  
-// });
+        // FileReaderオブジェクトを作成
+        var reader = new FileReader();
+
+        // 画像が読み込まれた時の処理を定義
+        reader.onload = function(e) {
+            // 画像を表示する要素を取得
+            var imageAdd = document.getElementById('image-add');
+            // 画像のパスを設定
+            imageAdd.src = e.target.result;
+        };
+
+        // 画像を読み込む
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    } else {
+          getId= document.getElementById('up-load');
+         var strJoin = getId.id + num.toString();
+         fileInput = document.getElementById(strJoin);
+         file = fileInput.files[0];
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            imageId = document.getElementById('image-add');
+            addNum = imageId.id + num.toString();
+            imageAdd =document.getElementById(addNum);
+            imageAdd.src = e.target.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+}
