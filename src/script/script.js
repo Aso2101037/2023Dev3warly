@@ -323,9 +323,9 @@ for(var i=0;i<traffic.length;i++){
   }
 count++;
 };
-
+// 画像を表示させるプログラム
 function imageChange() {
-    var num = count-1; // countの初期値を設定（必要に応じて変更してください）
+    var num = count - 1; 
 
     if (num == 0) {
         // ファイルの情報を取得
@@ -366,4 +366,4 @@ function imageChange() {
             reader.readAsDataURL(file);
         }
     }
-}
+};

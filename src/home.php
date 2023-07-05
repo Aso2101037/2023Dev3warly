@@ -37,11 +37,11 @@
                      <p>旅行プラン投稿</p>
                      <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
-                <div class="modal-kankou-post" onclick="location.href='./search-kankou.php'">
+                <div class="modal-kankou-post" onclick="location.href='./tourist_spot_post.php'">
                      <p>観光名所投稿</p>
                      <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
-                 <div class="modal-food-post" onclick="location.href='./search-food.php'">
+                 <div class="modal-food-post" onclick="location.href='./restaurant_post.php'">
                      <p>飲食店投稿</p>
                     <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
@@ -58,10 +58,10 @@
             <div class="plan-div" onclick="location.href='./plan-post.php'">
                 <img src="./images/post-plan.svg"  alt=""><span class="post-font">旅行プランの投稿</span>
             </div>
-            <div class="kankou-div">
+            <div class="kankou-div" onclick="location.href='./tourist_spot_post.php'">
                 <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
             </div>
-            <div class="food-div">
+            <div class="food-div" onclick="location.href='./restaurant_post.php'">
                 <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
             </div>
         </div>
