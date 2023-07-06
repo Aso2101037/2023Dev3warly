@@ -274,7 +274,6 @@ public function deletePlanPostDtlTbl($getid){
     //旅行プラン投稿機能
 public function plan_post($plan_spot_name,$plan_spot_start_time,$plan_spot_finish_time,$plan_spot_address,$plan_spot_public_transport,$plan_spot_travel_time,$plan_spot_comment,$plan_spot_image,$plan_title,$release,$plan_day,$prefecture_id){
         $pdo = $this->dbConnect();
-        session_start();
         $user_id = $_SESSION['user_id'];
         $sql = "INSERT INTO plan_post(plan_post_id,user_id,plan_title,release,plan_day)VALUES(?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
@@ -357,7 +356,7 @@ public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_
 //観光名所投稿機能
 public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_spot_image,$tourist_spot_start,$tourist_spot_end,$tourist_spot_title,$tourist_spot_comment,$category_id,$tourist_spot_day,$tourist_release){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,tourist_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,0,PDO::PARAM_STR);
         $ps->bindValue(2,$tourist_spot_name,PDO::PARAM_STR);
@@ -377,9 +376,8 @@ public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_s
         $ps->bindValue(1,$tourist_spot_comment,PDO::PARAM_STR);
         $ps->execute();
         $searchArray = $ps->fetchAll();
-        $tourist_spot_id = $searchArray['tourist_spot_id'];
-        session_start();
-        $user_id = $_SESSION['user_id'];
+        $tourist_spot_id = $searchArray[0]['tourist_spot_id'];
+        $user_id = $_SESSION['email'];
         $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,0,PDO::PARAM_STR);
