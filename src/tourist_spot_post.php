@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="./style/tourist_spot_post_style.css">
 </head>
 <body>
+<?php
+            session_start();
+            if($_SESSION['email'] === null){
+                header("Location: login.php");
+                exit();
+            }
+?>
 <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
@@ -110,17 +117,17 @@
             <input type="text"class="time_text" name = "form_time_text">
 
             <div class="komokumei">カテゴリー</div>
-                <div class="radios" name="category">
-                    <input type="radio" name="category" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
-                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
+                <div class="radios">
+                    <input type="radio" name="category" value = "1" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
+                    <input type="radio" name="category" value = "2" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
                 </div>
-                <div class="radios" name = "category">
-                    <input type="radio" name="category" > <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
-                    <input type="radio" name="category"class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
+                <div class="radios">
+                    <input type="radio" name="category" value = "3"> <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
+                    <input type="radio" name="category" value = "4" class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
                 </div>
-                <div class="radios" name = "category">
-                    <input type="radio" name="category" > <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
-                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
+                <div class="radios">
+                    <input type="radio" name="category" value = "5"> <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
+                    <input type="radio" name="category" value = "6" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
                 </div>
             </div>
         
