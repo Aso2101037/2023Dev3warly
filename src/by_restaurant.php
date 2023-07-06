@@ -33,7 +33,7 @@
 <nav>
   <ol class="breadcrumb">
     <li class="list"><a href="home.php">Home</a></li>>
-    <li class="list">観光名所名</li>
+    <li class="list">飲食店名</li>
   </ol>
 </nav>
 <div class="flex">
