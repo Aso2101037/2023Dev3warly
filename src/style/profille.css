@@ -600,7 +600,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #aaa;
 }
 .detail-left{
     width: 60%;
@@ -627,6 +626,8 @@
     justify-content: center;
 }
 .detail-liked{
+    position: relative;
+    left: -5%;
     width: 30%;
     height:12%;
     border-radius: 10px;
@@ -639,6 +640,9 @@
     margin-top: 7%;
 }
 .detail-log{
+    position: relative;
+    top: -20%;
+    left: -40%;
     color: #002B5B;
 }
 .detail-right{
@@ -647,5 +651,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.detail-img{
+    width: 70%;
+    height: 70%;
+    border: 2px dashed black;
 }
 /* スタンプラリー都道府県別詳細画面 */
