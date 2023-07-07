@@ -354,7 +354,8 @@ public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_
         $ps->execute();
 }
 //観光名所投稿機能
-public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_spot_image,$tourist_spot_start,$tourist_spot_end,$tourist_spot_title,$tourist_spot_comment,$category_id,$tourist_spot_day,$tourist_release){
+public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_spot_image,$tourist_spot_start,$tourist_spot_end,$tourist_spot_title,$tourist_spot_comment,$category_id,$tourist_release){
+        $tourist_spot_day = date("YmdHis");
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
