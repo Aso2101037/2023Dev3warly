@@ -8,8 +8,9 @@ body{
 }
 
 .iconselect{
+    margin-top: 4rem ;
     width: 100%;
-    margin: 1.3em 0;
+    height: 15vh;
     display:flex;
     flex-direction: column;
     justify-content: end;
@@ -137,4 +138,18 @@ select{
     color:#FFFFFF;
     border: none;
 
+}
+
+.image_range{
+    width:8%;
+    height:100%;
+    border: 2px dashed #002B5B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.image_range > img{
+    width:100%;
+    height: 100%;
 }
