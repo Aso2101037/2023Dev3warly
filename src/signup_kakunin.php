@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+<?php
         $date = date("y-m-d");
         $content = file_get_contents($_FILES['image']['tmp_name']);
-        
+
         if((isset($_POST["year"]))&&(isset($_POST["month"]))&&(isset($_POST["day"]))) {
             // セレクトボックスで選択された値を受け取る
             $year = $_POST["year"];
@@ -60,29 +60,16 @@
         }else{
             $gender_id = "未定義";
         }
-        echo "性別　　　　　:";
-        if($gender_id == 0){
-            echo "男性";
-        }else if($gender_id == 1){
-            echo "女性";
-        }else{
-            echo "それ以外";
-        }
+        echo "性別　　　　　:" . $gender_id . "<br>";
         if(isset($_POST['hito'])){
             $user_one_thing = $_POST['hito'];
         }else{
             $user_one_thing = "未定義";
         }
-
         echo "ひとこと　　　:" . $user_one_thing . "<br>";
         $dbm = new DBManager();
-
         $userList = $dbm->insertUserTbl(null, $password,$username,$user_mailaddress,$dateString,$gender_id,"0",$user_one_thing,$content);
     ?>
-    <!--画像 -->
-    <div class="icon-image">
-        <img src="data:<?php echo $image['image_type'] ?>;base64,<?php echo $img; ?>">
-    </div>
 
 </body>
 </html>
