@@ -17,8 +17,10 @@ body{
     align-items: center;
 }
 .icon{
-    width: 15%;
-    height: 15vh;
+    width: auto; /* 適切な幅を指定してください */
+    height: auto; /* 適切な高さを指定してください */
+    border-radius: 50%;
+    object-fit: cover;
 }
 .icon-sele{
     position: relative;
@@ -152,4 +154,5 @@ select{
 .image_range > img{
     width:100%;
     height: 100%;
+    border-radius: 50%;
 }
