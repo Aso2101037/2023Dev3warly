@@ -315,23 +315,23 @@ public function plan_post($plan_spot_name,$plan_spot_start_time,$plan_spot_finis
         $ps->execute();
 }
 //飲食店投稿機能
-public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_name,$restaurant_comment,$restaurant_address,$restaurant_telephone_number,$restaurant_start_time,$restaurant_finish_time,$restaurant_budget,$restaurant_category_id,$restaurant_date,$restaurant_release){
+public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_name,$restaurant_comment,$restaurant_address,$restaurant_start_time,$restaurant_finish_time,$restaurant_budget,$restaurant_category_id,$restaurant_date,$restaurant_release){
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO restaurant_post(restaurant_post_id,restaurant_title,restaurant_image,restaurant_name,restaurant_comment,restaurant_address,restaurant_telephone_number,restaurant_start_time,restaurant_finish_time,restaurant_budget,restaurant_category_id,restaurant_date,restaurant_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO restaurant_post(restaurant_post_id,restaurant_title,restaurant_image,restaurant_name,restaurant_comment,restaurant_address,restaurant_start_time,restaurant_finish_time,restaurant_budget,restaurant_category_id,restaurant_date,restaurant_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
+        $restaurant_date = date("YmdHis");
         $ps->bindValue(1,0,PDO::PARAM_STR);
         $ps->bindValue(2,$restaurant_title,PDO::PARAM_STR);
         $ps->bindValue(3,$restaurant_image,PDO::PARAM_STR);
         $ps->bindValue(4,$restaurant_name,PDO::PARAM_STR);
         $ps->bindValue(5,$restaurant_comment,PDO::PARAM_STR);
-        $ps->bindValue(6,$restaurant_address,PDO::PARAM_STR);  
-        $ps->bindValue(7,$restaurant_telephone_number,PDO::PARAM_STR);   
-        $ps->bindValue(8,$restaurant_start_time,PDO::PARAM_STR);
-        $ps->bindValue(9,$restaurant_finish_time,PDO::PARAM_STR);  
-        $ps->bindValue(10,$restaurant_budget,PDO::PARAM_STR);   
-        $ps->bindValue(11,$restaurant_category_id,PDO::PARAM_STR);  
-        $ps->bindValue(12,$restaurant_date,PDO::PARAM_STR); 
-        $ps->bindValue(13,$restaurant_release,PDO::PARAM_STR); 
+        $ps->bindValue(6,$restaurant_address,PDO::PARAM_STR);   
+        $ps->bindValue(7,$restaurant_start_time,PDO::PARAM_STR);
+        $ps->bindValue(8,$restaurant_finish_time,PDO::PARAM_STR);  
+        $ps->bindValue(9,$restaurant_budget,PDO::PARAM_STR);   
+        $ps->bindValue(10,$restaurant_category_id,PDO::PARAM_STR);  
+        $ps->bindValue(11,$restaurant_date,PDO::PARAM_STR); 
+        $ps->bindValue(12,$restaurant_release,PDO::PARAM_STR); 
         $ps->execute();
         //ここからpostテーブルへの追加
         $sql = "SELECT * FROM restaurant_post WHERE restaurant_comment = ?";
@@ -339,9 +339,11 @@ public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_
         $ps->bindValue(1,$restaurant_comment,PDO::PARAM_STR);
         $ps->execute();
         $searchArray = $ps->fetchAll();
-        $restaurant_post_id = $searchArray['restaurant_post_id'];
-        session_start();
-        $user_id = $_SESSION['user_id'];
+        $restaurant_post_id = $searchArray[0]['restaurant_post_id'];
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $user_id = $_SESSION['email'];
         $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,0,PDO::PARAM_STR);
@@ -378,6 +380,9 @@ public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_s
         $ps->execute();
         $searchArray = $ps->fetchAll();
         $tourist_spot_id = $searchArray[0]['tourist_spot_id'];
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         $user_id = $_SESSION['email'];
         $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);

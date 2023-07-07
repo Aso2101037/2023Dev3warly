@@ -41,7 +41,7 @@
     <div class="flex">
         <div class="left">
             <div class="sinkisakusei">新規投稿を作成</div>
-            <input type="checkbox"class="koukai_check" name="form_koukai"> <span class="koukai">公開</span>
+            <input type="checkbox"class="koukai_check" name="form_koukai" value = "1"> <span class="koukai">公開</span>
             <input type="text"class="title-text" name="form_title" placeholder="ここにタイトルを入力">
             <div class="img-post">
                 <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>

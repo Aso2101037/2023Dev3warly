@@ -1,5 +1,9 @@
 <?php
-    $form_koukai = $_POST['form_koukai'];
+    if(isset($_POST['form_koukai'])) {
+        $form_koukai = $_POST['form_koukai'];
+    } else {
+        $form_koukai = 0;
+    }
     $form_title = $_POST['form_title'];
     $form_tourist_name = $_POST['form_tourist_name'];
     $form_tourist_comment = $_POST['form_tourist_comment'];

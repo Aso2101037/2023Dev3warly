@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="./style/restaurant_post_style.css">
 </head>
 <body>
+<?php
+            session_start();
+            if($_SESSION['email'] === null){
+                header("Location: login.php");
+                exit();
+            }
+?>
 <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
@@ -34,7 +41,7 @@
     <div class="flex">
         <div class="left">
             <div class="sinkisakusei">新規投稿を作成</div>
-            <input type="checkbox"class="koukai_check" name = "form_koukai"> <span class="koukai">公開</span>
+            <input type="checkbox"class="koukai_check" name = "form_koukai" value = "1"> <span class="koukai">公開</span>
             <input type="text"class="title-text"placeholder="ここにタイトルを入力" name = "form_title">
             <div class="img-post">
                 <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>
