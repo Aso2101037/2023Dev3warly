@@ -383,3 +383,24 @@ function deleteCard(button) {
   var postContainer = button.parentNode.parentNode.parentNode;
   postContainer.parentNode.removeChild(postContainer);
 }
+
+document.getElementById('image_select').addEventListener('click', function(event) {
+  event.preventDefault(); // デフォルトの動作をキャンセル
+
+  document.getElementById('image').click();
+});
+
+function imageChange() {
+  var fileInput = document.getElementById('image');
+  var image = document.getElementById('image-add');
+
+  if (fileInput.files && fileInput.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      image.src = e.target.result;
+    };
+
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+}
