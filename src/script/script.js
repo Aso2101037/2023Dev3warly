@@ -123,6 +123,7 @@ const addele = () => {
   const CommentText = document.createElement("input");
   CommentText.setAttribute("type", "text");
   CommentText.setAttribute("placeholder", "コメント");
+  CommentText.setAttribute("name","comment"+[count]);
   CommentText.className = "comment-text";
   getCommentDiv.appendChild(CommentText);
 
