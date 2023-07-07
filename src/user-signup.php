@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="./style/user-sinup-style.css">
     <!-- 作成者：梶原・山中 -->
 </head>
+
+
 <body>
+
+<!-- ・・・・・・ -->
 <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
@@ -32,17 +36,21 @@
         </div>
 </div>
 <form  class = "form-signup" action="signup_kakunin.php" method="post" enctype="multipart/form-data">
+<!-- ボタンまで行けたやつ（押したら画像が変わる処理はまだ。。。） -->
     <div class="iconselect">
-        <img src="images/icon.svg" class="icon">
-        <!-- 写真選択が出来ないから修正 -->
-        <input type="file" name="" class="icon-sele" id="">選択
+            <div class="image_range">
+            <img src="images/icon.svg" class="icon" id="image-add">
+            </div>
+            <button class="icon-sele" for="up-load"  id="image_select">選択</button>
+            <input type="file" id="image" name="image" style="display: none;" accept="image/*" onchange="imageChange()">
+            
     </div>
 
     <div class="item-name">性別</div>
     <div class="seibetu">
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="0"checked>  <span class="seibetumei">男性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="1">  <span class="seibetumei">女性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="2">  <span class="seibetumei">その他</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="men"checked>  <span class="seibetumei">男性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="woman">  <span class="seibetumei">女性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="others">  <span class="seibetumei">その他</span></span>
     </div>
     <!-- foreach検討 -->
         <div class="item-name">生年月日</div>
@@ -268,6 +276,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/script.js"></script>
     <script src="./script/header.js"></script>
 </body>
 </html>
