@@ -390,17 +390,17 @@ document.getElementById('image_select').addEventListener('click', function(event
   document.getElementById('image').click();
 });
 
-function imageChange() {
-  var fileInput = document.getElementById('image');
-  var image = document.getElementById('image-add');
+// function imageChange() {
+//   var fileInput = document.getElementById('image');
+//   var image = document.getElementById('image-add');
 
-  if (fileInput.files && fileInput.files[0]) {
-    var reader = new FileReader();
+//   if (fileInput.files && fileInput.files[0]) {
+//     var reader = new FileReader();
 
-    reader.onload = function (e) {
-      image.src = e.target.result;
-    };
+//     reader.onload = function (e) {
+//       image.src = e.target.result;
+//     };
 
-    reader.readAsDataURL(fileInput.files[0]);
-  }
-}
+//     reader.readAsDataURL(fileInput.files[0]);
+//   }
+// }

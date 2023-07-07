@@ -277,5 +277,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/image-change.js"></script>
+
 </body>
 </html>
