@@ -378,6 +378,7 @@ function imageChange() {
     }
   }
 }
+// カードを削除するプログラム
 function deleteCard(button) {
   var postContainer = button.parentNode.parentNode.parentNode;
   postContainer.parentNode.removeChild(postContainer);

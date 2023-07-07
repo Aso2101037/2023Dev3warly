@@ -48,6 +48,7 @@
             </div>
         </div>
     </div>
+    
     <div id="memory">
         <region-component :class="{'is-none':regionChange}" class="region-com"
         @click-kyushu="kyushuChange" 
