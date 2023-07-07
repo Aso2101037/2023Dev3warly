@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="./style/tourist_spot_post-style.css">
 </head>
 <body>
+<?php
+            session_start();
+            if($_SESSION['email'] === null){
+                header("Location: login.php");
+                exit();
+            }
+?>
 <div id="app">
         <header-component @clicksearch="ModalSeach"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
@@ -30,11 +37,12 @@
             </div>
         </div>
 </div>
+<form action="tourist_post_kakunin1.php" method="post">
     <div class="flex">
         <div class="left">
             <div class="sinkisakusei">新規投稿を作成</div>
-            <input type="checkbox"class="koukai_check"> <span class="koukai">公開</span>
-            <input type="text"class="title-text"placeholder="ここにタイトルを入力">
+            <input type="checkbox"class="koukai_check" name="form_koukai"> <span class="koukai">公開</span>
+            <input type="text"class="title-text" name="form_title" placeholder="ここにタイトルを入力">
             <div class="img-post">
                 <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>
                     <a href=""class="img-link">写真を選択</a>
@@ -46,14 +54,14 @@
                 <img src="images/icon.svg"class="icon"><div class="nickname">〇〇〇〇〇</div>
             </div>
             <div class="komokumei">観光名所名</div>
-            <input type="text"class="tourist_text">
+            <input type="text"class="tourist_text" name="form_tourist_name">
 
             <div class="komokumei">コメント</div>
-            <textarea class="comment_text">
+            <textarea class="comment_text" name="form_tourist_comment">
             </textarea>
 
             <div class="komokumei">住所</div>
-            <select class="pref">
+            <select class="pref" name="form_jusyo">
                 <option value="" selected>都道府県</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
@@ -103,23 +111,23 @@
                 <option value="鹿児島県">鹿児島県</option>
                 <option value="沖縄県">沖縄県</option>
             </select>
-            <input type="text"class="address_text">
+            <input type="text"class="address_text" name ="form_address_text">
 
             <div class="komokumei">営業時間</div>
-            <input type="text"class="time_text">
+            <input type="text"class="time_text" name = "form_time_text">
 
             <div class="komokumei">カテゴリー</div>
                 <div class="radios">
-                    <input type="radio" name="category" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
-                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
+                    <input type="radio" name="category" value = "1" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
+                    <input type="radio" name="category" value = "2" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
                 </div>
                 <div class="radios">
-                    <input type="radio" name="category" > <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
-                    <input type="radio" name="category"class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
+                    <input type="radio" name="category" value = "3"> <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
+                    <input type="radio" name="category" value = "4" class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
                 </div>
                 <div class="radios">
-                    <input type="radio" name="category" > <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
-                    <input type="radio" name="category" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
+                    <input type="radio" name="category" value = "5"> <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
+                    <input type="radio" name="category" value = "6" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
                 </div>
             </div>
         
@@ -129,6 +137,7 @@
         <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
         <button class="sign-up" type="submit">Share</button>
     </div>
+</form>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

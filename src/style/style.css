@@ -289,7 +289,6 @@ animation:change-img-anim 12s linear infinite;
 }
 /* cardのデザインのやつ ↑↑*/
 
-/* 検索系のやつ ↑↑*/
 /* ↑↑モーダル検索の部分↑↑ */
 .modal-div-post{
     position: absolute;
@@ -379,8 +378,6 @@ animation:change-img-anim 12s linear infinite;
     animation:change-img-anim 12s linear infinite;
     border-radius: 0 0 20px 20px;
 }
-/* cardのデザインのやつ ↑↑*/
-
 /* 検索系のやつ ↑↑*/
  .public-title-div{
     margin-top: 2%;
@@ -522,6 +519,17 @@ animation:change-img-anim 12s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.right-container >button{
+    position: relative;
+    top: -8%;
+    right: -46%;
+    border-radius: 50%;
+    padding: 3% 5%;
+    border:none;
+    background-color: #EA5455;
+    color: #F9F5EB;
 }
 .right-container > img{
     width: 80%;
