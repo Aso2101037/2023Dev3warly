@@ -35,15 +35,16 @@ a:active {
 }
 .flex{
    display: flex;
+   justify-content:space-around;
    margin-top: 3%;
    
 }
 .left{
-   width: 55%;
+   width: 50%;
     
 }
 .right{
-   width: 45%;
+   width: 40%;
 }
 
 
@@ -57,8 +58,8 @@ a:active {
 }
 .image{
     margin-top: 2%;
-    width: 600px;
-    height: 600px;
+    width: 90%;
+    height: 85vh;
     background-color: #E4DCCF;
     margin-left: auto;
     margin-right: auto;
@@ -67,18 +68,19 @@ a:active {
 
 
 .icon-nickname{
-    margin-left: 20%;
+    display: flex;
+    margin-left: 15%;
+    align-items: center;
 }
 .icon{
-   width: 10%;
-   height:10%;
-   margin-top: -2%;
+    width: 10%;
+    height: 10%;
+    
 }
 .nickname{
-   font-size: 2.5em;
-   margin-left: 3%;
-   color: #002B5B;
-   
+    font-size: 2.5em;
+    margin-left: 3%;
+    color: #002B5B;
 }
 .komokumei{
     font-size: 1.5em;
