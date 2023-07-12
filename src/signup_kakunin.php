@@ -31,7 +31,7 @@
             $yearDiff = $diff->y;
             $monthDiff = $diff->m;
             $dayDiff = $diff->d;
-            echo "年齢　　　　　: {$yearDiff}歳"."<br>";
+            // echo "年齢　　　　　: {$yearDiff}歳"."<br>";
             // 受け取った値を画面に出力
             
          };
@@ -42,33 +42,35 @@
             $password = "未定義";
         }
 
-        echo "パスワード　　:" . $password . "<br>";
+        // echo "パスワード　　:" . $password . "<br>";
         if(isset($_POST['nickname'])){
             $username = $_POST['nickname'];
         }else{
             $username = "未定義";
         }
-        echo "ニックネーム　:" . $username . "<br>";
+        // echo "ニックネーム　:" . $username . "<br>";
         if(isset($_POST['mailaddress'])){
             $user_mailaddress = $_POST['mailaddress'];
         }else{
             $user_mailaddress = "未定義";
         }
-        echo "メールアドレス:" . $user_mailaddress . "<br>";
+        // echo "メールアドレス:" . $user_mailaddress . "<br>";
         if(isset($_POST['sei'])){
             $gender_id = $_POST['sei'];
         }else{
             $gender_id = "未定義";
         }
-        echo "性別　　　　　:" . $gender_id . "<br>";
+        // echo "性別　　　　　:" . $gender_id . "<br>";
         if(isset($_POST['hito'])){
             $user_one_thing = $_POST['hito'];
         }else{
             $user_one_thing = "未定義";
         }
-        echo "ひとこと　　　:" . $user_one_thing . "<br>";
+        // echo "ひとこと　　　:" . $user_one_thing . "<br>";
         $dbm = new DBManager();
         $userList = $dbm->insertUserTbl(null, $password,$username,$user_mailaddress,$dateString,$gender_id,"0",$user_one_thing,$content);
+        header("Location: home.php");
+        exit;
     ?>
 
 </body>
