@@ -69,7 +69,7 @@
         // echo "ひとこと　　　:" . $user_one_thing . "<br>";
         $dbm = new DBManager();
         $userList = $dbm->insertUserTbl(null, $password,$username,$user_mailaddress,$dateString,$gender_id,"0",$user_one_thing,$content);
-        header("Location: home.php");
+        header("Location: home.php?message=registered");
         exit;
     ?>
 

@@ -1,5 +1,7 @@
 <?php 
-
+    if (isset($_GET['message']) && $_GET['message'] === 'registered') {
+        echo '<script>alert("ユーザー情報が登録されました");</script>';
+    }
 ?>
 
 <!DOCTYPE html>
