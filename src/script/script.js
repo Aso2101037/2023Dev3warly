@@ -143,6 +143,7 @@ const addele = () => {
   // <div class="place-div">の子要素<select name="" id="prefectures"></select>の部分
   const PlaceSelect = document.createElement("select");
   PlaceSelect.id = "prefectures" + [count];
+  PlaceSelect.setAttribute("name","place-select"+[count]);
   getPlaceDiv.appendChild(PlaceSelect);
 
   // <div class="place-div">の子要素<input type="text" class="place-text" placeholder="場所を入力して下さい">の部分
@@ -150,6 +151,7 @@ const addele = () => {
   PlaceText.setAttribute("type", "text");
   PlaceText.className = "place-text";
   PlaceText.setAttribute("placeholder", "場所を入力してください");
+  PlaceText.setAttribute("name","place"+[count]);
   getPlaceDiv.appendChild(PlaceText);
 
   // <div class="traffic-div">の部分
@@ -168,6 +170,7 @@ const addele = () => {
   // <div class="traffic-div">の子要素<select name="" id="traffic"></select>の部分
   const TrafficSelect = document.createElement("select");
   TrafficSelect.id = "traffic" + [count];
+  TrafficSelect.setAttribute("name","traffic-select"+[count]);
   getTrafficDiv.appendChild(TrafficSelect);
 
   //<div class="traffic-div">の子要素<span>約</span><input type="number" min="0" name="" id="" class="number-text">の部分
@@ -177,6 +180,7 @@ const addele = () => {
   const TrafficNumber = document.createElement("input");
   TrafficNumber.setAttribute("type", "number");
   TrafficNumber.setAttribute("min", "0");
+  TrafficNumber.setAttribute("name","traffic-timer"+[count]);
   TrafficNumber.className = "number-text";
   getTrafficDiv.appendChild(TrafficNumber);
 
@@ -198,8 +202,10 @@ const addele = () => {
   const TimeSpan = document.createElement("span");
   const Time2 = document.createElement("input");
   Time1.setAttribute("type", "time");
+  Time1.setAttribute("name","time-first"+[count]);
   TimeSpan.innerHTML = "～";
   Time2.setAttribute("type", "time");
+  Time2.setAttribute("name","time-second"+[count]);
   getTimeDiv.appendChild(Time1);
   getTimeDiv.appendChild(TimeSpan);
   getTimeDiv.appendChild(Time2);
@@ -228,6 +234,7 @@ const addele = () => {
   const getFileLabelId = document.getElementById("FileLabel" + [count]);
   const FileType = document.createElement("input");
   FileType.setAttribute("type", "file");
+  FileType.setAttribute("name","img-select"+[count]);
   FileType.id = "up-load" + [count];
   FileType.className = "img-file";
   FileType.setAttribute("onchange", "imageChange()");
@@ -238,10 +245,9 @@ const addele = () => {
   RightContainer.id = "RightContainerId" + [count];
   RightContainer.className = "right-container";
   getBackColorId.appendChild(RightContainer);
+
   // カードの削除ボタンの部分
-  const getRightContainerId = document.getElementById(
-    "RightContainerId" + [count]
-  );
+  const getRightContainerId = document.getElementById("RightContainerId" + [count]);
   const deleteButton = document.createElement("button");
   deleteButton.id = "delete-button" + [count];
   deleteButton.className = "delete-buttons"
@@ -250,9 +256,9 @@ const addele = () => {
   getRightContainerId.appendChild(deleteButton);
 
   // <img id="img-file">の部分
-  // const getRightContainerId = document.getElementById("RightContainerId"+[count]);
   const RightImgFile = document.createElement("img");
   RightImgFile.id = "image-add" + [count];
+  RightImgFile.setAttribute("name","img-display"+[count]);
   getRightContainerId.appendChild(RightImgFile);
 
   // 都道府県のセレクトボックス用
@@ -384,24 +390,3 @@ function deleteCard(button) {
   var postContainer = button.parentNode.parentNode.parentNode;
   postContainer.parentNode.removeChild(postContainer);
 }
-
-document.getElementById('image_select').addEventListener('click', function(event) {
-  event.preventDefault(); // デフォルトの動作をキャンセル
-
-  document.getElementById('image').click();
-});
-
-// function imageChange() {
-//   var fileInput = document.getElementById('image');
-//   var image = document.getElementById('image-add');
-
-//   if (fileInput.files && fileInput.files[0]) {
-//     var reader = new FileReader();
-
-//     reader.onload = function (e) {
-//       image.src = e.target.result;
-//     };
-
-//     reader.readAsDataURL(fileInput.files[0]);
-//   }
-// }
