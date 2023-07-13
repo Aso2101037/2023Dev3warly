@@ -12,6 +12,12 @@ function imageChange() {
       reader.readAsDataURL(fileInput.files[0]);
     }
   }
+//ボタンを押下すると、写真ファイルの選択になる動作
+document.getElementById('image_select').addEventListener('click', function(event) {
+  event.preventDefault(); // デフォルトの動作をキャンセル
+
+  document.getElementById('image').click();
+});
   function spotChange() {
     var fileInput = document.getElementById('spot');
     var image = document.getElementById('spot_image');
