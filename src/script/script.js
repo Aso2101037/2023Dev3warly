@@ -390,3 +390,9 @@ function deleteCard(button) {
   var postContainer = button.parentNode.parentNode.parentNode;
   postContainer.parentNode.removeChild(postContainer);
 }
+//ボタンを押下すると、写真ファイルの選択になる動作
+document.getElementById('image_select').addEventListener('click', function(event) {
+  event.preventDefault(); // デフォルトの動作をキャンセル
+
+  document.getElementById('image').click();
+});
