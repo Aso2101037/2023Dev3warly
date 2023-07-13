@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+    <form method = "POST" action = "plan_post_kakunin1.php">
     <div class="public-title-div">
         <label for="public" class="check"><input type="checkbox" class="box"  name="public" id="public">公開</label>
         <input type="text" class="post-title" placeholder="タイトル">
@@ -61,9 +62,8 @@
     </div>
     <div class="button-container">
         <button class="back-button">＜戻る</button>    
-        <button class="share-button">Share</button>
+        <input type = "submit" class ="share-button" value = "Share">
     </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/script.js"></script>
