@@ -10,7 +10,7 @@ class DBManager{
     //    $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1417815-hosapo;charset=utf8','LAA1417815','Pass0411');
     //    return $pdo;     
     //}
-    private function session_email_pass($pass,$email){
+    private function session_email_pass($email,$pass){
         session_start();
         // ハッシュ化したパスワードを引数として与えてください
         $_SESSION['email'] = $email;
@@ -120,6 +120,15 @@ class DBManager{
         $searchArray = $ps->fetchAll();
         return $searchArray;
     }
+    public function getUser($email) {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_mailaddress = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $email, PDO::PARAM_STR);
+        $ps->execute();
+        $getdata = $ps->fetch();
+        return $getdata;
+    }
 
     //hosapo_hospital_tblをidで取得するメソッド
     public function getHospitalTblByid($hospitalid){
@@ -144,7 +153,7 @@ class DBManager{
     }
 
     //パスワード再設定するメソッド
-    public function changeUserTblByword($pass,$email){
+    public function changeUserTblByword($email,$pass){
         $pdo = $this->dbConnect();
         $sql = "UPDATE hosapo_user_tbl SET password=:password , email_address = :email_address WHERE  email_address = :email_address";
         $ps = $pdo->prepare($sql);
@@ -263,26 +272,7 @@ public function deletePlanPostDtlTbl($getid){
     }
 }
 
-//ボタンを押下してデータベース内の観光名所削除する
-public function deleteToristSpotTbl($getid){
-    $pdo = $this->dbConnect();
-    // 削除対象のIDを取得
-    $id = $_POST['id'];
 
-    // データを削除するクエリを実行
-    $sql = "DELETE FROM tourist_spot WHERE tourist_spot_id = :id";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-
-    if ($stmt->execute()) {
-        // 削除成功時の処理
-        echo "<script>alert('削除が成功しました。');</script>";
-    } else {
-        // 削除失敗時の処理
-        echo "<script>alert('削除に失敗しました。');</script>";
-    }
-}
 }
 ?>
 

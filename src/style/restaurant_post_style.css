@@ -1,0 +1,188 @@
+
+html{
+     height: 120%;
+}
+.flex{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 3%;
+}
+.left{
+    width: 50%;
+    
+}
+.right{
+    width: 40%;
+    margin-top: 2%;
+}
+.sinkisakusei{
+    color:#002B5B;
+    font-size: 1.5em;
+}
+.koukai-img{
+    text-align: center;
+}
+.koukai_check{
+    transform:scale(2.5);
+    margin-right: 2%;
+}
+
+.koukai{
+    font-size: 1.5em;
+}
+
+.title-text{
+    width:55%;
+    height: 3.0rem;
+    font-size: 2.0em;
+    background-color: #E4DCCF;
+    margin-left: 20%;
+    border-radius: 10px;
+    border :none;
+}
+.title-text::placeholder{
+    text-align:center;
+}
+
+.img-post{
+    width: 90%;
+    height: 85vh;
+    background-color: #E4DCCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    
+}
+
+.photo-img{
+    width: 150px;
+    height: 150px;
+}
+.img-link{
+    font-size:1.5em;
+    text-decoration: none;
+}
+
+
+
+.icon-nickname{
+    display: flex;
+    margin-left: 20%;
+    align-items: center;
+}
+.icon{
+    width: 10%;
+    height: 10%;
+    
+}
+.nickname{
+    font-size: 2.5em;
+    margin-left: 3%;
+    color: #002B5B;
+}
+
+.komokumei{
+    font-size: 1.5em;
+    margin-top: 3%;
+}
+.tourist_text{
+    width: 85%;
+    height: 5%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+.comment_text{
+    width: 85%;
+    height: 25%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.0em;
+}
+.select-todou{
+    width: 8vw;
+    height: 5vh;
+    background-color: #E4DCCF;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+   font-size: 1.0em;
+   font-weight: 500;
+}
+.address_text{
+    height: 5vh;
+    width:65%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.0em;
+    margin-left: 1%;
+}
+
+.time_text{
+    width: 85%;
+    height: 5%;
+    background-color: #E4DCCF;
+    border:none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+.yosan-kategory{
+    display: flex;
+    justify-content:left;
+}
+.kategory{
+    margin-left: 10%;
+}
+.yosan-text{
+    width: 15vw;
+    height: 5vh;
+    background-color: #E4DCCF;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+    font-size: 1.5em;
+}
+.select-kategory{
+    width: 15vw;
+    height: 5vh;
+    background-color: #E4DCCF;
+    text-align: center;
+    border:none;
+    border-radius:10px;
+   font-size: 1.5em;
+}
+.btn{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+ }
+ 
+ .back{
+     width:13vw;
+     height: 10vh;
+     background: #E4DCCF;
+     font-size:2.3em;
+     padding-right: 1%;
+     border-radius:10px;
+     color:#002B5B;
+     border: none;
+ }
+ .sign-up{
+     margin-left: 15%;
+     width: 13vw;
+     height: 10vh;
+     background:#EA5455;
+     font-size:2.0em;
+     border-radius:10px;
+     color:#FFFFFF;
+     border: none;
+ 
+ }

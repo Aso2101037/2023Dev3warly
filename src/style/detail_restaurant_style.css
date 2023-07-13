@@ -1,0 +1,167 @@
+
+html{
+    height: 120%;
+}
+.breadcrumb {
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+  
+  
+.list{
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    background-color: #E4DCCF;
+    text-decoration: none;
+    border-radius:10px;
+
+}
+a,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+}
+.list a{
+    text-decoration: none;
+}
+.pop{
+    color: black;
+}
+.flex{
+   display: flex;
+   justify-content:space-around;
+   margin-top: 3%;
+   
+}
+.left{
+   width: 50%;
+    
+}
+.right{
+   width: 40%;
+}
+
+
+.title{
+   width:55%;
+   height: 3.0rem;
+   font-size: 2.0em;
+   background-color: #E4DCCF;
+   text-align: center;
+   margin: auto;
+}
+.image{
+    margin-top: 2%;
+    width: 90%;
+    height:85vh;
+    background-color: #E4DCCF;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.icon-nickname{
+    display: flex;
+    margin-left: 15%;
+    align-items: center;
+}
+.icon{
+    width: 10%;
+    height: 10%;
+    
+}
+.nickname{
+    font-size: 2.5em;
+    margin-left: 3%;
+    color: #002B5B;
+}
+.komokumei{
+    font-size: 1.5em;
+    margin-top: 1%;
+}
+
+.hyoji-area{
+    width:80%;
+    height: 3.0rem;
+    font-size: 2.0em;
+    background-color: #E4DCCF;
+    text-align: center;
+    border-radius:10px;
+    margin-bottom: 2%;
+}
+
+.hyoji-area-comment{
+    width:80%;
+    height: 10.0rem;
+    font-size: 1.5em;
+    background-color: #E4DCCF;
+    border-radius:10px;
+    margin-bottom: 2%;
+    white-space: normal;
+    line-break: normal;
+    word-wrap: normal;
+}
+
+.yosan-category{
+    display: flex;
+}
+.yosan{
+    width: 45%;
+}
+.category{
+    width: 45%;
+}
+.hyoji-area-yo-ca{
+    width:80%;
+    height: 3.0rem;
+    font-size: 2.0em;
+    background-color: #E4DCCF;
+    text-align: center;
+    border-radius:10px;
+}
+.btn{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+ }
+ 
+ .good{
+     width:13vw;
+     height: 10vh;
+     background: #E4DCCF;
+     font-size:2.0em;
+     border-radius:10px;
+     color:#002B5B;
+     border: none;
+ }
+ .good-img{
+    height: 50%;
+    margin-bottom: 5%;
+    margin-right: 2%;
+ }
+ .back{
+     margin-left: 15%;
+     width: 13vw;
+     height: 10vh;
+     background: #E4DCCF;
+     font-size:2.0em;
+     padding-right: 1%;
+     border-radius:10px;
+     color:#002B5B;
+     border: none;
+ 
+ }
+ .imgsize{
+    height: 100%;
+    width: 100%;
+ }

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トラスタ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="./style/style.css">
-    <title>旅行プラン検索結果画面</title>
+    <!-- 作成者：梶原 -->
 </head>
-<!-- 作成者：梶原 -->
 <body>
     <!-- header部分↓↓ -->
     <div id="app">
-    <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
+        <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
+        <!-- 検索のモーダル -->
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
                 <div class="modal-plan" onclick="location.href='./search-plan.php'">
@@ -29,8 +31,8 @@
                 </div>
             </div>
         </div>
-             <!-- -投稿のモーダル -->
-             <div :class="{'post-active': postActive }" class="modal-div-post">
+        <!-- 投稿のモーダル -->
+        <div :class="{'post-active': postActive }" class="modal-div-post">
             <div class="modal-body-post">
                 <div class="modal-plan-post" onclick="location.href='./plan-post.php'">
                      <p>旅行プラン投稿</p>
@@ -47,13 +49,24 @@
             </div>
         </div>
     </div>
-    <div id="card">
-    <card-component></card-component>
-    <card-component></card-component>
+    <form method = "POST" action = "plan_post_kakunin1.php">
+    <div class="public-title-div">
+        <label for="public" class="check"><input type="checkbox" class="box"  name="public" id="public">公開</label>
+        <input type="text" class="post-title" placeholder="タイトル">
+    </div>
+    <div id="post">
+       <post-component></post-component>
+    </div> 
+    <div class="add-container">
+            <button class="add-post"  onclick = "addele()">場所の追加</button>
+    </div>
+    <div class="button-container">
+        <button class="back-button">＜戻る</button>    
+        <input type = "submit" class ="share-button" value = "Share">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/plan-post.js"></script>
 </body>
-
 </html>

@@ -8,16 +8,19 @@ body{
 }
 
 .iconselect{
+    margin-top: 4rem ;
     width: 100%;
-    margin: 1.3em 0;
+    height: 15vh;
     display:flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
 }
 .icon{
-    width: 15%;
-    height: 15vh;
+    width: auto; /* 適切な幅を指定してください */
+    height: auto; /* 適切な高さを指定してください */
+    border-radius: 50%;
+    object-fit: cover;
 }
 .icon-sele{
     position: relative;
@@ -137,4 +140,19 @@ select{
     color:#FFFFFF;
     border: none;
 
+}
+
+.image_range{
+    width:8%;
+    height:100%;
+    border: 2px dashed #002B5B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.image_range > img{
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
 }
