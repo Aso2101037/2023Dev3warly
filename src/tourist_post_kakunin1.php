@@ -18,4 +18,6 @@
     $dbm->tourist_spot($form_tourist_name,$form_address_text,0,0,0,$form_title,$form_tourist_comment,$category,0,$form_koukai);
     echo "DB保存完了<br>";
     echo $form_title;
+    header("Location: home.php?message=spot_complete");
+        exit;
 ?>

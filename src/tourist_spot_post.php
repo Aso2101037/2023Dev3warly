@@ -43,9 +43,10 @@
             <div class="sinkisakusei">新規投稿を作成</div>
             <input type="checkbox"class="koukai_check" name="form_koukai" value = "1"> <span class="koukai">公開</span>
             <input type="text"class="title-text" name="form_title" placeholder="ここにタイトルを入力">
-            <div class="img-post">
-                <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>
-                    <a href=""class="img-link">写真を選択</a>
+            <div class="img-post" id="spot_image">
+                <span class="img-select"><img src="images/picture.svg"class="photo-img" ><br>
+                    <a class="img-link" id="spot_image_select">写真を選択</a>
+                    <input type="file" id="spot" name="spot" style="display: none;" accept="image/*" onchange="spotChange()">
                 </span>
             </div>
         </div>
