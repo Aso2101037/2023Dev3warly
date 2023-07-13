@@ -48,7 +48,7 @@
             <img src="images/icon.svg" class="icon" id="image-add">
             </div>
             <button class="icon-sele" for="up-load"  id="image_select">選択</button>
-            <input type="file" id="image" name="image" style="display: none;" accept="image/*" onchange="imageChange()">
+            <input type="file" id="image" name="image" style="display: none;" accept="image/*" onchange=" imageChange()">
             
     </div>
 
@@ -266,7 +266,7 @@
 
         <div class="item-name">パスワード</div>
         <div class="password">
-            <input type="texx"class="textbox"name="password" id="password">
+            <input type="password"class="textbox"name="password" id="password">
         </div>    
 
         <div class="item-name">ひとこと</div>
@@ -282,7 +282,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./script/script.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/image-change.js"></script>
 </body>
