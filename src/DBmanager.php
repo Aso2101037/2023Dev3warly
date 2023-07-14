@@ -210,7 +210,7 @@ public function deletePlanPostDtlTbl($getid){
 public function deleteToristSpotTbl($getid){
     $pdo = $this->dbConnect();
     // 削除対象のIDを取得
-    $id = $_POST['id'];
+    $id = $_POST['torist_spot_id'];
 
     // データを削除するクエリを実行
     $sql = "DELETE FROM tourist_spot WHERE tourist_spot_id = :id";
