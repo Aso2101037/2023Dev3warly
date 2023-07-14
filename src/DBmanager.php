@@ -18,37 +18,6 @@ class DBManager{
         header("Location: home.php");
         exit();
     }
-    
-
-    // public function getUserTblByword($pass,$email){
-    //     $pdo = $this->dbConnect();
-    //     $sql = "UPDATE hosapo_user_tbl SET password=? WHERE email_address= ?";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1,$pass,PDO::PARAM_STR);
-    //     $ps->bindValue(2,"%".$email."%",PDO::PARAM_STR);
-    //     $ps->execute();
-    //     $searchArray = $ps->fetchAll();
-    //     return $searchArray;
-    // }
-
-    // //新規追加(ユーザー)
-    // public function insertUserTbl($user_id,$password,$user_name,$user_mailaddress,$user_age,$gender_id,$user_title_id,$user_one_thing,$user_profile){
-    //     //パスワードハッシュ化
-    //     $hash_pass = password_hash($password, PASSWORD_DEFAULT);
-    //     $pdo = $this->dbConnect();
-    //     $sql = "INSERT INTO user(user_id,password,user_name,user_mailaddress,user_age,gender_id,user_title_id,user_one_thing,user_profile)VALUES(?,?,?,?,?,?,?,?,?)";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1,$user_id,PDO::PARAM_STR);
-    //     $ps->bindValue(2,$hash_pass,PDO::PARAM_STR);
-    //     $ps->bindValue(3,$user_name,PDO::PARAM_STR);
-    //     $ps->bindValue(4,$user_mailaddress,PDO::PARAM_STR);
-    //     $ps->bindValue(5,$user_age,PDO::PARAM_STR);
-    //     $ps->bindValue(6,$gender_id,PDO::PARAM_STR);
-    //     $ps->bindValue(7,$user_title_id,PDO::PARAM_STR);  
-    //     $ps->bindValue(8,$user_one_thing,PDO::PARAM_STR);   
-    //     $ps->bindValue(9,$user_profile,PDO::PARAM_STR);  
-    //     $ps->execute();
-    // }
 
         //新規追加(ユーザー)
     public function insertUserTbl($user_id,$password,$user_name,$user_mailaddress,$user_age,$gender_id,$user_title_id,$user_one_thing,$user_profile){
@@ -95,20 +64,6 @@ class DBManager{
         }
         
     }
-
-    //新規追加(予約{appointment})
-    public function insertApptbl($name,$hospitalid,$specialty,$date,$time){
-        $pdo = $this->dbConnect();
-        $sql = "INSERT INTO hosapo_appointment_tbl(user_name,hospital_id,medical_specialty,appointment_data,appointment_time)VALUES(?,?,?,?,?)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$name,PDO::PARAM_STR);
-        $ps->bindValue(2,$hospitalid,PDO::PARAM_STR);
-        $ps->bindValue(3,$specialty,PDO::PARAM_STR);
-        $ps->bindValue(4,$date,PDO::PARAM_STR);
-        $ps->bindValue(5,$time,PDO::PARAM_STR);
-        $ps->execute();
-    }
-
     //userを名前で取得するメソッド
     public function getUserTblByword($username){
         $pdo = $this->dbConnect();
@@ -130,107 +85,86 @@ class DBManager{
         return $getdata;
     }
 
-    //hosapo_hospital_tblをidで取得するメソッド
-    public function getHospitalTblByid($hospitalid){
+//観光名所新規追加のメソッド
+    public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_spot_image,$tourist_spot_start,$tourist_spot_end,$tourist_spot_title,$tourist_spot_comment,$category_id,$tourist_release){
+        $tourist_spot_day = date("YmdHis");
         $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_id LIKE ?";
+        $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,1)";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,"%".$hospitalid."%",PDO::PARAM_STR);
+        $ps->bindValue(1,0,PDO::PARAM_STR);
+        $ps->bindValue(2,$tourist_spot_name,PDO::PARAM_STR);
+        $ps->bindValue(3,$tourist_spot_address,PDO::PARAM_STR);
+        $ps->bindValue(4,$tourist_spot_image,PDO::PARAM_STR);
+        $ps->bindValue(5,$tourist_spot_start,PDO::PARAM_STR);
+        $ps->bindValue(6,$tourist_spot_end,PDO::PARAM_STR);
+        $ps->bindValue(7,$tourist_spot_title,PDO::PARAM_STR);  
+        $ps->bindValue(8,$tourist_spot_comment,PDO::PARAM_STR);   
+        $ps->bindValue(9,$category_id,PDO::PARAM_STR);
+        $ps->bindValue(10,$tourist_spot_day,PDO::PARAM_STR);  
+        $ps->execute();
+        //ここからpostテーブルへの追加
+        $sql = "SELECT * FROM tourist_spot WHERE tourist_spot_comment = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$tourist_spot_comment,PDO::PARAM_STR);
         $ps->execute();
         $searchArray = $ps->fetchAll();
-        return $searchArray;
-    }
-
-    //user_idを受診者名で取得するメソッド
-    public function getUserTblByname($user_name){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM hosapo_user_tbl WHERE full_name LIKE ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,"%".$user_name."%",PDO::PARAM_STR);
-        $ps->execute();
-        $searchArray = $ps->fetchAll();
-        return $searchArray;
-    }
-
-    //パスワード再設定するメソッド
-    public function changeUserTblByword($email,$pass){
-        $pdo = $this->dbConnect();
-        $sql = "UPDATE hosapo_user_tbl SET password=:password , email_address = :email_address WHERE  email_address = :email_address";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$email,PDO::PARAM_STR);
-        $ps->execute(array(':password' => $pass, ':email_address' => $email));
-    }
-    //あむの画面
-    public function getcomment($hospital_introduction){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_introduction LIKE ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, "%" . $hospital_introduction . "%", PDO::PARAM_STR);
-        $ps->execute();
-        $searchArray = $ps->fetchAll();
-        return $searchArray;
+        $tourist_spot_id = $searchArray[0]['tourist_spot_id'];
+        if (!isset($_SESSION)) {
+            session_start();
         }
-        
-        //あむの画面
-        public function getUserTblByIdAndPass($hospital_id){
-            $pdo = $this->dbConnect();
-            $sql = "SELECT * FROM hosapo_hospital_tbl WHERE hospital_id = ? ";
-            $ps = $pdo->prepare($sql);
-            $ps->bindValue(1, $hospital_id, PDO::PARAM_INT);
-            $ps->execute();
-            $searchArray = $ps->fetchAll();
-            return $searchArray;
-            
-        }
-
-    /*新規追加(予約状況)
-    public function insertapp($){
-        $pdo = $this->dbConnect();
-        $sql = "INSERT INTO hosapo_appointment_tbl(appointment_id,user_id,hospial_id,medical_sprciality,appointment_data,appointment_time)VALUES(?,?,?,?,?)";
+        $user_id = $_SESSION['email'];
+        $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$,PDO::PARAM_INT);
-        $ps->bindValue(2,$,PDO::PARAM_STR);
-        $ps->bindValue(3,$,PDO::PARAM_STR);
-        $ps->bindValue(4,$,PDO::PARAM_STR);
-        $ps->bindValue(5,$,PDO::PARAM_STR);
-
+        $ps->bindValue(1,0,PDO::PARAM_STR);
+        $ps->bindValue(2,$user_id,PDO::PARAM_STR);
+        $ps->bindValue(3,0,PDO::PARAM_STR);
+        $ps->bindValue(4,0,PDO::PARAM_STR);
+        $ps->bindValue(5,$tourist_spot_id,PDO::PARAM_STR);
+        $ps->bindValue(6,0,PDO::PARAM_STR);
+        $ps->bindValue(7,0,PDO::PARAM_STR);
         $ps->execute();
-        
-    }*/
-
-        //新規追加(予約)
-    /*public function insertappintmentTbl($id,$pass,$username,$usermail,$address){
-        $pdo = $this->dbConnect();
-        $sql = "INSERT INTO hosapo_user_tbl(user_id,hospital_id,japan_name,medical_specialty,appointment_data,appointment_time)VALUES(?,?,?,?,?,?)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$pass,PDO::PARAM_STR);
-        $ps->bindValue(2,$name,PDO::PARAM_STR);
-        $ps->bindValue(3,$namek,PDO::PARAM_STR);
-        $ps->bindValue(4,$address,PDO::PARAM_STR);
-        $ps->bindValue(5,$telephone_number,PDO::PARAM_STR);
-        $ps->bindValue(6,$birthday,PDO::PARAM_STR);
-        $ps->bindValue(7,$gender,PDO::PARAM_STR);
-        $ps->bindValue(8,$email_address,PDO::PARAM_STR);       
-        
-        $ps->execute();
-        
-    }*/
-
-
-       // hosapo_hospital_tblを名前で取得するメソッド
-    //     public function getUserTblByid(){
-    //     $pdo = $this->dbConnect();
-    //     $sql = "SELECT * FROM hosapo_hospital_tbl ";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->execute();
-    //     $searchArray = $ps->fetchAll();
-    //     return $searchArray;
-    // }
-
-
-    ///できてるか確認
-    //できた
-
+}
+//飲食店投稿新規追加のメソッド
+public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_name,$restaurant_comment,$restaurant_address,$restaurant_start_time,$restaurant_finish_time,$restaurant_budget,$restaurant_category_id,$restaurant_date,$restaurant_release){
+    $pdo = $this->dbConnect();
+    $sql = "INSERT INTO restaurant_post(restaurant_post_id,restaurant_title,restaurant_image,restaurant_name,restaurant_comment,restaurant_address,restaurant_start_time,restaurant_finish_time,restaurant_budget,restaurant_category_id,restaurant_date,restaurant_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+    $ps = $pdo->prepare($sql);
+    $restaurant_date = date("YmdHis");
+    $ps->bindValue(1,0,PDO::PARAM_STR);
+    $ps->bindValue(2,$restaurant_title,PDO::PARAM_STR);
+    $ps->bindValue(3,$restaurant_image,PDO::PARAM_STR);
+    $ps->bindValue(4,$restaurant_name,PDO::PARAM_STR);
+    $ps->bindValue(5,$restaurant_comment,PDO::PARAM_STR);
+    $ps->bindValue(6,$restaurant_address,PDO::PARAM_STR);   
+    $ps->bindValue(7,$restaurant_start_time,PDO::PARAM_STR);
+    $ps->bindValue(8,$restaurant_finish_time,PDO::PARAM_STR);  
+    $ps->bindValue(9,$restaurant_budget,PDO::PARAM_STR);   
+    $ps->bindValue(10,$restaurant_category_id,PDO::PARAM_STR);  
+    $ps->bindValue(11,$restaurant_date,PDO::PARAM_STR); 
+    $ps->bindValue(12,$restaurant_release,PDO::PARAM_STR); 
+    $ps->execute();
+    //ここからpostテーブルへの追加
+    $sql = "SELECT * FROM restaurant_post WHERE restaurant_comment = ?";
+    $ps = $pdo->prepare($sql);
+    $ps->bindValue(1,$restaurant_comment,PDO::PARAM_STR);
+    $ps->execute();
+    $searchArray = $ps->fetchAll();
+    $restaurant_post_id = $searchArray[0]['restaurant_post_id'];
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $user_id = $_SESSION['email'];
+    $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
+    $ps = $pdo->prepare($sql);
+    $ps->bindValue(1,0,PDO::PARAM_STR);
+    $ps->bindValue(2,$user_id,PDO::PARAM_STR);
+    $ps->bindValue(3,0,PDO::PARAM_STR);
+    $ps->bindValue(4,$restaurant_post_id,PDO::PARAM_STR);
+    $ps->bindValue(5,0,PDO::PARAM_STR);
+    $ps->bindValue(6,0,PDO::PARAM_STR);
+    $ps->bindValue(7,0,PDO::PARAM_STR);
+    $ps->execute();
+}
     //ボタンを押下してデータベース内の投稿削除する
 public function deletePostTbl($getid){
     $pdo = $this->dbConnect();
