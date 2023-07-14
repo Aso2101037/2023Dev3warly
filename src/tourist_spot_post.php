@@ -132,6 +132,7 @@
             <input type="text"class="address_text" name ="form_address_text">
 
             <div class="komokumei">営業時間</div>
+            <!-- 時間の部分を修正 -->
             <input type="text"class="time_text" name = "form_time_text">
 
             <div class="komokumei">カテゴリー</div>
