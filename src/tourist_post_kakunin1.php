@@ -1,6 +1,7 @@
 <?php
+    $form_koukai=0;
     if(isset($_POST['form_koukai'])) {
-        $form_koukai = $_POST['form_koukai'];
+        $form_koukai = 1;
     } else {
         $form_koukai = 0;
     }
@@ -15,7 +16,7 @@
     $email = $_SESSION['email'];
     require_once "DBmanager.php";
     $dbm = new DBManager();
-    $dbm->tourist_spot($form_tourist_name,$form_address_text,0,0,0,$form_title,$form_tourist_comment,$category,0,0);
+    $dbm->tourist_spot($form_tourist_name,$form_address_text,0,0,0,$form_title,$form_tourist_comment,$category,0,$form_koukai);
 
     header("Location: home.php?message=spot_complete");
         exit;

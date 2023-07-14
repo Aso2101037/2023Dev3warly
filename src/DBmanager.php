@@ -89,7 +89,7 @@ class DBManager{
     public function tourist_spot($tourist_spot_name,$tourist_spot_address,$tourist_spot_image,$tourist_spot_start,$tourist_spot_end,$tourist_spot_title,$tourist_spot_comment,$category_id,$tourist_release){
         $tourist_spot_day = date("YmdHis");
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,1)";
+        $sql = "INSERT INTO tourist_spot(tourist_spot_id,tourist_spot_name,tourist_spot_address,tourist_spot_image,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,0,PDO::PARAM_STR);
         $ps->bindValue(2,$tourist_spot_name,PDO::PARAM_STR);
@@ -101,6 +101,7 @@ class DBManager{
         $ps->bindValue(8,$tourist_spot_comment,PDO::PARAM_STR);   
         $ps->bindValue(9,$category_id,PDO::PARAM_STR);
         $ps->bindValue(10,$tourist_spot_day,PDO::PARAM_STR);  
+        $ps->bindValue(11,$tourist_release,PDO::PARAM_INT);
         $ps->execute();
         //ここからpostテーブルへの追加
         $sql = "SELECT * FROM tourist_spot WHERE tourist_spot_comment = ?";
