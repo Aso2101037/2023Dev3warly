@@ -48,23 +48,31 @@ html{
     width: 90%;
     height: 85vh;
     background-color: #E4DCCF;
+    background-repeat:no-repeat;
+    border: 2px dashed black;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2%;
-    
+    flex-direction: column;
+    background-size:100% 100%;
 }
 
 .photo-img{
     width: 150px;
     height: 150px;
 }
-.img-link{
-    font-size:1.5em;
-    text-decoration: none;
+label>input{
+    display: none;
 }
-
-
+.img-select{
+    font-size: 1.3em;
+    color:#0080ff;
+    text-align: center;
+}
+.img-select:hover{
+    opacity: 1;
+}
 
 .icon-nickname{
     display: flex;
@@ -100,7 +108,7 @@ html{
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
-    font-size: 1.0em;
+    font-size: 1.2em;
 }
 .select-todou{
     width: 8vw;
@@ -109,8 +117,8 @@ html{
     text-align: center;
     border:none;
     border-radius:10px;
-   font-size: 1.0em;
-   font-weight: 500;
+   font-size: 1.2em;
+   
 }
 .address_text{
     height: 5vh;
@@ -118,16 +126,20 @@ html{
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
-    font-size: 1.0em;
+    font-size: 1.2em;
     margin-left: 1%;
 }
 
 .time_text{
-    width: 85%;
-    height: 5%;
+    height: 5vh;
+    width: 42%;
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+.kara{
     font-size: 1.5em;
 }
 

@@ -60,11 +60,14 @@ html{
     width: 150px;
     height: 150px;
 }
-.img-link{
-    font-size:1.5em;
-    text-decoration: none;
+label>input{
+    display: none;
 }
-
+.img-select{
+    font-size: 1.3em;
+    color:#0080ff;
+    text-align: center;
+}
 
 
 .icon-nickname{
@@ -101,7 +104,7 @@ html{
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
-    font-size: 1.0em;
+    font-size: 1.2em;
 }
 
 select{
@@ -111,8 +114,7 @@ select{
     text-align: center;
     border:none;
     border-radius:10px;
-   font-size: 1.5em;
-   font-weight: 500;
+   font-size: 1.2em;
 }
 .address_text{
     height: 5vh;
@@ -120,16 +122,20 @@ select{
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
-    font-size: 1.0em;
+    font-size: 1.2em;
     margin-left: 1%;
 }
 
 .time_text{
-    width: 85%;
-    height: 5%;
+    height: 5vh;
+    width: 42%;
     background-color: #E4DCCF;
     border:none;
     border-radius: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+.kara{
     font-size: 1.5em;
 }
 
