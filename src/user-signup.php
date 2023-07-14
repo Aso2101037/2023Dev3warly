@@ -65,7 +65,7 @@
             <img src="images/icon.svg" class="icon" id="image-add">
             </div>
             <button class="icon-sele" for="up-load"  id="image_select">選択</button>
-            <input type="file" id="image" name="image" style="display: none;" accept="image/*" onchange="imageChange()">
+            <input type="file" id="image" name="image" style="display: none;" accept="image/*" onchange=" imageChange()">
             
     </div>
 
@@ -283,7 +283,7 @@
 
         <div class="item-name">パスワード</div>
         <div class="password">
-            <input type="texx"class="textbox"name="password" id="password">
+            <input type="password"class="textbox"name="password" id="password">
         </div>    
 
         <div class="item-name">ひとこと</div>
