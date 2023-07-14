@@ -62,8 +62,8 @@
             <input type="text"class="title-text" name="form_title" placeholder="ここにタイトルを入力">
             <div class="img-post" id="spot_image">
                 <span class="img-select"><img src="images/picture.svg"class="photo-img" ><br>
-                    <a class="img-link" id="spot_image_select">写真を選択</a>
-                    <input type="file" id="spot" name="spot" style="display: none;" accept="image/*" onchange="spotChange()">
+                    <label  for="up-load"class="img-select">写真を選択<input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="img-select0" id="up-load" required="required"></label>
+                    
                 </span>
             </div>
         </div>
@@ -132,9 +132,9 @@
             <input type="text"class="address_text" name ="form_address_text">
 
             <div class="komokumei">営業時間</div>
-            <!-- 時間の部分を修正 -->
-            <input type="text"class="time_text" name = "form_time_text">
 
+            <input type="time" name="timer-first0" id="" class="time_text"required="required"><span class="kara">～</span><input type="time" name="timer-secend0" id="" class="time_text"required="required">
+            
             <div class="komokumei">カテゴリー</div>
                 <div class="radios">
                     <input type="radio" name="category" value = "1" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
@@ -149,9 +149,9 @@
                     <input type="radio" name="category" value = "6" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
                 </div>
             </div>
-        
     </div>
-    
+    </div>
+
     <div class="btn">
         <button class="back" type="button" onclick="history.back(-1);">＜戻る</button>
         <button class="sign-up" type="submit">Share</button>

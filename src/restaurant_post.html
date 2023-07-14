@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/restaurant_post_style.css">
@@ -60,10 +60,11 @@
             <div class="sinkisakusei">新規投稿を作成</div>
             <input type="checkbox"class="koukai_check" name = "form_koukai" value = "1"> <span class="koukai">公開</span>
             <input type="text"class="title-text"placeholder="ここにタイトルを入力" name = "form_title">
-            <div class="img-post">
-                <span class="img-select"><img src="images/picture.svg"class="photo-img"><br>
-                    <a href=""class="img-link">写真を選択</a>
-                </span>
+            <div class="img-post" id="image-add">
+                    <img src="images/picture.svg"  class="photo-img">
+                    <label  for="image"class="img-select">写真を選択
+                        <input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="img-select0" id="image" required="required">
+                    </label>
             </div>
         </div>
         <div class="right">
@@ -131,7 +132,7 @@
             <input type="text"class="address_text" name = "form_address_text">
 
             <div class="komokumei">営業時間</div>
-            <input type="text"class="time_text" name = "form_time_text">
+            <input type="time" name="timer-first0" id="" class="time_text"required="required"><span class="kara">～</span><input type="time" name="timer-secend0" id="" class="time_text"required="required">
 
             <div class="yosan-kategory">
                 <div class="yosan">
@@ -160,5 +161,7 @@
 </form>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
+    <script src="./script/image-change.js"></script>
+
 </body>
 </html>
