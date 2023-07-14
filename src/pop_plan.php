@@ -30,7 +30,7 @@
             </div>
         </div>
              <!-- -投稿のモーダル -->
-             <div :class="{'post-active': postActive }" class="modal-div-post">
+        <div :class="{'post-active': postActive }" class="modal-div-post">
             <div class="modal-body-post">
                 <div class="modal-plan-post" onclick="location.href='./plan-post.php'">
                      <p>旅行プラン投稿</p>

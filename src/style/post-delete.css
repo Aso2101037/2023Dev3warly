@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+    width: 100%;
+    height:15vh;
+}
+#app{
+    background-color: #E4DCCF;
+}
+.title-logo{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    width: 20vw;
+    height: 15vh;
+}
+.title{
+ font-size: 2.0rem;
+ color: #002B5B;
+ margin-left: 1rem;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.header-button{
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+    width: 60vw;
+    height: 15vh;
+}
+.header-button > img{
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem;
+}
+.header-button > a{
+    text-decoration: none;
+}
+.header-button > img:nth-child(1):hover{
+    transition: all 0.7s linear;
+    transform: scale(1.4);
+}
+.header-button > img:nth-child(2):hover{
+    transition: all 0.7s linear;
+    transform: scale(1.4);
+}
+.header-button > img:nth-child(3):hover{
+    transition: all 0.7s linear;
+    transform: scale(1.4);
+}
+.login-div{
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+.login-div:hover{
+    transition: all 0.7s linear;
+    transform: scale(1.2);
+    animation: back-color 5s linear infinite;
+}
+.login-div > img{
+    width: 50px;
+    height: 50px;
+    margin:0 0 0 1rem;
+}
+.login-div > span{
+    font-size: 2.0rem;
+    color: #002B5B;
+    margin-right: 20px;
+}
+/* ↑↑　header部分 ↑↑*/
+.modal-div{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: hidden;
+}
+.modal-div.is-active{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: inherit;
+}
+.modal-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 30vh;
+    background-color:#F9F5EB;
+}
+.modal-plan{
+    width: 24%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-plan > p{
+    font-size: 1.5rem;
+}
+.modal-plan >img{
+    margin-bottom: 10%;
+}
+.modal-kankou{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-kankou > p{
+    font-size: 1.5rem;
+}
+.modal-kankou > img{
+    margin: 15% 0 0 0;
+}
+.modal-food{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-food > p{
+    font-size: 1.8rem;
+}
+.modal-food >img{
+    margin:0% 0 0 15%;
+}
+/* ↑↑モーダルの部分↑↑ */
+/* ↓モーダル検索の部分↓ */
+.modal-div-post{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: hidden;
+}
+.modal-div-post.post-active{
+    position: absolute;
+    top: 16%;
+    left: 13.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height:50vh;
+    background-color:#F9F5EB;
+    border-radius: 20px;
+    z-index: 1;
+    visibility: inherit;
+}
+.modal-body-post{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 30vh;
+    background-color:#F9F5EB;
+}
+.modal-plan-post{
+    width: 24%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-plan-post > p{
+    font-size: 1.5rem;
+}
+.modal-plan-post >img{
+    margin-bottom: 10%;
+}
+.modal-kankou-post{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-kankou-post > p{
+    font-size: 1.5rem;
+}
+.modal-kankou-post > img{
+    margin: 15% 0 0 0;
+}
+.modal-food-post{
+    width: 23%;
+    height:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E4DCCF;
+    border-radius: 20px;
+}
+.modal-food-post > p{
+    font-size: 1.8rem;
+}
+.modal-food-post >img{
+    margin:0% 0 0 15%;
+}
+/* post-deleteの中身の部分 */
+.breadcrumbs-list{
+    margin: 2rem;
+    width: 20%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-div{
+    width: 45%;
+    height: 5vh;
+    text-align: center;
+    color: #002B5B;
+    font-size: 1.3rem;
+    background-color: #E4DCCF;
+    border-radius: 10px;
+}
+.breadcrumbs-list > span{
+    margin: 0 1.5rem;
+    font-size: 2rem;
+}
+.delete-div{
+    width: 45%;
+    height: 5vh;
+    text-align: center;
+    color: #002B5B;
+    font-size: 1.3rem;
+    background-color: #E4DCCF;
+    border-radius: 10px;
+}
+#post-delete-list{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.delete-column{
+    margin:  1.5rem auto;
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    background-color: #E4DCCF;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+}
+.name-style{
+    font-size: 1.2rem;
+    color: #002B5B;
+    width: auto;
+}
+.name-style::before{
+    content: '日付: ';
+}
+.type-style{
+    font-size: 1.2rem;
+    color: #002B5B;
+    width: auto;
+}
+.type-style::before{
+    content: '投稿名: ';
+}
+.title-style{
+    font-size: 1.2rem;
+    color: #002B5B;
+    width: auto;
+}
+.title-style::before{
+    content: 'タイトル: ';
+}
+.delete-button{
+    position: relative;
+    top: 0%;
+    right: -4%;
+    width: 2.5vw;
+    height: 5vh;
+    border-radius:50%;
+    background-color: #EA5455;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-button >span{
+    color: #F9F5EB;
+    font-size: 2rem;
+}
