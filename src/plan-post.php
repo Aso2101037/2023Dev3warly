@@ -64,6 +64,7 @@
         <button class="back-button">＜戻る</button>    
         <input type = "submit" class ="share-button" value = "Share">
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/script.js"></script>
