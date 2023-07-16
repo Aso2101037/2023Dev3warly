@@ -27,7 +27,7 @@ $startTimes[$j] = $_POST['timer-first'];
 $endTimes[$j] = $_POST['timer-second'];
 $images[$j] = $_POST['img-select'];
 // パラメータの数を取得
-$paramCount = count($_POST) - 10; // 'release'と'title'、1行目の８要素を除く
+$paramCount = count($_POST)/8 - 10; // 'release'と'title'、1行目の８要素を除く
 
 for ($i = 1; $i <= $paramCount; $i++) {
     // オプションのパラメータを取得
@@ -51,7 +51,5 @@ for ($i = 1; $i <= $paramCount; $i++) {
     $startTime = $startTimes[$i];
     $endTime = $endTimes[$i];
     $image = $images[$i];
-
-
 }
 ?>
