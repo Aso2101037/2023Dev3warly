@@ -26,8 +26,6 @@ $moveTimes[$j] = $_POST['traffic-timer'];
 $startTimes[$j] = $_POST['timer-first'];
 $endTimes[$j] = $_POST['timer-second'];
 $images[$j] = $_POST['img-select'];
-session_start();
-$email = $_SESSION['email'];
 require_once "DBmanager.php";
 $dbm = new DBManager();
 // パラメータの数を取得
@@ -44,9 +42,10 @@ for ($i = 1; $i <= $paramCount; $i++) {
     $endTimes[$i] = $_POST['timer-second'.$i];
     $images[$i] = $_POST['img-select'.$i];
 }
-
+require_once "DBmanager.php";
+$dbm = new DBManager();
 // 取得したデータを処理する
-for ($i = 1; $i <= $paramCount; $i++) {
+for ($i = 0; $i <= $paramCount; $i++) {
     $comment = $comments[$i];
     $ken = $kens[$i];
     $place = $places[$i];
@@ -55,5 +54,7 @@ for ($i = 1; $i <= $paramCount; $i++) {
     $startTime = $startTimes[$i];
     $endTime = $endTimes[$i];
     $image = $images[$i];
+    $dbm->plan_post($place,$startTime,$endTime,$moveMean,$moveTime,$comment,$image,$title,$public,0,$ken);
 }
+unset($_SESSION['plan_post_id']);
 ?>

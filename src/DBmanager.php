@@ -166,15 +166,19 @@ public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_
     $ps->bindValue(7,0,PDO::PARAM_STR);
     $ps->execute();
 }
-public function plan_post($plan_spot_name,$plan_spot_start_time,$plan_spot_finish_time,$plan_spot_address,$plan_spot_public_transport,$plan_spot_travel_time,$plan_spot_comment,$plan_spot_image,$plan_title,$release,$plan_day,$prefecture_id){
+public function plan_post($plan_spot_name,$plan_spot_start_time,$plan_spot_finish_time,$plan_spot_public_transport,$plan_spot_travel_time,$plan_spot_comment,$plan_spot_image,$plan_title,$release,$plan_day,$prefecture_id){
     $pdo = $this->dbConnect();
     session_start();
     $user_id = $_SESSION['user_id'];
     $sql = "INSERT INTO plan_post(plan_post_id,user_id,plan_title,release,plan_day)VALUES(?,?,?,?,?)";
     $ps = $pdo->prepare($sql);
-    $min = 1;
-    $max = 999999;
-    $plan_post_id = mt_rand($min, $max);//ランダムにplan_post_idを作成
+    if(isset($_SESSION['plan_post_id'])){
+        $min = 1;
+        $max = 999999;
+        $plan_day = 1;//今日の日付
+        $plan_spot_address = 1;
+        $plan_post_id = mt_rand($min, $max);//ランダムにplan_post_idを作成
+    }
     $ps->bindValue(1,$plan_post_id,PDO::PARAM_STR);
     $ps->bindValue(2,$user_id,PDO::PARAM_STR);
     $ps->bindValue(3,$plan_title,PDO::PARAM_STR);
