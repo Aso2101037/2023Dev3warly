@@ -26,6 +26,10 @@ $moveTimes[$j] = $_POST['traffic-timer'];
 $startTimes[$j] = $_POST['timer-first'];
 $endTimes[$j] = $_POST['timer-second'];
 $images[$j] = $_POST['img-select'];
+session_start();
+$email = $_SESSION['email'];
+require_once "DBmanager.php";
+$dbm = new DBManager();
 // パラメータの数を取得
 $paramCount = count($_POST)/8 - 10; // 'release'と'title'、1行目の８要素を除く
 
