@@ -202,10 +202,10 @@ const addele = () => {
   const TimeSpan = document.createElement("span");
   const Time2 = document.createElement("input");
   Time1.setAttribute("type", "time");
-  Time1.setAttribute("name","time-first"+[count]);
+  Time1.setAttribute("name","timer-first"+[count]);
   TimeSpan.innerHTML = "～";
   Time2.setAttribute("type", "time");
-  Time2.setAttribute("name","time-second"+[count]);
+  Time2.setAttribute("name","timer-second"+[count]);
   getTimeDiv.appendChild(Time1);
   getTimeDiv.appendChild(TimeSpan);
   getTimeDiv.appendChild(Time2);
