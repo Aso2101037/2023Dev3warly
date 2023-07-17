@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['public'])) {
+if (isset($_POST['public'])) {
     $public = $_POST['public'];
 } else {
     $public = 0;
@@ -26,35 +26,36 @@ $moveTimes[$j] = $_POST['traffic-timer'];
 $startTimes[$j] = $_POST['timer-first'];
 $endTimes[$j] = $_POST['timer-second'];
 $images[$j] = $_POST['img-select'];
+
 require_once "DBmanager.php";
 $dbm = new DBManager();
+
 // パラメータの数を取得
-$paramCount = count($_POST)/8 - 10; // 'release'と'title'、1行目の８要素を除く
+$paramCount = count($_POST) / 8 - 10; // 'release'と'title'、1行目の８要素を除く
 
 for ($i = 1; $i <= $paramCount; $i++) {
     // オプションのパラメータを取得
-    $comments[$i] = $_POST['comment'.$i];
-    $kens[$i] = $_POST['place-select'.$i];
-    $places[$i] = $_POST['place'.$i];
-    $moveMeans[$i] = $_POST['traffic-select'.$i];
-    $moveTimes[$i] = $_POST['traffic-timer'.$i];
-    $startTimes[$i] = $_POST['timer-first'.$i];
-    $endTimes[$i] = $_POST['timer-second'.$i];
-    $images[$i] = $_POST['img-select'.$i];
+    $comments[$i] = $_POST['comment' . $i];
+    $kens[$i] = $_POST['place-select' . $i];
+    $places[$i] = $_POST['place' . $i];
+    $moveMeans[$i] = $_POST['traffic-select' . $i];
+    $moveTimes[$i] = $_POST['traffic-timer' . $i];
+    $startTimes[$i] = $_POST['timer-first' . $i];
+    $endTimes[$i] = $_POST['timer-second' . $i];
+    $images[$i] = $_POST['img-select' . $i];
 }
-require_once "DBmanager.php";
-$dbm = new DBManager();
+
 // 取得したデータを処理する
-for ($i = 0; $i <= $paramCount; $i++) {
-    $comment = $comments[$i];
-    $ken = $kens[$i];
-    $place = $places[$i];
-    $moveMean = $moveMeans[$i];
-    $moveTime = $moveTimes[$i];
-    $startTime = $startTimes[$i];
-    $endTime = $endTimes[$i];
-    $image = $images[$i];
-    $dbm->plan_post($place,$startTime,$endTime,$moveMean,$moveTime,$comment,$image,$title,$public,0,$ken);
+for ($c = 0; $c <= $paramCount; $c++) {
+    $comment = $comments[$c];
+    $ken = $kens[$c];
+    $place = $places[$c];
+    $moveMean = $moveMeans[$c];
+    $moveTime = $moveTimes[$c];
+    $startTime = $startTimes[$c];
+    $endTime = $endTimes[$c];
+    $image = $images[$c];
+    $dbm->plan_post($place, $startTime, $endTime, $moveMean, $moveTime, $comment, $image, $title, $public, 0, $ken);
 }
 unset($_SESSION['plan_post_id']);
 ?>

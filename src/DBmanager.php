@@ -172,12 +172,15 @@ public function plan_post($plan_spot_name,$plan_spot_start_time,$plan_spot_finis
     $user_id = $_SESSION['user_id'];
     $sql = "INSERT INTO plan_post(plan_post_id,user_id,plan_title,release,plan_day)VALUES(?,?,?,?,?)";
     $ps = $pdo->prepare($sql);
-    if(isset($_SESSION['plan_post_id'])){
+    if(array_key_exists('plan_post_id', $_SESSION)){
+        $plan_post_id = $_SESSION['plan_post_id'];
+    }else{
         $min = 1;
         $max = 999999;
         $plan_day = 1;//今日の日付
         $plan_spot_address = 1;
         $plan_post_id = mt_rand($min, $max);//ランダムにplan_post_idを作成
+        $_SESSION['plan_post_id']
     }
     $ps->bindValue(1,$plan_post_id,PDO::PARAM_STR);
     $ps->bindValue(2,$user_id,PDO::PARAM_STR);
