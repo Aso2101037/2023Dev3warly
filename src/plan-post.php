@@ -59,7 +59,7 @@
     <form method = "POST" action = "plan_post_kakunin1.php">
     <div class="public-title-div">
         <label for="public" class="check"><input type="checkbox" class="box"  name="public" id="public">公開</label>
-        <input type="text" class="post-title" placeholder="タイトル">
+        <input type="text" class="post-title" placeholder="タイトル" name = "post-title">
     </div>
     <div id="post">
        <post-component></post-component>

@@ -1,10 +1,14 @@
+
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if (isset($_POST['public'])) {
     $public = $_POST['public'];
 } else {
     $public = 0;
 }
-$title = $_POST['title'];
+$title = $_POST['post-title'];
 
 // オプションのパラメータを処理
 $comments = array();
