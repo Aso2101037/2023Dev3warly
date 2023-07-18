@@ -172,10 +172,10 @@ public function restaurant_post($restaurant_title,$restaurant_image,$restaurant_
 public function plan_post($plan_spot_name, $plan_spot_start_time, $plan_spot_finish_time, $plan_spot_public_transport, $plan_spot_travel_time, $plan_spot_comment, $plan_spot_image, $plan_title, $release, $plan_day, $prefecture_id) {
     $pdo = $this->dbConnect();
     session_start();
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['email'];
 
     // plan_postテーブルへの追加
-    $sql = "INSERT INTO plan_post(plan_post_id, user_id, plan_title, release, plan_day) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO plan_post(plan_post_id, user_id, plan_title, 'release', plan_day) VALUES (?, ?, ?, ?, ?)";
     $ps = $pdo->prepare($sql);
     if (array_key_exists('plan_post_id', $_SESSION)) {
         $plan_post_id = $_SESSION['plan_post_id'];

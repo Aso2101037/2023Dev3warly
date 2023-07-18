@@ -65,13 +65,13 @@
        <post-component></post-component>
     </div> 
     <div class="add-container">
-            <button class="add-post"  onclick = "addele()">場所の追加</button>
+            <button type = "button" class="add-post"  onclick = "addele()">場所の追加</button>
     </div>
     <div class="button-container">
         <button class="back-button">＜戻る</button>    
         <input type = "submit" class ="share-button" value = "Share">
     </div>
-    
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/script.js"></script>
