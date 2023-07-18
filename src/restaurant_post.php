@@ -63,7 +63,7 @@
             <div class="img-post" id="image-add">
                     <img src="images/picture.svg"  class="photo-img">
                     <label  for="image"class="img-select">写真を選択
-                        <input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="img-select0" id="image" required="required">
+                        <input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="image" id="image" required="required">
                     </label>
             </div>
         </div>
