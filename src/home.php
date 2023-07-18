@@ -67,17 +67,16 @@
     </div>
     <!-- 旅行プランのカード↓↓ -->
     <div id="card">
-        <h1 class="favorite-font">人気の旅行プラン</h1>
+        <h1 class="favorite-font" onclick="location.href='./pop_plan.php'">人気の旅行プラン</h1>
         <card-component></card-component>
-        <h1 class="favorite-font">人気の観光名所</h1>
+        <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
         <card-component></card-component>
-        <h1 class="favorite-font">人気の飲食店</h1>
+        <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
         <card-component></card-component>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
-    <!-- <script src="./script/alert.js"></script> -->
     <script>
         if(f==true){
 
