@@ -14,7 +14,6 @@
     $form_address_text = $_POST['form_address_text'];
     $restaurant_start_time = $_POST['timer-first0'];
     $restaurant_finish_time = $_POST['timer-secend0'];
-    // $form_time_text = $_POST['form_time_text'];
     $category = $_POST['form_category'];
     $yosan = $_POST['form_yosan_text'];
     session_start();
