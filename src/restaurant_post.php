@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-<form action="restaurant_post_kakunin1.php" method="post">
+<form action="restaurant_post_kakunin1.php" method="post" enctype="multipart/form-data">
     <div class="flex">
         <div class="left">
             <div class="sinkisakusei">新規投稿を作成</div>

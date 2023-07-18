@@ -1,4 +1,7 @@
 <?php
+    //画像の処理
+    $content = file_get_contents($_FILES['image']['tmp_name']);
+    //公開する/しないでの処理
     if(isset($_POST['form_koukai'])) {
         $form_koukai = $_POST['form_koukai'];
     } else {
