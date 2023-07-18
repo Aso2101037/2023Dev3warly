@@ -1,6 +1,6 @@
 
 html{
-     height: 120%;
+     height: 140%;
 }
 .flex{
     display: flex;
@@ -49,11 +49,14 @@ html{
     width: 90%;
     height: 85vh;
     background-color: #E4DCCF;
+    background-repeat:no-repeat;
+    border: 2px dashed black;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2%;
-    
+    flex-direction: column;
+    background-size:100% 100%;
 }
 
 .photo-img{
@@ -183,6 +186,8 @@ select{
     justify-content: center;
     align-items: center;
     margin: 2rem 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
  }
  
  .back{

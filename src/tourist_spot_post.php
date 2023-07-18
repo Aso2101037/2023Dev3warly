@@ -60,11 +60,11 @@
             <div class="sinkisakusei">新規投稿を作成</div>
             <input type="checkbox"class="koukai_check" name="form_koukai" value = "1"> <span class="koukai">公開</span>
             <input type="text"class="title-text" name="form_title" placeholder="ここにタイトルを入力">
-            <div class="img-post" id="spot_image">
-                <span class="img-select"><img src="images/picture.svg"class="photo-img" ><br>
-                    <label  for="up-load"class="img-select">写真を選択<input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="img-select0" id="up-load" required="required"></label>
-                    
-                </span>
+            <div class="img-post" id="image-add">
+                    <img src="images/picture.svg"  class="photo-img">
+                    <label  for="image"class="img-select">写真を選択
+                        <input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="image" id="image" required="required">
+                    </label>
             </div>
         </div>
         <div class="right">
@@ -137,16 +137,16 @@
             
             <div class="komokumei">カテゴリー</div>
                 <div class="radios">
-                    <input type="radio" name="category" value = "1" checked> <label class="categorymei"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
-                    <input type="radio" name="category" value = "2" class="radio-right"> <label class="categorymei"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
+                    <input type="radio" name="category" value = "1" id="tosi" checked> <label class="categorymei" for="tosi"><img src="images/city.svg" class="komoku-img"><span class="categorymei-moji">都市</span></label>
+                    <input type="radio" name="category" value = "2" class="radio-right" id="onsen"> <label class="categorymei"for="onsen"><img src="images/onsen.svg"class="komoku-img"><span class="categorymei-moji">温泉</span></label>
                 </div>
                 <div class="radios">
-                    <input type="radio" name="category" value = "3"> <label class="categorymei"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
-                    <input type="radio" name="category" value = "4" class="radio-right"> <label class="categorymei"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
+                    <input type="radio" name="category" value = "3" id="bae"> <label class="categorymei"for="bae"><img src="images/shine.svg"class="komoku-img"><span class="categorymei-moji">映え</span></label>
+                    <input type="radio" name="category" value = "4" class="radio-right"id="tera"> <label class="categorymei"for="tera"><img src="images/temple.svg"class="komoku-img"><span class="categorymei-moji">神社・寺</span></label>
                 </div>
                 <div class="radios">
-                    <input type="radio" name="category" value = "5"> <label class="categorymei"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
-                    <input type="radio" name="category" value = "6" class="radio-right"> <label class="categorymei"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
+                    <input type="radio" name="category" value = "5"id="sizen"> <label class="categorymei"for="sizen"><img src="images/scenery.svg"class="komoku-img"><span class="categorymei-moji">自然風景</span></label>
+                    <input type="radio" name="category" value = "6" class="radio-right"id="burari"> <label class="categorymei"for="burari"><img src="images/aimlessly.svg"class="komoku-img-burari"><span class="categorymei-moji">ぶらり</span></label>
                 </div>
             </div>
     </div>
@@ -159,5 +159,6 @@
 </form>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
+    <script src="./script/image-change.js"></script>
 </body>
 </html>

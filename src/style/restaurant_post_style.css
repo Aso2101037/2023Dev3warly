@@ -1,6 +1,6 @@
 
 html{
-     height: 120%;
+     height: 140%;
 }
 .flex{
     display: flex;
@@ -175,6 +175,8 @@ label>input{
     justify-content: center;
     align-items: center;
     margin: 2rem 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
  }
  
  .back{
