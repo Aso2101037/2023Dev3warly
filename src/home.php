@@ -49,9 +49,7 @@
     </div>
       <!-- 画像の部分↓↓ -->
         <div class="img-div">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBVQ91GGbQRoj3Qlv3-c-5SJrjX5UDbm_VHg&usqp=CAU" class="homeback-img" alt="">
-            <img src="https://beiz.jp/images_P/fireworks/fireworks_00160.jpg" class="homeback-img" alt="">
-            <img src="images/homeback.png" class="homeback-img">
+           <img src="./images/backgroundimg.png" alt="">
         </div>
         <div class="post-select">
             <div class="plan-div" onclick="location.href='./plan-post.php'">

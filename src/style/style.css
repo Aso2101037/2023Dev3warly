@@ -162,55 +162,13 @@
     position: relative;
     width: 100%;
     height: 300px;
+    margin: 0;
+    padding: 0;
 }
-.homeback-img{
-    opacity: 0;
-animation:change-img-anim 12s linear infinite;
-}
-.homeback-img:nth-child(1){
-    width:100%;
-    position: relative;
-    top:0;
-    left: 0;
-    height: 300px;
-    object-fit:fill;
-    object-position: 20% 0%;
-    animation:change-img-anim-first 12s infinite ;
-    animation-delay: 0s;
-}
-.homeback-img:nth-child(2){
+.img-div >img{
     width: 100%;
-    height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0 ;
-    object-fit: cover;
-    object-position: 30% 30%;
-    animation-delay: 4s;
-}
-.homeback-img:nth-child(3){
-    width:100%;
-    position:absolute;
-    top: 0;
-    left: 0;
-    height: 300px;
-    object-fit:fill;
-    object-position: 20% 0%;
-    animation-delay: 8s;
-}
-@keyframes change-img-anim-first {
-	0%{ opacity:1;}
-  30%{ opacity: 1;}
-  36%{ opacity: 0;}
-  45%{ opacity: 0;}
-  100%{ opacity: 0;}
-}
-@keyframes change-img-anim {
-  0%{ opacity: 0;}
-  30%{ opacity: 1;}
-  36%{ opacity: 1;}
-  45%{ opacity: 0;}
-  100%{ opacity: 0;}
+    height: 100%;
+    object-fit:cover;
 }
 /* ホームの大きい画像のやつ↑↑ */
 .post-select{
@@ -257,7 +215,7 @@ animation:change-img-anim 12s linear infinite;
 }
 /* 投稿の選択部分のやつ↑↑ */
 #card{
-    margin: 0;
+    margin:0;
     padding:0 10px;
     width: 100%;
 }
@@ -278,14 +236,14 @@ animation:change-img-anim 12s linear infinite;
 .img-top{
     width: 100%;
     height:20vh;
-    border-radius: 20px 20px 0 0;
     object-fit: cover;
     object-position:30%  0%;
+    border-radius: 10px 10px 0 0;
 }
 .text-body{
     height: 20vh;
     background-color:#F9F5EB;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 10px 10px;
 }
 /* cardのデザインのやつ ↑↑*/
 
