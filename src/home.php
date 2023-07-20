@@ -78,7 +78,7 @@
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
     <script>
-        // const RestranList = JSON.parse(''); 
+        const RestranList = JSON.parse('<?php echo $ ?>') 
     </script>
 </body>
 </html>
