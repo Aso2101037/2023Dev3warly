@@ -19,7 +19,7 @@
     $email = $_SESSION['email'];
     require_once "DBmanager.php";
     $dbm = new DBManager();
-    $dbm->tourist_spot($form_tourist_name,$form_address_text,$content,$toursit_start_time,$tourist_finish_time,$form_title,$form_tourist_comment,$category,0,$form_koukai);
+    $dbm->tourist_spot($form_tourist_name,$form_address_text,$content,$toursit_start_time,$tourist_finish_time,$form_title,$form_tourist_comment,$category,$form_koukai);
     // header("Location: home.php?message=spot_complete");
     header("Location: home.php");
         exit;
