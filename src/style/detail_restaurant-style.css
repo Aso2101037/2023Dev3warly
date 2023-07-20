@@ -48,7 +48,7 @@ a:active {
 }
 
 
-.title{
+.dtitle{
    width:55%;
    height: 3.0rem;
    font-size: 2.0em;
@@ -59,7 +59,7 @@ a:active {
 .image{
     margin-top: 2%;
     width: 90%;
-    height: 85vh;
+    height:85vh;
     background-color: #E4DCCF;
     margin-left: auto;
     margin-right: auto;
@@ -100,13 +100,32 @@ a:active {
 .hyoji-area-comment{
     width:80%;
     height: 10.0rem;
+    font-size: 1.5em;
+    background-color: #E4DCCF;
+    border-radius:10px;
+    margin-bottom: 2%;
+    white-space: normal;
+    line-break: normal;
+    word-wrap: normal;
+}
+
+.yosan-category{
+    display: flex;
+}
+.yosan{
+    width: 45%;
+}
+.category{
+    width: 45%;
+}
+.hyoji-area-yo-ca{
+    width:80%;
+    height: 3.0rem;
     font-size: 2.0em;
     background-color: #E4DCCF;
     text-align: center;
     border-radius:10px;
-    margin-bottom: 2%;
 }
-
 .btn{
     width: 100%;
     height: 10vh;
