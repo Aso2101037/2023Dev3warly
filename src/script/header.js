@@ -8,7 +8,7 @@
             <img src="./images/profile.svg" onclick="location.href='./profille.php'" alt="">
             <img src="./images/search.svg" @click="$emit('clicksearch')" alt="">
             <img src="./images/square-plus.svg" @click="$emit('clickpost')" alt="">
-            <a href="./login.php"><div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div></a>
+            <a href="./login.php"><div class="login-div"><img src="./images/login.svg" alt=""><span id="kari">Login</span></div></a>
         </div>
      </div>`
     });
