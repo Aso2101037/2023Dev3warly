@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="./style/by_style.css">
 </head>
 <body>
+<?php
+$login=false;
+            session_start();
+            if($_SESSION['email'] === null){
+                header("Location: login.php");
+                exit();
+            }else{
+                $login = true;
+            }
+?>
 <!-- header部分↓↓ -->
 <div id="app">
     <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
@@ -68,5 +78,14 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./script/header.js"></script>
 <script src="./script/card.js"></script>
+<script>
+        const Login_flag = "<?php echo $login; ?>";
+        var log = document.getElementById("kari");
+        if(Login_flag=="1"){
+                log.innerHTML="Logout";
+        }else{
+            log.innerHTML="LogIn";
+        }
+    </script>
 </body>
 </html>
