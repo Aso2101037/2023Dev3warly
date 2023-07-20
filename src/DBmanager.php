@@ -283,6 +283,11 @@ public function deleteToristSpotTbl($getid){
         echo "<script>alert('削除に失敗しました。');</script>";
     }
 }
+    public function getAllRestranPost(){
+        $pdo = $this->dbConnect()->prepare("SELECT * FROM restaurant_post");
+        $pdo->execute();
+        return  json_encode($pdo->fetchAll());
+    }
 }
 ?>
 

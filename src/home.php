@@ -1,3 +1,5 @@
+<?php require_once "./DBmanager.php"
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -66,7 +68,7 @@
     <!-- 旅行プランのカード↓↓ -->
     <div id="card">
         <h1 class="favorite-font" onclick="location.href='./pop_plan.php'">人気の旅行プラン</h1>
-        <card-component></card-component>
+        <div class="container-plan" id="plan"></div>
         <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
         <card-component></card-component>
         <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
@@ -76,41 +78,7 @@
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
     <script>
-        if(f==true){
-
-        }else{
-            Vue.component('header-component',{
-    template:
-    `<div class="header">
-       <a href="./home.php" style="textDecoration: none"><div class="title-logo">
-            <span class="title">トラスタ</span><img src="./images/plean-log.svg" class="logo" alt="飛行機のロゴ">
-        </div></a>
-        <div class="header-button">
-            <img src="./images/profile.svg" onclick="location.href='./profille.php'" alt="">
-            <img src="./images/search.svg" @click="$emit('clicksearch')" alt="">
-            <img src="./images/square-plus.svg" @click="$emit('clickpost')" alt="">
-            <a href="./login.php"><div class="login-div"><img src="./images/login.svg" alt=""><span>Login</span></div></a>
-        </div>
-     </div>`
-    });
-const app = new Vue({
-    el:'#app',
-    data(){
-        return{
-            isActive:false,
-            postActive:false
-        };
-    },
-    methods:{
-        ModalSeach(){
-            this.isActive = !this.isActive;
-        },
-        ModalPost(){
-            this.postActive = !this.postActive;
-        }
-    }
-})
-        }
+        const RestranList = JSON.parse('<?php echo $ ?>') 
     </script>
 </body>
 </html>
