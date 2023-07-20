@@ -8,21 +8,19 @@
         $form_koukai = 0;
     }
     $form_title = $_POST['form_title'];
-    $form_tourist_name = $_POST['form_restaurant_name'];
-    $form_comment_text = $_POST['form_comment_text'];
+    $form_tourist_name = $_POST['form_tourist_name'];
+    $form_tourist_comment = $_POST['form_tourist_comment'];
     $form_jusyo = $_POST['form_jusyo'];
     $form_address_text = $_POST['form_address_text'];
-    $restaurant_start_time = $_POST['timer-first0'];
-    $restaurant_finish_time = $_POST['timer-secend0'];
-    $category = $_POST['form_category'];
-    $yosan = $_POST['form_yosan_text'];
+    $toursit_start_time = $_POST['timer-first0'];
+    $tourist_finish_time = $_POST['timer-secend0'];
+    $category = $_POST['category'];
     session_start();
     $email = $_SESSION['email'];
     require_once "DBmanager.php";
     $dbm = new DBManager();
-    $dbm->restaurant_post($form_title,$content,$form_tourist_name,$form_comment_text,$form_address_text,$restaurant_start_time,$restaurant_finish_time,$yosan,$category,0,$form_koukai);
-    echo "DB保存完了<br>";
-    echo $form_title;
-    header("Location: home.php?message=spot_complete");
+    $dbm->tourist_spot($form_tourist_name,$form_address_text,$content,$toursit_start_time,$tourist_finish_time,$form_title,$form_tourist_comment,$category,0,$form_koukai);
+    // header("Location: home.php?message=spot_complete");
+    header("Location: home.php");
         exit;
 ?>
