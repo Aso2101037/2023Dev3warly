@@ -72,7 +72,7 @@
         <div class="center-profille" >
             <div class="profille-left">
                 <img src="./images/icon.svg" class="top-img" alt="トプ画">
-                <div class="like-list"><span>いいね一覧</span></div>
+                <div class="like-list"onclick="location.href='./liked-list.php'"><span>いいね一覧</span></div>
             </div>
             <div class="profille-right">
                 <div class="titles-name">
