@@ -7,6 +7,10 @@ if (isset($_POST['public'])) {
     $public = 0;
 }
 $title = $_POST['post-title'];
+require_once "DBmanager.php";
+$dbm = new DBManager();
+$dbm->plan_post($title,$public,1);
+$dbm->insert_post_plan($_SESSION['place-select']);
 
 // オプションのパラメータを処理
 $comments = array();
@@ -30,21 +34,18 @@ $endTimes[$j] = $_POST['timer-second'];
 $images[$j] = $_POST['img-select'];
 
 $comment = $comments[0];
-    $ken = $kens[0];
-    $place = $places[0];
-    $moveMean = $moveMeans[0];
-    $moveTime = $moveTimes[0];
-    $startTime = $startTimes[0];
-    $endTime = $endTimes[0];
-    $image = $images[0];
+$ken = $kens[0];
+$place = $places[0];
+$moveMean = $moveMeans[0];
+$moveTime = $moveTimes[0];
+$startTime = $startTimes[0];
+$endTime = $endTimes[0];
+$image = $images[0];
 
-require_once "DBmanager.php";
-$dbm = new DBManager();
-    var_dump($place, $startTime, $endTime, $moveMean, $moveTime, $comment, $image, $title, $public, 0, $ken);
-$dbm->plan_post($place, $startTime, $endTime, $moveMean, $moveTime, $comment, $image, $title, $public, 0, $ken);
+
 
 // パラメータの数を取得
-$paramCount = (count($_POST) / 8) - 10; // 'release'と'title'、1行目の８要素を除く
+$paramCount = (count($_POST) - 2) / 8-8;
 
 for ($i = 1; $i <= $paramCount; $i++) {
     // オプションのパラメータを取得
@@ -68,17 +69,9 @@ for ($c = 0; $c <= $paramCount; $c++) {
     $startTime = $startTimes[$c];
     $endTime = $endTimes[$c];
     $image = $images[$c];
-    echo $comment."　";
-    echo $ken."　";
-    echo $place."　";
-    echo $moveMean."　";
-    echo $moveTime."　";
-    echo $startTime."　";
-    echo $endTime."　";
-    if(isset($image)){
-        echo "画像あり";
-    }
-    $dbm->plan_post($place, $startTime, $endTime, $moveMean, $moveTime, $comment, $image, $title, $public, 0, $ken);
+    $dbm->plan_post_detail($place, $startTime, $endTime,1, $moveMean, $moveTime, $comment, $image);
 }
 unset($_SESSION['plan_post_id']);
+header("Location: home.php?message=spot_complete");
+exit;
 ?>

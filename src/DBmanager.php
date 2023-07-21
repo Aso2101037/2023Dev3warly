@@ -193,7 +193,8 @@ class DBManager
         $ps->bindValue(7, 0, PDO::PARAM_STR);
         $ps->execute();
     }
-    public function plan_post($plan_spot_name, $plan_spot_start_time, $plan_spot_finish_time, $plan_spot_public_transport, $plan_spot_travel_time, $plan_spot_comment, $plan_spot_image, $plan_title, $release, $plan_day, $prefecture_id)
+    public function plan_post($plan_title, $release, $plan_day)
+    //plan_postテーブルへの追加（１投稿につき１つの追加）
     {
         $pdo = $this->dbConnect();
         session_start();
@@ -203,7 +204,6 @@ class DBManager
         // plan_postテーブルへの追加
         $sql = "INSERT INTO plan_post(user_id, plan_title, `release`, plan_day) VALUES (?, ?, ?, ?)";
         $ps = $pdo->prepare($sql);
-        $plan_spot_address = 1;
         $ps->bindValue(1, $user_id, PDO::PARAM_STR);
         $ps->bindValue(2, $plan_title, PDO::PARAM_STR);
         $ps->bindValue(3, $release, PDO::PARAM_STR);
@@ -212,12 +212,15 @@ class DBManager
 
         // 直前のINSERT文で生成されたplan_post_idを取得
         $plan_post_id = $pdo->lastInsertId();
-
-
-
-        // postテーブルへの追加
+        $_SESSION['plan_post_id'] = $plan_post_id;
+    }
+    public function insert_post_plan($prefecture_id){
         $sql = "INSERT INTO post(posts_id, user_id, plan_post_id, tourist_spot_id, restaurant_post_id, prefecture_id, regions_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $pdo = $this->dbConnect();
         $ps = $pdo->prepare($sql);
+        session_start();
+        $user_id = $_SESSION['user_id'];
+        $plan_post_id = $_SESSION['plan_post_id'];
         $ps->bindValue(1, 0, PDO::PARAM_STR);
         $ps->bindValue(2, $user_id, PDO::PARAM_STR);
         $ps->bindValue(3, $plan_post_id, PDO::PARAM_STR);
@@ -226,22 +229,27 @@ class DBManager
         $ps->bindValue(6, $prefecture_id, PDO::PARAM_STR);
         $ps->bindValue(7, 0, PDO::PARAM_STR);
         $ps->execute();
-
-        // plan_post_detailテーブルへの追加
-        $sql = "INSERT INTO plan_post_detail(plan_post_id, plan_post_detail_id, user_id, plan_spot_name, plan_spot_start_time, plan_spot_finish_time, plan_spot_address, plan_spot_public_transport, plan_spot_travel_time, plan_spot_comment, plan_spot_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, $plan_post_id, PDO::PARAM_STR);
-        $ps->bindValue(2, 0, PDO::PARAM_STR);
-        $ps->bindValue(3, $user_id, PDO::PARAM_STR);
-        $ps->bindValue(4, $plan_spot_name, PDO::PARAM_STR);
-        $ps->bindValue(5, $plan_spot_start_time, PDO::PARAM_STR);
-        $ps->bindValue(6, $plan_spot_finish_time, PDO::PARAM_STR);
-        $ps->bindValue(7, $plan_spot_address, PDO::PARAM_STR);
-        $ps->bindValue(8, $plan_spot_public_transport, PDO::PARAM_STR);
-        $ps->bindValue(9, $plan_spot_travel_time, PDO::PARAM_STR);
-        $ps->bindValue(10, $plan_spot_comment, PDO::PARAM_STR);
-        $ps->bindValue(11, $plan_spot_image, PDO::PARAM_STR);
-        $ps->execute();
+    }
+    public function plan_post_detail($plan_spot_name,$plan_spot_start_time,$plan_spot_finish_time,$plan_spot_address,$plan_spot_public_transport,$plan_spot_travel_time,$plan_spot_comment,$plan_spot_image){
+                // plan_post_detailテーブルへの追加
+                $sql = "INSERT INTO plan_post_detail(plan_post_id, plan_post_detail_id, user_id, plan_spot_name, plan_spot_start_time, plan_spot_finish_time, plan_spot_address, plan_spot_public_transport, plan_spot_travel_time, plan_spot_comment, plan_spot_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $pdo = $this->dbConnect();
+                $ps = $pdo->prepare($sql);
+                session_start();
+                $user_id = $_SESSION['user_id'];
+                $plan_post_id = $_SESSION['plan_post_id'];
+                $ps->bindValue(1, $plan_post_id, PDO::PARAM_STR);
+                $ps->bindValue(2, 0, PDO::PARAM_STR);
+                $ps->bindValue(3, $user_id, PDO::PARAM_STR);
+                $ps->bindValue(4, $plan_spot_name, PDO::PARAM_STR);
+                $ps->bindValue(5, $plan_spot_start_time, PDO::PARAM_STR);
+                $ps->bindValue(6, $plan_spot_finish_time, PDO::PARAM_STR);
+                $ps->bindValue(7, $plan_spot_address, PDO::PARAM_STR);
+                $ps->bindValue(8, $plan_spot_public_transport, PDO::PARAM_STR);
+                $ps->bindValue(9, $plan_spot_travel_time, PDO::PARAM_STR);
+                $ps->bindValue(10, $plan_spot_comment, PDO::PARAM_STR);
+                $ps->bindValue(11, $plan_spot_image, PDO::PARAM_STR);
+                $ps->execute();
     }
 
     //ボタンを押下してデータベース内の投稿削除する
