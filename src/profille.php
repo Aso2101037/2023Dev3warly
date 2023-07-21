@@ -100,7 +100,7 @@
         <div class="center-post">
             <div class="new-title-delete">
                 <div class="new-post"><span>最新の投稿</span></div>
-                <div class="post-delete"><span>投稿削除</span></div>
+                <div class="post-delete"onclick="location.href='./post-delete.php'"><span>投稿削除</span></div>
             </div>
             <div class="new-posts">
                 <div class="post-card">
