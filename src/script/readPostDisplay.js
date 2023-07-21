@@ -1,43 +1,24 @@
-// // レストランの投稿カード生成
-// function createRestran(restran_id,restaurant_post_id,restaurant_title, restaurant_image, restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release){
-//     // div要素を作成
-// const containerPlan = document.createElement('div');
-// containerPlan.classList.add('container-plan');
-// containerPlan.id = 'plan';
-// // 4つのcard-ele要素を作成してcontainerPlanに追加
-// for (let i = 0; i < 4; i++) {
-//     const cardEle = document.createElement('div');
-//     cardEle.classList.add('card-ele');
-//     cardEle.style.width = '100%';
-
-//     const img = document.createElement('img');
-//     img.src = restaurant_image;
-//     img.classList.add('img-top');
-
-//     const textBody = document.createElement('div');
-//     textBody.classList.add('text-body');
-
-//     const paragraph = document.createElement('p');
-//     paragraph.classList.add('text');
-//     paragraph.textContent = 'テキストが入ります';
-
-//     // 要素を組み立てる
-//     textBody.appendChild(paragraph);
-//     cardEle.appendChild(img);
-//     cardEle.appendChild(textBody);
-//     containerPlan.appendChild(cardEle);
-// }
-// // containerPlanをid="post"の要素に追加
-// const postElement = document.getElementById('post');
-// postElement.appendChild(containerPlan);
-// }
-// レストランの投稿カード生成
-function createRestran(restaurant_image){
-    // div要素を作成
-
-    const parent = document.getElementById("restran");
-    const image = document.createElement("img");
-    image.setAttribute("src",'data:image/;base64,'+restaurant_image);
-    parent.appendChild(image);
-    console.log();
+// レストラン投稿のカードを生成する機能
+function createRestranCard(parent,restaurant_post_id,restaurant_title,restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release){
+    // id="restran"の親要素を取得
+    const containerPlan = document.getElementById(parent);
+    // console.log(parent);
+    // 新しい子要素1を作成
+    const newCard = document.createElement("div");
+    newCard.className = "card-ele";
+    newCard.style.width = "100%";
+    newCard.innerHTML = `
+        <img id=`+restaurant_post_id+` src="./images/homeback.png" class="img-top" alt="...">
+        <div class="text-body">
+            <h4 class="text">`+restaurant_title+`</h4>
+            <p>`+restaurant_comment+`</p>
+        </div>`;
+    // 新しい子要素を親要素に追加
+    parent.appendChild(newCard);
+}
+// レストラン投稿の画像を持ってくる機能
+function createRestranImg(restaurant_post_id,restaurant_image){
+    const img_id = document.getElementById(restaurant_post_id);
+   img_id.src ='data:image/jpg;base64,'+restaurant_image;
+    console.log(img_id);
 }

@@ -1,9 +1,10 @@
-<?php 
+<?php
 require_once "./DBmanager.php";
 $db = new DBManager;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,59 +14,60 @@ $db = new DBManager;
     <link rel="stylesheet" href="./style/style.css">
     <!-- 作成者：梶原 -->
 </head>
+
 <body>
     <!-- header部分↓↓ -->
     <div id="app">
-    <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
+        <header-component @clicksearch="ModalSeach" @clickpost="ModalPost"></header-component>
         <div :class="{'is-active': isActive }" class="modal-div">
             <div class="modal-body">
                 <div class="modal-plan" onclick="location.href='./search-plan.php'">
-                     <p>旅行プラン検索</p>
-                     <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
+                    <p>旅行プラン検索</p>
+                    <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
                 <div class="modal-kankou" onclick="location.href='./search-kankou.php'">
-                     <p>観光名所検索</p>
-                     <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
+                    <p>観光名所検索</p>
+                    <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
-                 <div class="modal-food" onclick="location.href='./search-food.php'">
-                     <p>飲食店検索</p>
+                <div class="modal-food" onclick="location.href='./search-food.php'">
+                    <p>飲食店検索</p>
                     <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
             </div>
         </div>
-             <!-- -投稿のモーダル -->
-             <div :class="{'post-active': postActive }" class="modal-div-post">
+        <!-- -投稿のモーダル -->
+        <div :class="{'post-active': postActive }" class="modal-div-post">
             <div class="modal-body-post">
                 <div class="modal-plan-post" onclick="location.href='./plan-post.php'">
-                     <p>旅行プラン投稿</p>
-                     <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
+                    <p>旅行プラン投稿</p>
+                    <img src="./images/post-plan.svg" style="width: 5rem; height: 8rem;">
                 </div>
                 <div class="modal-kankou-post" onclick="location.href='./tourist_spot_post.php'">
-                     <p>観光名所投稿</p>
-                     <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
+                    <p>観光名所投稿</p>
+                    <img src="./images/post-kankou.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
-                 <div class="modal-food-post" onclick="location.href='./restaurant_post.php'">
-                     <p>飲食店投稿</p>
+                <div class="modal-food-post" onclick="location.href='./restaurant_post.php'">
+                    <p>飲食店投稿</p>
                     <img src="./images/post-food.svg" style="width: 6rem; height: 7rem;" alt="">
                 </div>
             </div>
         </div>
     </div>
-      <!-- 画像の部分↓↓ -->
-        <div class="img-div">
-           <img src="./images/backgroundimg.png" alt="">
+    <!-- 画像の部分↓↓ -->
+    <div class="img-div">
+        <img src="./images/backgroundimg.png" alt="">
+    </div>
+    <div class="post-select">
+        <div class="plan-div" onclick="location.href='./plan-post.php'">
+            <img src="./images/post-plan.svg" alt=""><span class="post-font">旅行プランの投稿</span>
         </div>
-        <div class="post-select">
-            <div class="plan-div" onclick="location.href='./plan-post.php'">
-                <img src="./images/post-plan.svg"  alt=""><span class="post-font">旅行プランの投稿</span>
-            </div>
-            <div class="kankou-div" onclick="location.href='./tourist_spot_post.php'">
-                <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
-            </div>
-            <div class="food-div" onclick="location.href='./restaurant_post.php'">
-                <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
-            </div>
+        <div class="kankou-div" onclick="location.href='./tourist_spot_post.php'">
+            <img src="./images/post-kankou.svg" alt=""><span class="post-font">観光名所の投稿</span>
         </div>
+        <div class="food-div" onclick="location.href='./restaurant_post.php'">
+            <img src="./images/post-food.svg" alt=""><span class="post-font">飲食店の投稿</span>
+        </div>
+    </div>
     </div>
     <!-- 旅行プランのカード↓↓ -->
     <div id="card">
@@ -73,25 +75,38 @@ $db = new DBManager;
         <!-- <div class="container-plan" id="plan"></div> -->
         <card-component></card-component>
         <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
-        <div class="container-plan" id="restran"></div>
-        <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
         <card-component></card-component>
+        <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
+        <div class="container-plan" id="restran"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
     <script src="./script/readPostDisplay.js"></script>
     <script>
-        console.log('<?php echo $db->getAllRestranImg(); ?>');
-        const RestranImgList = JSON.parse('<?php echo $db->getAllRestranImg(); ?>'); 
         var restran_id = document.getElementById("restran");
-        let restranCnt = 0;
-        RestranImgList.forEach(element => {
-            if(restranCnt<4){
-                restranCnt++;
-                createRestran(element.restaurant_image);
+        // 画像以外のデーターをJSON形式で持ってくる
+        const RestranData = <?php echo $db->getAllRestranData(); ?>;
+        let restranCnt1 = 0;
+        RestranData.forEach(ele => {
+            if (restranCnt1 < 4) {
+                restranCnt1++;
+                createRestranCard(restran_id, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
+            }
+        });
+        // 画像をJSON形式で持ってくる
+        const RestranImgList = <?php echo $db->getAllRestranImg(); ?>;
+        let restranCnt2 = 0;
+        // console.log(RestranImgList);
+        Object.keys(RestranImgList).forEach(element => {
+            if (restranCnt2 < 4) {
+                restranCnt2++;
+                // console.log(RestranImgList[element]);
+                createRestranImg(RestranImgList[element].id, RestranImgList[element].img);
+                // createRestran関数の引数に直接画像データを渡す
             }
         });
     </script>
 </body>
+
 </html>

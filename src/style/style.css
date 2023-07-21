@@ -222,12 +222,19 @@
 .container-plan{
     display: flex;
     width: 100%;
-    height: 40vh;
+    height: 60vh;
+    margin: 5% 0;
 }
 .card-ele{
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     margin:0 10px;
+}
+.card-ele:hover{
+    transition: all 0.2s linear;
+    transform: translateY(-10px);
+    transform: translateX(-2px);
+    box-shadow: 4px 4px  10px #666;
 }
 .favorite-font{
     margin: 3rem 3rem;
@@ -235,7 +242,7 @@
 }
 .img-top{
     width: 100%;
-    height:20vh;
+    height:40vh;
     object-fit: cover;
     object-position:30%  0%;
     border-radius: 10px 10px 0 0;

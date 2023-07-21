@@ -318,14 +318,26 @@ class DBManager
         }
     }
     public function getAllRestranImg(){
-        $pdo = $this->dbConnect()->prepare("SELECT restaurant_image FROM restaurant_post");
+        $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id , restaurant_image FROM restaurant_post");
         $pdo->execute();
-
+    
         $images = array();
         while($row = $pdo->fetch(PDO::FETCH_ASSOC)){
-            $images[] = base64_encode($row['restaurant_image']);
+            // 画像データをbase64エンコードして配列に追加
+            // $images[$row['restaurant_post_id']][] = base64_encode($row['restaurant_image']);
+            array_push($images, [
+                "id" => $row['restaurant_post_id'],
+                "img" => base64_encode($row['restaurant_image'])
+            ]);
         }
-        $json_data = json_encode($images);
-        return $json_data;
+        // 配列をJSON形式にエンコードして返す
+        return json_encode($images);
+    }
+
+    public function getAllRestranData(){
+        $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id,restaurant_title,restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release FROM restaurant_post");
+        $pdo->execute();
+        $data = $pdo->fetchAll();
+       return  json_encode($data);
     }
 }
