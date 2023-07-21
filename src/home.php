@@ -1,4 +1,6 @@
-<?php require_once "./DBmanager.php"
+<?php 
+require_once "./DBmanager.php";
+$db = new DBManager;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -68,17 +70,28 @@
     <!-- 旅行プランのカード↓↓ -->
     <div id="card">
         <h1 class="favorite-font" onclick="location.href='./pop_plan.php'">人気の旅行プラン</h1>
-        <div class="container-plan" id="plan"></div>
-        <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
+        <!-- <div class="container-plan" id="plan"></div> -->
         <card-component></card-component>
+        <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
+        <div class="container-plan" id="restran"></div>
         <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
         <card-component></card-component>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
+    <script src="./script/readPostDisplay.js"></script>
     <script>
-        const RestranList = JSON.parse('<?php echo $ ?>') 
+        console.log('<?php echo $db->getAllRestranImg(); ?>');
+        const RestranImgList = JSON.parse('<?php echo $db->getAllRestranImg(); ?>'); 
+        var restran_id = document.getElementById("restran");
+        let restranCnt = 0;
+        RestranImgList.forEach(element => {
+            if(restranCnt<4){
+                restranCnt++;
+                createRestran(element.restaurant_image);
+            }
+        });
     </script>
 </body>
 </html>
