@@ -230,7 +230,7 @@ class DBManager
         $ps->bindValue(7, 0, PDO::PARAM_STR);
         $ps->execute();
     }
-    public function plan_post_detail($plan_spot_name,$plan_spot_start_time,$plan_spot_finish_time,$plan_spot_address,$plan_spot_public_transport,$plan_spot_travel_time,$plan_spot_comment,$plan_spot_image){
+    public function plan_post_detail($plan_spot_name, $plan_spot_start_time, $plan_spot_finish_time, $plan_spot_public_transport, $plan_spot_travel_time, $plan_spot_comment, $plan_spot_image){
                 // plan_post_detailテーブルへの追加
                 $sql = "INSERT INTO plan_post_detail(plan_post_id, plan_post_detail_id, user_id, plan_spot_name, plan_spot_start_time, plan_spot_finish_time, plan_spot_address, plan_spot_public_transport, plan_spot_travel_time, plan_spot_comment, plan_spot_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $pdo = $this->dbConnect();
@@ -238,6 +238,7 @@ class DBManager
                 session_start();
                 $user_id = $_SESSION['user_id'];
                 $plan_post_id = $_SESSION['plan_post_id'];
+                $plan_spot_address = 1;
                 $ps->bindValue(1, $plan_post_id, PDO::PARAM_STR);
                 $ps->bindValue(2, 0, PDO::PARAM_STR);
                 $ps->bindValue(3, $user_id, PDO::PARAM_STR);
