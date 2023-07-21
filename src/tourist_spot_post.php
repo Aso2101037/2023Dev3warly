@@ -11,8 +11,9 @@
 </head>
 <body>
 <?php
+session_start();
 $login=false;
-            session_start();
+            
             if($_SESSION['email'] === null){
                 header("Location: login.php");
                 exit();

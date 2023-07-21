@@ -18,12 +18,27 @@ class DBManager
     private function session_email_pass($email, $pass)
     {
         session_start();
-        // ハッシュ化したパスワードを引数として与えてください
-        $_SESSION['email'] = $email;
-        $_SESSION['pass'] = $pass;
+        $_SESSION['email'] = $email; // メールアドレスの保存（ハッシュ化されたパスワードの保存は不要）
+        
+        $pdo = $this->dbConnect();
+        $sql = "SELECT user_id FROM user WHERE user_mailaddress = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $email, PDO::PARAM_STR);
+        $ps->execute();
+    
+        $result = $ps->fetch(PDO::FETCH_ASSOC); // 結果を連想配列として取得
+    
+        if ($result['user_id'] != null) {
+            $_SESSION['user_id'] = $result['user_id']; // ユーザーIDをセッションに保存
+        } else {
+            header("Location: user-signup.php");
+            exit(); // 必ずexit()を呼び出して処理を終了させる
+        }
+    
         header("Location: home.php");
         exit();
     }
+    
 
     //新規追加(ユーザー)
     public function insertUserTbl($user_id, $password, $user_name, $user_mailaddress, $user_age, $gender_id, $user_title_id, $user_one_thing, $user_profile)
@@ -124,7 +139,7 @@ class DBManager
         if (!isset($_SESSION)) {
             session_start();
         }
-        $user_id = $_SESSION['email'];
+        $user_id = $_SESSION['user_id'];
         $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, 0, PDO::PARAM_STR);
@@ -166,7 +181,7 @@ class DBManager
         if (!isset($_SESSION)) {
             session_start();
         }
-        $user_id = $_SESSION['email'];
+        $user_id = $_SESSION['user_id'];
         $sql = "INSERT INTO post(posts_id,user_id,plan_post_id,tourist_spot_id,restaurant_post_id,prefecture_id,regions_id)VALUES(?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, 0, PDO::PARAM_STR);
@@ -182,28 +197,23 @@ class DBManager
     {
         $pdo = $this->dbConnect();
         session_start();
-        $user_id = $_SESSION['email'];
+        $user_id = $_SESSION['user_id'];
+        $plan_day = date("YmdHis");
 
         // plan_postテーブルへの追加
-        $sql = "INSERT INTO plan_post(plan_post_id, user_id, plan_title, 'release', plan_day) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO plan_post(user_id, plan_title, `release`, plan_day) VALUES (?, ?, ?, ?)";
         $ps = $pdo->prepare($sql);
         $plan_spot_address = 1;
-        if (array_key_exists('plan_post_id', $_SESSION)) {
-            $plan_post_id = $_SESSION['plan_post_id'];
-        } else {
-            $min = 1;
-            $max = 999999;
-            $plan_day = 1; // 今日の日付
-            
-            $plan_post_id = mt_rand($min, $max); // ランダムにplan_post_idを作成
-            $_SESSION['plan_post_id'] = $plan_post_id;
-        }
-        $ps->bindValue(1, $plan_post_id, PDO::PARAM_STR);
-        $ps->bindValue(2, $user_id, PDO::PARAM_STR);
-        $ps->bindValue(3, $plan_title, PDO::PARAM_STR);
-        $ps->bindValue(4, $release, PDO::PARAM_STR);
-        $ps->bindValue(5, $plan_day, PDO::PARAM_STR);
+        $ps->bindValue(1, $user_id, PDO::PARAM_STR);
+        $ps->bindValue(2, $plan_title, PDO::PARAM_STR);
+        $ps->bindValue(3, $release, PDO::PARAM_STR);
+        $ps->bindValue(4, $plan_day, PDO::PARAM_STR);
         $ps->execute();
+
+        // 直前のINSERT文で生成されたplan_post_idを取得
+        $plan_post_id = $pdo->lastInsertId();
+
+
 
         // postテーブルへの追加
         $sql = "INSERT INTO post(posts_id, user_id, plan_post_id, tourist_spot_id, restaurant_post_id, prefecture_id, regions_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
