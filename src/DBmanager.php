@@ -187,13 +187,14 @@ class DBManager
         // plan_postテーブルへの追加
         $sql = "INSERT INTO plan_post(plan_post_id, user_id, plan_title, 'release', plan_day) VALUES (?, ?, ?, ?, ?)";
         $ps = $pdo->prepare($sql);
+        $plan_spot_address = 1;
         if (array_key_exists('plan_post_id', $_SESSION)) {
             $plan_post_id = $_SESSION['plan_post_id'];
         } else {
             $min = 1;
             $max = 999999;
             $plan_day = 1; // 今日の日付
-            $plan_spot_address = 1;
+            
             $plan_post_id = mt_rand($min, $max); // ランダムにplan_post_idを作成
             $_SESSION['plan_post_id'] = $plan_post_id;
         }
