@@ -75,7 +75,7 @@ $db = new DBManager;
         <!-- <div class="container-plan" id="plan"></div> -->
         <card-component></card-component>
         <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
-        <card-component></card-component>
+        <div class="container-plan" id="tourist"></div>
         <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
         <div class="container-plan" id="restran"></div>
     </div>
@@ -85,8 +85,11 @@ $db = new DBManager;
     <script src="./script/readPostDisplay.js"></script>
     <script>
         var restran_id = document.getElementById("restran");
+        var tourist_id = document.getElementById("tourist");
+
         // 画像以外のデーターをJSON形式で持ってくる
         const RestranData = <?php echo $db->getAllRestranData(); ?>;
+        // console.log(RestranData);
         let restranCnt1 = 0;
         RestranData.forEach(ele => {
             if (restranCnt1 < 4) {
@@ -94,6 +97,17 @@ $db = new DBManager;
                 createRestranCard(restran_id, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
             }
         });
+        // 観光名所投稿の部分
+        const TouristData = <?php echo $db->getAllTouristData(); ?>;
+        // console.log(TouristData);
+        let TouristCnt1 = 0;
+        TouristData.forEach(ele => {
+            if (TouristCnt1 < 4) {
+                TouristCnt1++;
+                createTouristCard(tourist_id,ele.tourist_spot_id, ele.tourist_spot_name,ele.tourist_spot_address,ele.tourist_spot_start,ele.tourist_spot_end,ele.tourist_spot_title,ele.tourist_spot_comment,ele.category_id,ele.plan_spot_day,ele.tourist_release);
+            }
+        });
+        
         // 画像をJSON形式で持ってくる
         const RestranImgList = <?php echo $db->getAllRestranImg(); ?>;
         let restranCnt2 = 0;
@@ -103,6 +117,16 @@ $db = new DBManager;
                 restranCnt2++;
                 // console.log(RestranImgList[element]);
                 createRestranImg(RestranImgList[element].id, RestranImgList[element].img);
+                // createRestran関数の引数に直接画像データを渡す
+            }
+        });
+        const TouristImgList = <?php echo $db->getAllTouristImg(); ?>;
+        let TouristCnt2 = 0;
+        console.log(TouristImgList);
+        Object.keys(TouristImgList).forEach(element => {
+            if (TouristCnt2 < 4) {
+                TouristCnt2++;
+                createTouristImg(TouristImgList[element].id, TouristImgList[element].img);
                 // createRestran関数の引数に直接画像データを渡す
             }
         });

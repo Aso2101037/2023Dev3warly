@@ -334,10 +334,32 @@ class DBManager
         return json_encode($images);
     }
 
+    public function getAllTouristImg(){
+        $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id , tourist_spot_image FROM tourist_spot");
+        $pdo->execute();
+
+        $tourist_images = array();
+        while($row = $pdo->fetch(PDO::FETCH_ASSOC)){
+            array_push($tourist_images,[
+                "id" => $row['tourist_spot_id'],
+                "img"=>base64_encode($row['tourist_spot_image'])
+            ]);
+        }
+        return json_encode($tourist_images);
+    }
+
     public function getAllRestranData(){
         $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id,restaurant_title,restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release FROM restaurant_post");
         $pdo->execute();
         $data = $pdo->fetchAll();
        return  json_encode($data);
     }
+
+    public function getAllTouristData(){
+        $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id, tourist_spot_name,tourist_spot_address,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release FROM tourist_spot");
+        $pdo->execute();
+        $Touristdata = $pdo->fetchAll();
+        return json_encode($Touristdata);
+    }
 }
+
