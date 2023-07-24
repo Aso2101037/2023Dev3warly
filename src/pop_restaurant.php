@@ -69,15 +69,11 @@ $db = new DBManager;
             <li class="list">人気の飲食店</li>
         </ol>
     </nav>
-    <div id="card">
-
-    </div>
-
+    <div id="card"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/readPostDisplay.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
     <script>
         const RestranData = <?php echo $db->getAllRestranData(); ?>;
         const RestranCnt = <?php echo $db->getRestranCnt(); ?>;

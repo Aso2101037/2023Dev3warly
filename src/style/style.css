@@ -229,6 +229,11 @@
     width: 100%;
     height: 60vh;
     margin:0 10px;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow:scroll;
+    background-color:#F9F5EB;
 }
 .card-ele:hover{
     transition: all 0.2s linear;

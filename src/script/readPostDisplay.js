@@ -101,3 +101,4 @@ function createTouristImg(tourist_spot_id, tourist_spot_image) {
   tourist_img_id.src = "data:image/jpg;base64," + tourist_spot_image;
   console.log(tourist_img_id);
 }
+

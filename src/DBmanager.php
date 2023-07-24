@@ -323,6 +323,12 @@ class DBManager
         $count = $pdo->fetch(PDO::FETCH_ASSOC);
         return $count['total'];
     }
+    public function getTouristCnt(){
+        $pdo = $this->dbConnect()->prepare("SELECT COUNT(*) AS total FROM tourist_spot");
+        $pdo->execute();
+        $count = $pdo->fetch(PDO::FETCH_ASSOC);
+        return $count['total'];
+    }
     public function getAllRestranImg(){
         $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id , restaurant_image FROM restaurant_post ORDER BY restaurant_post_id DESC");
         $pdo->execute();
