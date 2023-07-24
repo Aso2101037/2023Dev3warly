@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/profille.css">
+    <link rel="stylesheet" href="./style/Profille.css">
     <!-- 作成者：梶原 -->
 </head>
 <body>
@@ -61,14 +61,14 @@ $login=false;
     <div class="detail-container">
         <div class="detail">
             <div class="detail-left">
-                <h3 class="detail-log"><span class="back-span" onclick="location.href='./stamp-region.php'">Trip Log</span> - 北海道・東北</h3>
+                <h3 class="detail-log"><span class="back-span" onclick="location.href='./stamp-region.php'">Trip Log</span><!-- - 北海道・東北--></h3>
                 <div class="detail-circle">
                     <div class="circle">
                         <p>次の<br>グレードまで<br><span>6</span>/<span>10</span></p>
                     </div>
                     <p class="circle-post">投稿数<span>~</span>件</p>
                 </div>
-                <div class="detail-liked"><p >いいね済み投稿<spna>~</spna>件</p></div>
+                <!-- <div class="detail-liked"><p >いいね済み投稿<spna>~</spna>件</p></div> -->
             </div>
             <div class="detail-right">
                 <img src="" class="detail-img" alt="">
@@ -80,7 +80,7 @@ $login=false;
         <div class="center-post">
             <div class="new-title-delete">
                 <div class="new-post"><span>最新の投稿</span></div>
-                <div class="post-delete"><span>投稿削除</span></div>
+                <div class="post-delete"onclick="location.href='./post-delete.php'"><span>投稿削除</span></div>
             </div>
             <div class="new-posts">
                 <div class="post-card">
@@ -112,6 +112,5 @@ $login=false;
             log.innerHTML="LogIn";
         }
     </script>
-<!-- テスト -->
 </body>
 </html>

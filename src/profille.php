@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/profille.css">
+    <link rel="stylesheet" href="./style/Profille.css">
     <!-- 作成者：梶原 -->
 </head>
 <body>
@@ -72,7 +72,7 @@
         <div class="center-profille" >
             <div class="profille-left">
                 <img src="./images/icon.svg" class="top-img" alt="トプ画">
-                <div class="like-list"onclick="location.href='./liked-list.php'"><span>いいね一覧</span></div>
+                <!-- <div class="like-list"onclick="location.href='./liked-list.php'"><span>いいね一覧</span></div> -->
             </div>
             <div class="profille-right">
                 <div class="titles-name">
@@ -86,13 +86,15 @@
     <!-- 旅行日記部分 -->
     <div class="trip-container">
         <div class="center-trip">
-            <div class="trip-left" onclick="location.href='./stamp-region.php'">
+            <div class="trip-left" onclick="location.href='./profille-detail.php'">
                 <img src="./images/trip-memory.svg" alt=""><span>旅行日記</span>
             </div>
+            <!--
             <div class="trip-right">
                 <div class="total-post"><span>総投稿数<span>～</span>件</span></div>
                 <div class="place-visite"><span>訪れた場所<span>～</span>カ所</span></div>
             </div>
+            -->
         </div>
     </div>
     <!-- 最近の投稿を表示する部分 -->
