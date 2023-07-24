@@ -1,3 +1,7 @@
+<?php
+require_once "./DBmanager.php";
+$db = new DBManager;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -66,20 +70,49 @@
         </ol>
     </nav>
     <div id="card">
-        <!-- <card-component class="card-co"></card-component>
-    <card-component class="card-co"></card-component>
-    <card-component class="card-co"></card-component> -->
+
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/readPostDisplay.js"></script>
     <script src="./script/header.js"></script>
     <script src="./script/card.js"></script>
     <script>
         const RestranData = <?php echo $db->getAllRestranData(); ?>;
-        let card_id = document.getElementById("card"); 
-        RestranData.forEach(ele => {
-            createAllCard(card_id, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
+        const RestranCnt = <?php echo $db->getRestranCnt(); ?>;
+        let Cnt = RestranCnt / 4;
+        let Nomuch =RestranCnt % 4;
+        var num = 1;
+        const card_id = document.getElementById("card");
+
+        // RestranDataを4つずつ分割する
+        const chunkSize = 4;
+        const chunkedRestranData = [];
+        for (let i = 0; i < RestranData.length - Nomuch; i += chunkSize) {
+            const chunk = RestranData.slice(i, i + chunkSize);
+            chunkedRestranData.push(chunk);
+        }
+
+        for (let i = 0; i < Cnt; i++) {
+            const ContainerDiv = document.createElement("div");
+            ContainerDiv.id = "container_" + [num];
+            ContainerDiv.className = "container-plan";
+            card_id.appendChild(ContainerDiv);
+            num++;
+
+            const currentData = chunkedRestranData[i];
+            currentData.forEach(ele => {
+                createAllCard(ContainerDiv, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
+            });
+        }
+        const RestranImgList = <?php echo $db->getAllRestranImg(); ?>;
+        let restranCnt2 = 0;
+        // console.log(RestranImgList);
+        Object.keys(RestranImgList).forEach(element => {
+                // console.log(RestranImgList[element]);
+                createRestranImg(RestranImgList[element].id, RestranImgList[element].img);
+                // createRestran関数の引数に直接画像データを渡す
         });
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");

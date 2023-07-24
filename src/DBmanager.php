@@ -317,6 +317,12 @@ class DBManager
             echo "<script>alert('削除に失敗しました。');</script>";
         }
     }
+    public function getRestranCnt(){
+        $pdo = $this->dbConnect()->prepare("SELECT COUNT(*) AS total FROM restaurant_post");
+        $pdo->execute();
+        $count = $pdo->fetch(PDO::FETCH_ASSOC);
+        return $count['total'];
+    }
     public function getAllRestranImg(){
         $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id , restaurant_image FROM restaurant_post ORDER BY restaurant_post_id DESC");
         $pdo->execute();
