@@ -112,5 +112,6 @@ $login=false;
             log.innerHTML="LogIn";
         }
     </script>
+<!-- テスト -->
 </body>
 </html>
