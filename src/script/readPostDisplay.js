@@ -34,30 +34,11 @@ function createRestranCard(
   // 新しい子要素を親要素に追加
   parent.appendChild(newCard);
 }
-// ホームの移植店投稿の画像を持ってくる機能
+// ホームの飲食店投稿の画像を持ってくる機能
 function createRestranImg(restaurant_post_id, restaurant_image) {
   const img_id = document.getElementById(restaurant_post_id);
   img_id.src = "data:image/jpg;base64," + restaurant_image;
   console.log(img_id);
-}
-// 飲食店投稿数に応じてカードを作成する関数
-function createAllCard(container_id, post_id, title, comment) {
-  const newCard = document.createElement("div");
-  newCard.className = "card-ele";
-  newCard.style.width = "100%";
-  newCard.innerHTML =
-  `<img id=`+post_id +` src="./images/homeback.png" class="img-top" alt="...">
-        <div class="text-body">
-            <h4 class="text">`+ title +`</h4>
-                <p>` + comment +`</p>
-        </div>`;
-  // 新しい子要素を親要素に追加
-  container_id.appendChild(newCard);
-}
-// 飲食店投稿数に応じてカードの画像を生成する関数
-function createSetImg(post_id,image){
-    const img_id = document.getElementById(post_id);
-  img_id.src = "data:image/jpg;base64," + image;
 }
 // 観光名所投稿のカードを生成する機能
 function createTouristCard(
@@ -101,4 +82,22 @@ function createTouristImg(tourist_spot_id, tourist_spot_image) {
   tourist_img_id.src = "data:image/jpg;base64," + tourist_spot_image;
   console.log(tourist_img_id);
 }
-
+// 飲食店・観光名所投稿数に応じてカードを作成する関数
+function createAllCard(container_id, post_id, title, comment) {
+    const newCard = document.createElement("div");
+    newCard.className = "card-ele";
+    newCard.style.width = "100%";
+    newCard.innerHTML =
+    `<img id=`+post_id +` src="./images/homeback.png" class="img-top" alt="...">
+          <div class="text-body">
+              <h4 class="text">`+ title +`</h4>
+                  <p>` + comment +`</p>
+          </div>`;
+    // 新しい子要素を親要素に追加
+    container_id.appendChild(newCard);
+  }
+  // 飲食店・観光名所投稿数に応じてカードの画像を生成する関数
+  function createSetImg(post_id,image){
+      const img_id = document.getElementById(post_id);
+    img_id.src = "data:image/jpg;base64," + image;
+  }
