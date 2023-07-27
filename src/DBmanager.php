@@ -404,5 +404,20 @@ class DBManager
         $Touristdata = $pdo->fetchAll();
         return json_encode($Touristdata);
     }
+    // 飲食店の詳細画面に情報を送る
+    public function getCardId($CardId){
+        $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id,restaurant_title,restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release FROM restaurant_post WHERE restaurant_post_id = $CardId ");
+        $pdo->execute();
+        $data = $pdo->fetch();
+        return json_encode($data);
+    }
+    public function getRestranImg($CardId){
+        $pdo = $this->dbConnect()->prepare("SELECT  restaurant_image FROM restaurant_post WHERE restaurant_post_id = $CardId ");
+        $pdo->execute();
+        $row = $pdo->fetch();
+        $images = base64_encode($row['restaurant_image']);
+        // 配列をJSON形式にエンコードして返す
+        return json_encode($images);
+    }
 }
 

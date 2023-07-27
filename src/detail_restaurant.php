@@ -1,3 +1,7 @@
+<?php
+require_once "./DBmanager.php";
+$db = new DBManager;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -67,9 +71,9 @@ $login=false;
     <div class="flex">
         <div class="left">
             <div class="title-img">
-                <div class="dtitle">タイトル</div>
+                <div class="dtitle" id="title">タイトル</div>
             </div>
-            <div class="image"><img src=""class="imgsize"></div>
+            <div class="image"><img src=""class="imgsize" id = <?php echo $_POST['CardId']?>></div>
         </div>
         <div class="right">
             
@@ -77,28 +81,28 @@ $login=false;
                 <img src="images/icon.svg"class="icon"><div class="nickname">〇〇〇〇〇</div>
             </div>
             <div class="komokumei">飲食店名</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area" id="Restaurant_name"></div>
 
             <div class="komokumei">コメント</div>
-            <div class="hyoji-area-comment"></div>
+            <div class="hyoji-area-comment" id="Restaurant_comment"></div>
 
             <div class="komokumei">住所</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area" id="Restaurant_address"></div>
 
             <div class="komokumei">電話番号</div>
             <div class="hyoji-area"></div>
 
             <div class="komokumei">営業時間</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area"><span id="first-time"></span><span>~</span><span id="last-time"></span></div>
 
             <div class="yosan-category">
                 <div class="yosan">
                     <div class="komokumei">予算</div>
-                    <div class="hyoji-area-yo-ca"></div>
+                    <div class="hyoji-area-yo-ca" id="Restaurant_budget"></div>
                 </div>
                 <div class="category">
                     <div class="komokumei">カテゴリー</div>
-                    <div class="hyoji-area-yo-ca"></div>
+                    <div class="hyoji-area-yo-ca" id="category"></div>
                 </div>
             </div>
         </div>
@@ -111,6 +115,28 @@ $login=false;
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script>
+        const CardDetail = <?php echo $db->getCardId($_POST['CardId']); ?>;
+        const ImgDetail = <?php echo $db->getRestranImg($_POST['CardId']); ?>;
+        const title =document.getElementById("title");
+        const Restaurant_name = document.getElementById("Restaurant_name");
+        const ImgId = document.getElementById(<?php echo $_POST['CardId']?>);
+        const Restaurant_comment =document.getElementById("Restaurant_comment");
+        const address =document.getElementById("Restaurant_address");
+        const first_time =document.getElementById("first-time");
+        const last_time =document.getElementById("last-time");
+        const Restaurant_budget =document.getElementById("Restaurant_budget");
+        // console.log(ImgDetail);
+
+        ImgId.src = "data:image/jpg;base64," + ImgDetail;
+        title.innerHTML = CardDetail.restaurant_title;
+        Restaurant_name.innerHTML = CardDetail.restaurant_name;
+        Restaurant_comment.innerHTML = CardDetail.restaurant_comment;
+        address.innerHTML = CardDetail.restaurant_address;
+        first_time.innerHTML = CardDetail.restaurant_start_time;
+        last_time.innerHTML = CardDetail.restaurant_finish_time;
+        Restaurant_budget.innerHTML = CardDetail.restaurant_budget;
+
+
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
