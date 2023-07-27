@@ -101,3 +101,14 @@ function createAllCard(container_id, post_id, title, comment) {
       const img_id = document.getElementById(post_id);
     img_id.src = "data:image/jpg;base64," + image;
   }
+  function createDetail(){
+
+  }
+
+  function createUserImg(user_profile){
+    // console.log(user_profile);
+    const img_id = document.getElementById("user_image");
+    // console.log(img_id);
+   img_id.src ='data:image/jpg;base64,'+user_profile;
+
+}
