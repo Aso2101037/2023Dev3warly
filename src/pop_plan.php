@@ -1,3 +1,8 @@
+<?php
+require_once "./DBmanager.php";
+$db = new DBManager;
+?>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -63,16 +68,45 @@ $login=false;
     <li class="list">人気の旅行プラン</li>
   </ol>
 </nav>
-<div id="card">
-    <card-component class="card-co"></card-component>
-    <card-component class="card-co"></card-component>
-    <card-component class="card-co"></card-component>
-</div>
+<div id="card"></div>
         
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./script/header.js"></script>
-<script src="./script/card.js"></script>
+<script src="./script/readPostDisplay.js"></script>
 <script>
+    const PlanData = <?php echo $db->getAllPlanData(); ?>;
+        const PlanCnt = <?php echo $db->getPlanCnt(); ?>;
+        let Cnt = PlanCnt / 4;
+        let Nomuch = PlanCnt % 4;
+        var num = 1;
+        const N = "";
+        const card_id = document.getElementById("card");
+
+        // RestranDataを4つずつ分割する
+        const chunkSize = 4;
+        const chunkedPlanData = [];
+        for (let i = 0; i < PlanData.length - Nomuch; i += chunkSize) {
+            const chunk = PlanData.slice(i, i + chunkSize);
+            chunkedPlanData.push(chunk);
+        }
+
+        for (let i = 0; i < Cnt; i++) {
+            const ContainerDiv = document.createElement("div");
+            ContainerDiv.id = "container_" + [num];
+            ContainerDiv.className = "container-plan";
+            card_id.appendChild(ContainerDiv);
+            num++;
+
+            const currentData = chunkedPlanData[i];
+            currentData.forEach(ele => {
+                createAllCard(ContainerDiv, ele.plan_post_id, ele.plan_title,N);
+            });
+        }
+    // 旅行プランの画像を取得
+    const PlanImgList = <?php echo $db->getPlanImg(); ?>;
+        Object.keys(PlanImgList).forEach(element => {
+                createPlanImg(PlanImgList[element].id, PlanImgList[element].img);
+        });
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){

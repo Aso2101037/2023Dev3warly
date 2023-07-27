@@ -317,6 +317,13 @@ class DBManager
             echo "<script>alert('削除に失敗しました。');</script>";
         }
     }
+    // 旅行プランの件数を取得
+    public function getPlanCnt(){
+        $pdo = $this->dbConnect()->prepare("SELECT COUNT(*) AS total FROM plan_post");
+        $pdo->execute();
+        $count = $pdo->fetch(PDO::FETCH_ASSOC);
+        return $count['total'];
+    }
     // 飲食店の件数を取得
     public function getRestranCnt(){
         $pdo = $this->dbConnect()->prepare("SELECT COUNT(*) AS total FROM restaurant_post");
