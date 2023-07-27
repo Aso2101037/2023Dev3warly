@@ -1,3 +1,23 @@
+// 旅行プランのカードを生成する機能
+function createPlanCard(parent, plan_id, title) {
+  // 新しい子要素1を作成
+  const newCard = document.createElement("div");
+  newCard.className = "card-ele";
+  newCard.style.width = "100%";
+  newCard.innerHTML =
+    `
+        <img id=` + plan_id +` src="./images/homeback.png" class="img-top" alt="...">
+        <div class="text-body">
+            <h4 class="text">` + title +`</h4>
+        </div>`;
+  // 新しい子要素を親要素に追加
+  parent.appendChild(newCard);
+}
+// 旅行プランの画像を取得する機能
+function createPlanImg(plan_id, plan_image) {
+  const plan_img_id = document.getElementById(plan_id);
+  plan_img_id.src = "data:image/jpg;base64,"+plan_image;
+}
 // ホームの飲食店投稿のカードを生成する機能
 function createRestranCard(
   parent,
@@ -38,7 +58,7 @@ function createRestranCard(
 function createRestranImg(restaurant_post_id, restaurant_image) {
   const img_id = document.getElementById(restaurant_post_id);
   img_id.src = "data:image/jpg;base64," + restaurant_image;
-  console.log(img_id);
+  // console.log(img_id);
 }
 // 観光名所投稿のカードを生成する機能
 function createTouristCard(
@@ -77,38 +97,39 @@ function createTouristCard(
 }
 //観光名所投稿の画像を持ってくる機能
 function createTouristImg(tourist_spot_id, tourist_spot_image) {
-  console.log(tourist_spot_id);
+  // console.log(tourist_spot_id);
   const tourist_img_id = document.getElementById(tourist_spot_id);
   tourist_img_id.src = "data:image/jpg;base64," + tourist_spot_image;
-  console.log(tourist_img_id);
+  // console.log(tourist_img_id);
 }
 // 飲食店・観光名所投稿数に応じてカードを作成する関数
 function createAllCard(container_id, post_id, title, comment) {
-    const newCard = document.createElement("div");
-    newCard.className = "card-ele";
-    newCard.style.width = "100%";
-    newCard.innerHTML =
-    `<img id=`+post_id +` src="./images/homeback.png" class="img-top" alt="...">
+  const newCard = document.createElement("div");
+  newCard.className = "card-ele";
+  newCard.style.width = "100%";
+  newCard.innerHTML =
+    `<img id=` +
+    post_id +
+    ` src="./images/homeback.png" class="img-top" alt="...">
           <div class="text-body">
-              <h4 class="text">`+ title +`</h4>
-                  <p>` + comment +`</p>
+              <h4 class="text">` +
+    title +
+    `</h4>
+                  <p>` +
+    comment +
+    `</p>
           </div>`;
-    // 新しい子要素を親要素に追加
-    container_id.appendChild(newCard);
-  }
-  // 飲食店・観光名所投稿数に応じてカードの画像を生成する関数
-  function createSetImg(post_id,image){
-      const img_id = document.getElementById(post_id);
-    img_id.src = "data:image/jpg;base64," + image;
-  }
-  function createDetail(){
-
-  }
-
-  function createUserImg(user_profile){
-    // console.log(user_profile);
-    const img_id = document.getElementById("user_image");
-    // console.log(img_id);
-   img_id.src ='data:image/jpg;base64,'+user_profile;
-
+  // 新しい子要素を親要素に追加
+  container_id.appendChild(newCard);
+}
+// 飲食店・観光名所投稿数に応じてカードの画像を生成する関数
+function createSetImg(post_id, image) {
+  const img_id = document.getElementById(post_id);
+  img_id.src = "data:image/jpg;base64," + image;
+}
+function createUserImg(user_profile) {
+  // console.log(user_profile);
+  const img_id = document.getElementById("user_image");
+  // console.log(img_id);
+  img_id.src = "data:image/jpg;base64," + user_profile;
 }

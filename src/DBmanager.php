@@ -331,6 +331,7 @@ class DBManager
         $count = $pdo->fetch(PDO::FETCH_ASSOC);
         return $count['total'];
     }
+    // 飲食店の画像を取得
     public function getAllRestranImg(){
         $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id , restaurant_image FROM restaurant_post ORDER BY restaurant_post_id DESC");
         $pdo->execute();
@@ -347,7 +348,21 @@ class DBManager
         // 配列をJSON形式にエンコードして返す
         return json_encode($images);
     }
+    // 旅行プランの画像を取得する
+    public function getPlanImg(){
+        $pdo = $this->dbConnect()->prepare("SELECT plan_post_id,plan_spot_image FROM `plan_post_detail` GROUP BY plan_post_id ORDER BY plan_post_id DESC");
+        $pdo->execute();
 
+        $plan_images = array();
+        while($row = $pdo->fetch(PDO::FETCH_ASSOC)){
+            array_push($plan_images,[
+                "id" => $row['plan_post_id'],
+                "img"=>base64_encode($row['plan_spot_image'])
+            ]);
+        }
+        return json_encode($plan_images);
+    }
+// 観光名所投稿から画像を取得する
     public function getAllTouristImg(){
         $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id , tourist_spot_image FROM tourist_spot ORDER BY tourist_spot_id DESC");
         $pdo->execute();
@@ -361,14 +376,21 @@ class DBManager
         }
         return json_encode($tourist_images);
     }
-
+    // 旅行プランIDとタイトルを取得
+    public function getAllPlanData(){
+        $pdo = $this->dbConnect()->prepare("SELECT plan_post_id,plan_title FROM `plan_post` ORDER BY plan_post_id DESC");
+        $pdo->execute();
+        $data = $pdo->fetchAll();
+       return  json_encode($data);
+    }
+// 飲食店の画像以外のデータを取得
     public function getAllRestranData(){
         $pdo = $this->dbConnect()->prepare("SELECT restaurant_post_id,restaurant_title,restaurant_name, restaurant_comment, restaurant_address, restaurant_start_time, restaurant_finish_time, restaurant_budget, restaurant_category_id, restaurant_date, restaurant_release FROM restaurant_post ORDER BY restaurant_post_id DESC");
         $pdo->execute();
         $data = $pdo->fetchAll();
        return  json_encode($data);
     }
-
+// 観光名所の画像以外のデータを取得
     public function getAllTouristData(){
         $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id, tourist_spot_name,tourist_spot_address,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release FROM tourist_spot ORDER BY tourist_spot_id DESC");
         $pdo->execute();
