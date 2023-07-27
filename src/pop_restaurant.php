@@ -99,7 +99,7 @@ $db = new DBManager;
 
             const currentData = chunkedRestranData[i];
             currentData.forEach(ele => {
-                createAllCard(ContainerDiv, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
+                createAllRestaurantCard(ContainerDiv, ele.restaurant_post_id, ele.restaurant_title, ele.restaurant_name, ele.restaurant_comment, ele.restaurant_address, ele.restaurant_start_time, ele.restaurant_finish_time, ele.restaurant_budget, ele.restaurant_category_id, ele.restaurant_date, ele.restaurant_release);
             });
         }
         const RestranImgList = <?php echo $db->getAllRestranImg(); ?>;

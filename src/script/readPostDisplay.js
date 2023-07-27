@@ -39,10 +39,12 @@ function createRestranCard(
   newCard.className = "card-ele";
   newCard.style.width = "100%";
   newCard.innerHTML =
-    `
-        <img id=` +
-    restaurant_post_id +
-    ` src="./images/homeback.png" class="img-top" alt="...">
+    ` <form action="detail_restaurant.php" method="post">
+        <input type="hidden" name="CardId" value=`+restaurant_post_id+`>
+          <button type="submit" style="border: none;width: 100%;">
+            <img id=` + restaurant_post_id +` src="./images/homeback.png" class="img-top" alt="...">
+          </button>
+      </form>
         <div class="text-body">
             <h4 class="text">` +
     restaurant_title +
@@ -74,24 +76,27 @@ function createTouristCard(
   plan_spot_day,
   tourist_release
 ) {
-  // console.log(parent);
   // 新しい子要素1を作成
   const newCard = document.createElement("div");
   newCard.className = "card-ele";
   newCard.style.width = "100%";
   newCard.innerHTML =
-    `
-        <img id=` +
-    tourist_spot_id +
-    ` src="./images/homeback.png" class="img-top" alt="...">
-        <div class="text-body">
-            <h4 class="text">` +
-    tourist_spot_title +
-    `</h4>
-            <p>` +
-    tourist_spot_comment +
-    `</p>
-        </div>`;
+  ` <form action="detail_tourist_spot.php" method="post">
+  <input type="hidden" name="CardId" value=` +tourist_spot_id +
+`>
+    <button type="submit" style="border: none;width: 100%;">
+      <img id=` + tourist_spot_id +
+` src="./images/homeback.png" class="img-top" alt="...">
+    </button>
+</form>
+  <div class="text-body">
+      <h4 class="text">` +
+      tourist_spot_title +
+`</h4>
+      <p>` +
+      tourist_spot_comment +
+`</p>
+  </div>`;
   // 新しい子要素を親要素に追加
   parent.appendChild(newCard);
 }
@@ -102,23 +107,59 @@ function createTouristImg(tourist_spot_id, tourist_spot_image) {
   tourist_img_id.src = "data:image/jpg;base64," + tourist_spot_image;
   // console.log(tourist_img_id);
 }
-// 飲食店・観光名所投稿数に応じてカードを作成する関数
-function createAllCard(container_id, post_id, title, comment) {
+//飲食店投稿数に応じてカードを作成する関数
+function createAllRestaurantCard(container_id, post_id, title, comment) {
   const newCard = document.createElement("div");
   newCard.className = "card-ele";
   newCard.style.width = "100%";
   newCard.innerHTML =
-    `<img id=` +
-    post_id +
-    ` src="./images/homeback.png" class="img-top" alt="...">
-          <div class="text-body">
-              <h4 class="text">` +
-    title +
-    `</h4>
-                  <p>` +
-    comment +
-    `</p>
-          </div>`;
+  ` <form action="detail_restaurant.php" method="post">
+  <input type="hidden" name="CardId" value=`+post_id +`>
+    <button type="submit" style="border: none;width: 100%;">
+      <img id=` +post_id +` src="./images/homeback.png" class="img-top" alt="...">
+    </button>
+</form>
+  <div class="text-body">
+      <h4 class="text">` +title +`</h4>
+      <p>` +comment +`</p>
+  </div>`;
+  // 新しい子要素を親要素に追加
+  container_id.appendChild(newCard);
+}
+// 観光名所投稿数に応じてカードを作成する関数
+function createAllTouristCard(container_id, post_id, title, comment) {
+  const newCard = document.createElement("div");
+  newCard.className = "card-ele";
+  newCard.style.width = "100%";
+  newCard.innerHTML =
+  ` <form action="detail_restaurant.php" method="post">
+  <input type="hidden" name="CardId" value=`+post_id +`>
+    <button type="submit" style="border: none;width: 100%;">
+      <img id=` +post_id +` src="./images/homeback.png" class="img-top" alt="...">
+    </button>
+</form>
+  <div class="text-body">
+      <h4 class="text">`+ title +`</h4>
+      <p>` +comment +`</p>
+  </div>`;
+  // 新しい子要素を親要素に追加
+  container_id.appendChild(newCard);
+}
+function createAllPlanCard(container_id, post_id, title, comment) {
+  const newCard = document.createElement("div");
+  newCard.className = "card-ele";
+  newCard.style.width = "100%";
+  newCard.innerHTML =
+  ` <form action="plan-detail.php" method="post">
+  <input type="hidden" name="CardId" value=`+post_id +`>
+    <button type="submit" style="border: none;width: 100%;">
+      <img id=` +post_id +` src="./images/homeback.png" class="img-top" alt="...">
+    </button>
+</form>
+  <div class="text-body">
+      <h4 class="text">`+ title +`</h4>
+      <p>` +comment +`</p>
+  </div>`;
   // 新しい子要素を親要素に追加
   container_id.appendChild(newCard);
 }

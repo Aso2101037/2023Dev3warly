@@ -99,7 +99,7 @@ $login=false;
 
             const currentData = chunkedPlanData[i];
             currentData.forEach(ele => {
-                createAllCard(ContainerDiv, ele.plan_post_id, ele.plan_title,N);
+                createAllPlanCard(ContainerDiv, ele.plan_post_id, ele.plan_title,N);
             });
         }
     // 旅行プランの画像を取得

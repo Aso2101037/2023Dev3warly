@@ -99,7 +99,7 @@ $db = new DBManager;
 
             const currentData = chunkedTouristData[i];
             currentData.forEach(ele => {
-                createAllCard(ContainerDiv, ele.tourist_spot_id, ele.tourist_spot_name,ele.tourist_spot_address,ele.tourist_spot_start,ele.tourist_spot_end,ele.tourist_spot_title,ele.tourist_spot_comment,ele.category_id,ele.plan_spot_day,ele.tourist_release);
+                createAllTouristCard(ContainerDiv, ele.tourist_spot_id, ele.tourist_spot_name,ele.tourist_spot_address,ele.tourist_spot_start,ele.tourist_spot_end,ele.tourist_spot_title,ele.tourist_spot_comment,ele.category_id,ele.plan_spot_day,ele.tourist_release);
             });
         }
         const TouristImgList = <?php echo $db->getAllTouristImg(); ?>;
