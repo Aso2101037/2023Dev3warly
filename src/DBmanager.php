@@ -420,9 +420,19 @@ class DBManager
         return json_encode($images);
     }
     // 観光名所の詳細画面に情報を送る
-    public function getTouristCardId(){
-        $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id, tourist_spot_name,tourist_spot_address,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release FROM tourist_spot WHERE tourist_spot_id = ");
-
+    public function getTouristCardId($CardId){
+        $pdo = $this->dbConnect()->prepare("SELECT tourist_spot_id, tourist_spot_name,tourist_spot_address,tourist_spot_start,tourist_spot_end,tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release FROM tourist_spot WHERE tourist_spot_id = $CardId");
+        $pdo->execute();
+        $data = $pdo->fetch();
+        return json_encode($data);
+    }
+    public function getTouristImg($CardId){
+        $pdo = $this->dbConnect()->prepare("SELECT  tourist_spot_image FROM tourist_spot WHERE tourist_spot_id = $CardId");
+        $pdo->execute();
+        $row = $pdo->fetch();
+        $images = base64_encode($row['tourist_spot_image']);
+        // 配列をJSON形式にエンコードして返す
+        return json_encode($images);
     }
 }
 

@@ -1,3 +1,7 @@
+<?php
+require_once "./DBmanager.php";
+$db = new DBManager;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -67,9 +71,9 @@ $login=false;
     <div class="flex">
         <div class="left">
             <div class="title-img">
-                <div class="dtitle">タイトル</div>
+                <div class="dtitle" id="title">タイトル</div>
             </div>
-            <div class="image"><img src=""class="imgsize"></div>
+            <div class="image"><img src=""class="imgsize" id=<?php echo $_POST['CardId']?>></div>
         </div>
         <div class="right">
             <div class="icon-nickname">
@@ -77,19 +81,19 @@ $login=false;
             </div>
 
             <div class="komokumei">観光名所名</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area" id="name"></div>
 
             <div class="komokumei">コメント</div>
-            <div class="hyoji-area-comment"></div>
+            <div class="hyoji-area-comment" id="comment"></div>
 
             <div class="komokumei">住所</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area" id="address"></div>
 
             <div class="komokumei">電話番号</div>
             <div class="hyoji-area"></div>
 
             <div class="komokumei">営業時間</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area" ><span id="first-time"></span>~<span id="last-time"></span></div>
         </div>
     </div>
     
@@ -101,6 +105,27 @@ $login=false;
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
     <script>
+        const CardDetail = <?php echo $db->getTouristCardId($_POST['CardId']); ?>;
+        const ImgDetail = <?php echo $db->getTouristImg($_POST['CardId']); ?>;
+        const title =document.getElementById("title");
+        const Imgid =document.getElementById(<?php echo $_POST['CardId']?>);
+        const name =document.getElementById("name");
+        const comment =document.getElementById("comment");
+        const address =document.getElementById("address");
+        const first =document.getElementById("first-time");
+        const last =document.getElementById("last-time");
+        console.log(); 
+        // tourist_spot_name,tourist_spot_address,tourist_spot_start,tourist_spot_end,
+        // tourist_spot_title,tourist_spot_comment,category_id,plan_spot_day,tourist_release
+        title.innerHTML =CardDetail.tourist_spot_title;
+        Imgid.src = "data:image/jpg;base64," + ImgDetail;
+        name.innerHTML = CardDetail.tourist_spot_name;
+        comment.innerHTML = CardDetail.tourist_spot_comment;
+        address.innerHTML =CardDetail.tourist_spot_address;
+        first.innerHTML =CardDetail.tourist_spot_start;
+        last.innerHTML =CardDetail.tourist_spot_end;
+
+
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
