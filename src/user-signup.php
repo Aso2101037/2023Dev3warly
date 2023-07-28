@@ -20,15 +20,15 @@
 
 <body>
 <?php
-$login=false;
-            session_start();
-            if($_SESSION['email'] === null){
-                header("Location: login.php");
-                exit();
-            }else{
-                $login = true;
-            }
-?>
+// $login=false;
+//             session_start();
+//             if($_SESSION['email'] === null){
+//                 header("Location: login.php");
+//                 exit();
+//             }else{
+//                 $login = true;
+//             }
+// ?>
 <!-- ・・・・・・ -->
 <!-- header部分↓↓ -->
 <div id="app">
@@ -310,13 +310,13 @@ $login=false;
     <script src="./script/header.js"></script>
     <script src="./script/image-change.js"></script>
     <script>
-        const Login_flag = "<?php echo $login; ?>";
-        var log = document.getElementById("kari");
-        if(Login_flag=="1"){
-                log.innerHTML="Logout";
-        }else{
-            log.innerHTML="LogIn";
-        }
+        // const Login_flag = "<?php echo $login; ?>";
+        // var log = document.getElementById("kari");
+        // if(Login_flag=="1"){
+        //         log.innerHTML="Logout";
+        // }else{
+        //     log.innerHTML="LogIn";
+        // }
     </script>
 </body>
 </html>
