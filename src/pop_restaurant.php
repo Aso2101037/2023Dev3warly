@@ -115,9 +115,9 @@ $db = new DBManager;
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
-                log.innerHTML="<a href='logout.php'>Logout</a>";
+                log.innerHTML="<a href='logout.php' class='href-color'>Logout</a>";
         }else{
-            log.innerHTML="<a href='login.php'>Login</a>";
+            log.innerHTML="<a href='login.php' class='href-color'>Login</a>";
         }
     </script>
 </body>

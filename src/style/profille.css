@@ -658,3 +658,7 @@
     border: 2px dashed black;
 }
 /* スタンプラリー都道府県別詳細画面 */
+.href-color{
+    text-decoration: none;
+    color: #002B5B;
+}
