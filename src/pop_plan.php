@@ -107,12 +107,14 @@ $login=false;
         Object.keys(PlanImgList).forEach(element => {
                 createPlanImg(PlanImgList[element].id, PlanImgList[element].img);
         });
+    </script>
+        <script>
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
-                log.innerHTML="Logout";
+                log.innerHTML="<a href='logout.php'>Logout</a>";
         }else{
-            log.innerHTML="LogIn";
+            log.innerHTML="<a href='login.php'>Login</a>";
         }
     </script>
 </body>

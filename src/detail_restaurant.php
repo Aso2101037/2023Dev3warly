@@ -137,12 +137,14 @@ $login=false;
         Restaurant_budget.innerHTML = CardDetail.restaurant_budget;
 
 
+    </script>
+        <script>
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
-                log.innerHTML="Logout";
+                log.innerHTML="<a href='logout.php'>Logout</a>";
         }else{
-            log.innerHTML="LogIn";
+            log.innerHTML="<a href='login.php'>Login</a>";
         }
     </script>
 </body>

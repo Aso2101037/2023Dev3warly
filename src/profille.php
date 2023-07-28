@@ -129,17 +129,19 @@
     <script src="./script/header.js"></script>
     <script src="./script/readPostDisplay.js"></script>
     <script>
-        const Login_flag = "<?php echo $login; ?>";
-        var log = document.getElementById("kari");
-        if (Login_flag == "1") {
-            log.innerHTML = "Logout";
-        } else {
-            log.innerHTML = "LogIn";
-        }
 
         const UserImage = "<?php echo base64_encode($getdata['user_profile']) ?>";
             // console.log(UserImage);
             createUserImg(UserImage);
+    </script>
+        <script>
+        const Login_flag = "<?php echo $login; ?>";
+        var log = document.getElementById("kari");
+        if(Login_flag=="1"){
+                log.innerHTML="<a href='logout.php'>Logout</a>";
+        }else{
+            log.innerHTML="<a href='login.php'>Login</a>";
+        }
     </script>
 </body>
 

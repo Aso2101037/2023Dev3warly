@@ -109,12 +109,14 @@ $db = new DBManager;
             createSetImg(TouristImgList[element].id, TouristImgList[element].img);
                 // createRestran関数の引数に直接画像データを渡す
         });
+    </script>
+        <script>
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
-        if (Login_flag == "1") {
-            log.innerHTML = "Logout";
-        } else {
-            log.innerHTML = "LogIn";
+        if(Login_flag=="1"){
+                log.innerHTML="<a href='logout.php'>Logout</a>";
+        }else{
+            log.innerHTML="<a href='login.php'>Login</a>";
         }
     </script>
 </body>
