@@ -21,7 +21,7 @@
     $email = $_SESSION['email'];
     require_once "DBmanager.php";
     $dbm = new DBManager();
-    $dbm->restaurant_post($form_title,$content,$form_tourist_name,$form_comment_text,$form_address_text,$restaurant_start_time,$restaurant_finish_time,$yosan,$category,0,$form_koukai);
+    $dbm->restaurant_post($form_title,$content,$form_tourist_name,$form_comment_text,$form_address_text,$restaurant_start_time,$restaurant_finish_time,$yosan,$category,$category,$form_koukai);
     header("Location: home.php?message=spot_complete");
     exit;
 ?>
