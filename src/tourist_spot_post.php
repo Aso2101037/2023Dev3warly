@@ -168,9 +168,9 @@ $login=false;
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
-                log.innerHTML="Logout";
+                log.innerHTML="<a href='logout.php' class='href-color'>Logout</a>";
         }else{
-            log.innerHTML="LogIn";
+            log.innerHTML="<a href='login.php' class='href-color'>Login</a>";
         }
     </script>
 </body>

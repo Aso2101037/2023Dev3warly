@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/Profille.css">
+    <link rel="stylesheet" href="./style/profille.css">
     <!-- 作成者：梶原 -->
 </head>
 
@@ -138,9 +138,9 @@
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
         if(Login_flag=="1"){
-                log.innerHTML="<a href='logout.php'>Logout</a>";
+                log.innerHTML="<a href='logout.php' class='href-color'>Logout</a>";
         }else{
-            log.innerHTML="<a href='login.php'>Login</a>";
+            log.innerHTML="<a href='login.php' class='href-color'>Login</a>";
         }
     </script>
 </body>
