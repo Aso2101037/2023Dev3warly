@@ -7,7 +7,7 @@
     <title>トラスタ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/detail_tourist_spot_style.css">
+    <link rel="stylesheet" href="./style/detail_tourist_spot-style.css">
 </head>
 <body>
 <?php
@@ -83,10 +83,8 @@ $login=false;
             <div class="hyoji-area-comment"></div>
 
             <div class="komokumei">住所</div>
-            <div class="hyoji-area"></div>
+            <div class="hyoji-area-address"></div>
 
-            <div class="komokumei">電話番号</div>
-            <div class="hyoji-area"></div>
 
             <div class="komokumei">営業時間</div>
             <div class="hyoji-area"></div>
@@ -94,7 +92,7 @@ $login=false;
     </div>
     
     <div class="btn">
-        <button class="good" type="button" ><img src="images/good.svg" class="good-img">いいね</button>
+        <!-- <button class="good" type="button" ><img src="images/good.svg" class="good-img">いいね</button> -->
         <button class="back" type="button"onclick="history.back(-1);">＜戻る</button>
     </div>
     

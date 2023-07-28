@@ -59,7 +59,7 @@ a:active {
 .image{
     margin-top: 2%;
     width: 90%;
-    height: 85vh;
+    height:85vh;
     background-color: #E4DCCF;
     margin-left: auto;
     margin-right: auto;
@@ -100,23 +100,51 @@ a:active {
 .hyoji-area-comment{
     width:80%;
     height: 10.0rem;
+    font-size: 2rem;
+    white-space: nowrap; /* テキストを折り返さずに表示 */
+  overflow: hidden; 
+    background-color: #E4DCCF;
+    border-radius:10px;
+    margin-bottom: 2%;
+    white-space: normal;
+    line-break: normal;
+    word-wrap: normal;
+}
+.hyoji-area-address{
+    width:80%;
+    height: 10.0rem;
+    font-size: 1.5rem; 
+    background-color: #E4DCCF;
+    border-radius:10px;
+    margin-bottom: 2%;
+} 
+.yosan-category{
+    display: flex;
+}
+.yosan{
+    width: 45%;
+}
+.category{
+    width: 45%;
+}
+.hyoji-area-yo-ca{
+    width:80%;
+    height: 3.0rem;
     font-size: 2.0em;
     background-color: #E4DCCF;
     text-align: center;
     border-radius:10px;
-    margin-bottom: 2%;
 }
-
 .btn{
+    /* display: flex; */
     width: 100%;
     height: 10vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem 0;
  }
  
- .good{
+ /* .good{
      width:13vw;
      height: 10vh;
      background: #E4DCCF;
@@ -129,9 +157,9 @@ a:active {
     height: 50%;
     margin-bottom: 5%;
     margin-right: 2%;
- }
+ } */
  .back{
-     margin-left: 15%;
+     /* margin-left: 15%; */
      width: 13vw;
      height: 10vh;
      background: #E4DCCF;
