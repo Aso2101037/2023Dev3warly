@@ -49,8 +49,8 @@
                 <img src="images/icon.svg" class="icon">
                 <h2>login</h2>
                 <div class="error">メールアドレスまたはパスワードが間違っています。</div>
-                <button class="sign-up" type="submit" onclick="location.href='./user-signup.php'">sign-up</button>
-    </div>
+                <a href="user-signup.php"><button class="sign-up" type="submit">sign-up</button></a>
+       </div>
 
     <form  class = "form-signin" action="login_kakunin.php" method="post">
         <div class="inputEmail">

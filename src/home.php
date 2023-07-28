@@ -81,8 +81,7 @@ $login=false;
     <!-- 旅行プランのカード↓↓ -->
     <div id="card">
         <h1 class="favorite-font" onclick="location.href='./pop_plan.php'">人気の旅行プラン</h1>
-        <!-- <div class="container-plan" id="plan"></div> -->
-        <card-component></card-component>
+        <div class="container-plan" id="plan"></div>
         <h1 class="favorite-font" onclick="location.href='./pop_tourist_spot.php'">人気の観光名所</h1>
         <div class="container-plan" id="tourist"></div>
         <h1 class="favorite-font" onclick="location.href='./pop_restaurant.php'">人気の飲食店</h1>
@@ -93,8 +92,19 @@ $login=false;
     <script src="./script/card.js"></script>
     <script src="./script/readPostDisplay.js"></script>
     <script>
+        const plan_id = document.getElementById("plan");
         var restran_id = document.getElementById("restran");
         var tourist_id = document.getElementById("tourist");
+            // 旅行プラン投稿の部分
+            const PlangetData = <?php echo $db->getAllPlanData(); ?>;
+        console.log(PlangetData);
+        let PlanCnt1 = 0;
+        PlangetData.forEach(ele => {
+            if(PlanCnt1 < 4){
+                PlanCnt1++;
+                createPlanCard(plan_id,ele.plan_post_id,ele.plan_title);
+            }
+        });
 
         // 画像以外のデーターをJSON形式で持ってくる
         const RestranData = <?php echo $db->getAllRestranData(); ?>;
@@ -114,6 +124,16 @@ $login=false;
             if (TouristCnt1 < 4) {
                 TouristCnt1++;
                 createTouristCard(tourist_id,ele.tourist_spot_id, ele.tourist_spot_name,ele.tourist_spot_address,ele.tourist_spot_start,ele.tourist_spot_end,ele.tourist_spot_title,ele.tourist_spot_comment,ele.category_id,ele.plan_spot_day,ele.tourist_release);
+            }
+        });
+              // 旅行プランの画像を取得
+              const PlanImgList = <?php echo $db->getPlanImg(); ?>;
+        let PlanCnt2 = 0;
+        Object.keys(PlanImgList).forEach(element => {
+            if (PlanCnt2 < 4) {
+                PlanCnt2++;
+                createPlanImg(PlanImgList[element].id, PlanImgList[element].img);
+                console.log(PlanImgList[element].img);
             }
         });
         

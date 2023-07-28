@@ -169,8 +169,6 @@ function createSetImg(post_id, image) {
   img_id.src = "data:image/jpg;base64," + image;
 }
 function createUserImg(user_profile) {
-  // console.log(user_profile);
   const img_id = document.getElementById("user_image");
-  // console.log(img_id);
   img_id.src = "data:image/jpg;base64," + user_profile;
 }
