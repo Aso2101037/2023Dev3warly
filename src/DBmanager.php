@@ -155,7 +155,7 @@ class DBManager
     public function restaurant_post($restaurant_title, $restaurant_image, $restaurant_name, $restaurant_comment, $restaurant_address, $restaurant_start_time, $restaurant_finish_time, $restaurant_budget, $restaurant_category_id, $restaurant_date, $restaurant_release)
     {
         $pdo = $this->dbConnect();
-        $sql = "INSERT INTO restaurant_post(restaurant_post_id,restaurant_title,restaurant_image,restaurant_name,restaurant_comment,restaurant_address,restaurant_start_time,restaurant_finish_time,restaurant_budget,category_id,restaurant_date,restaurant_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO restaurant_post(restaurant_post_id,restaurant_title,restaurant_image,restaurant_name,restaurant_comment,restaurant_address,restaurant_start_time,restaurant_finish_time,restaurant_budget,restaurant_category_id,restaurant_date,restaurant_release)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         $ps = $pdo->prepare($sql);
         $restaurant_date = date("YmdHis");
         $ps->bindValue(1, 0, PDO::PARAM_STR);
