@@ -132,7 +132,7 @@ function createAllTouristCard(container_id, post_id, title, comment) {
   newCard.className = "card-ele";
   newCard.style.width = "100%";
   newCard.innerHTML =
-  ` <form action="detail_restaurant.php" method="post">
+  ` <form action="detail_tourist_spot.php" method="post">
   <input type="hidden" name="CardId" value=`+post_id +`>
     <button type="submit" style="border: none;width: 100%;">
       <img id=` +post_id +` src="./images/homeback.png" class="img-top" alt="...">
