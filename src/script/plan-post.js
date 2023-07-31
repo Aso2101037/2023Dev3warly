@@ -23,7 +23,7 @@ var PostComponent = Vue.component('post-component',{
             </div>
             <div class="file-div">
                 <img src="./images/file.svg" class="logo-img" alt="">
-                <label  for="up-load" class="img-select">写真を選択<input type="file" onchange="imagePranChange()" class="img-file" accept="image/*" name="img-select" id="up-load" required="required"></label>
+                <label  for="up-load" class="img-select">写真を選択<input type="file" onchange="imageChange()" class="img-file" accept="image/*" name="img-select" id="up-load" required="required"></label>
             </div>
         </div>
         <div class="right-container">

@@ -79,7 +79,7 @@ $login=false;
     <script src="./script/header.js"></script>
     <script src="./script/script.js"></script>
     <script src="./script/plan-post.js"></script>
-    <script src="./script/image-change.js"></script>
+    <!-- <script src="./script/image-change.js"></script> -->
     <script>
         const Login_flag = "<?php echo $login; ?>";
         var log = document.getElementById("kari");
