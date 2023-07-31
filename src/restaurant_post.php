@@ -145,12 +145,12 @@ $login=false;
                 <div class="kategory">
                 <div class="komokumei">カテゴリー</div>
                     <select class="select-kategory" name = "form_category">
-                        <option value="7"selected>朝食</option>
-                        <option value="8">昼食</option>
-                        <option value="9">夕食</option>
-                        <option value="10">軽食</option>
-                        <option value="11">名物</option>
-                        <option value="12">地元飯</option>
+                        <option value="朝食"selected>朝食</option>
+                        <option value="昼食">昼食</option>
+                        <option value="夕食">夕食</option>
+                        <option value="軽食">軽食</option>
+                        <option value="名物">名物</option>
+                        <option value="地元飯">地元飯</option>
                     </select>
                 </div>
             </div>
