@@ -80,9 +80,9 @@
 
     <div class="item-name">性別</div>
     <div class="seibetu">
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="0"checked>  <span class="seibetumei">男性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="1">  <span class="seibetumei">女性</span></span>
-        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="2">  <span class="seibetumei">その他</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="男性"checked>  <span class="seibetumei">男性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="女性">  <span class="seibetumei">女性</span></span>
+        <span class="radiobtn"><input type="radio" name="sei" id="sei" value="その他">  <span class="seibetumei">その他</span></span>
     </div>
     <!-- foreach検討 -->
         <div class="item-name">生年月日</div>

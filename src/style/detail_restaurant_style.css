@@ -49,12 +49,14 @@ a:active {
 
 
 .dtitle{
-   width:55%;
-   height: 3.0rem;
-   font-size: 2.0em;
-   background-color: #E4DCCF;
-   text-align: center;
-   margin: auto;
+    display: flex;
+    width:70%;
+    height: 3.0rem;
+    font-size: 1.3em;
+    background-color: #E4DCCF;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 .image{
     margin-top: 2%;
@@ -90,19 +92,19 @@ a:active {
 .hyoji-area{
     width:80%;
     height: 3.0rem;
-    font-size: 2.0em;
+    font-size: 1.5em;
     background-color: #E4DCCF;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius:10px;
     margin-bottom: 2%;
 }
 
 .hyoji-area-comment{
     width:80%;
-    height: 10.0rem;
-    font-size: 2rem;
-    white-space: nowrap; /* テキストを折り返さずに表示 */
-  overflow: hidden; 
+    height: 13.0rem;
+    font-size: 1.2rem;
     background-color: #E4DCCF;
     border-radius:10px;
     margin-bottom: 2%;
@@ -112,12 +114,15 @@ a:active {
 }
 .hyoji-area-address{
     width:80%;
-    height: 10.0rem;
+    height: 6.0rem;
     font-size: 1.5rem; 
     background-color: #E4DCCF;
     border-radius:10px;
     margin-bottom: 2%;
+    display: flex;
+    align-items: center;
 } 
+
 .yosan-category{
     display: flex;
 }
@@ -130,9 +135,11 @@ a:active {
 .hyoji-area-yo-ca{
     width:80%;
     height: 3.0rem;
-    font-size: 2.0em;
+    font-size: 1.5em;
     background-color: #E4DCCF;
-    text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
     border-radius:10px;
 }
 .btn{
