@@ -89,7 +89,6 @@ $login=false;
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/header.js"></script>
-    <script src="./script/card.js"></script>
     <script src="./script/readPostDisplay.js"></script>
     <script>
         const plan_id = document.getElementById("plan");
