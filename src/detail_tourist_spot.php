@@ -77,7 +77,7 @@ $login=false;
         </div>
         <div class="right">
             <div class="icon-nickname">
-                <img src="images/icon.svg"class="icon"><div class="nickname">〇〇〇〇〇</div>
+                <img src="images/icon.svg"class="icon"><div class="nickname"><?php  echo $_SESSION['user_name']; ?></div>
             </div>
 
             <div class="komokumei">観光名所名</div>

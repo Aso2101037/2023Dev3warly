@@ -21,7 +21,7 @@ class DBManager
         $_SESSION['email'] = $email; // メールアドレスの保存（ハッシュ化されたパスワードの保存は不要）
         
         $pdo = $this->dbConnect();
-        $sql = "SELECT user_id FROM user WHERE user_mailaddress = ?";
+        $sql = "SELECT user_id,user_name FROM user WHERE user_mailaddress = ?";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $email, PDO::PARAM_STR);
         $ps->execute();
@@ -34,6 +34,7 @@ class DBManager
             header("Location: user-signup.php");
             exit(); // 必ずexit()を呼び出して処理を終了させる
         }
+        $_SESSION['user_name'] = $result['user_name'];
     
         header("Location: home.php");
         exit();

@@ -17,13 +17,14 @@ $db = new DBManager;
 
 <body>
 <?php
-$login=false;
-            session_start();
-            if($_SESSION['email'] === null){
-                $login = false;
-            }else{
-                $login = true;
-            }
+$login = false;
+session_start();
+
+if(isset($_SESSION['email'])){
+    $login = true;
+} else {
+    $login = false;
+}
 ?>
     <!-- header部分↓↓ -->
     <div id="app">

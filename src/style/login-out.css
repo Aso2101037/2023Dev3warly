@@ -73,6 +73,16 @@
     color:#FFFFFF;
     border: none;
 }
+.logout{
+    margin-left: 15%;
+    width: 13vw;
+    height: 10vh;
+    background-color: #002B5B;
+    font-size:2.0em;
+    border-radius:10px;
+    color:#FFFFFF;
+    border: none;
+}
 .sign-up{
     position: absolute;
     top: 20%;
@@ -91,7 +101,7 @@
     font-size: 2.5em;
     font-weight: bold;
 }
-.logout{
+.logouttext{
     font-size: 2.0em;
     margin-top: 1%;
     margin-left: 2%;
