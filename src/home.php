@@ -97,7 +97,7 @@ if(isset($_SESSION['email'])){
         var tourist_id = document.getElementById("tourist");
             // 旅行プラン投稿の部分
             const PlangetData = <?php echo $db->getAllPlanData(); ?>;
-        console.log(PlangetData);
+        // console.log(PlangetData);
         let PlanCnt1 = 0;
         PlangetData.forEach(ele => {
             if(PlanCnt1 < 4){
@@ -133,7 +133,7 @@ if(isset($_SESSION['email'])){
             if (PlanCnt2 < 4) {
                 PlanCnt2++;
                 createPlanImg(PlanImgList[element].id, PlanImgList[element].img);
-                console.log(PlanImgList[element].img);
+                // console.log(PlanImgList[element].img);
             }
         });
         
@@ -151,7 +151,7 @@ if(isset($_SESSION['email'])){
         });
         const TouristImgList = <?php echo $db->getAllTouristImg(); ?>;
         let TouristCnt2 = 0;
-        console.log(TouristImgList);
+        // console.log(TouristImgList);
         Object.keys(TouristImgList).forEach(element => {
             if (TouristCnt2 < 4) {
                 TouristCnt2++;

@@ -15,8 +15,9 @@ function createPlanCard(parent, plan_id, title) {
 }
 // 旅行プランの画像を取得する機能
 function createPlanImg(plan_id, plan_image) {
+  // console.log(plan_id);
   const plan_img_id = document.getElementById(plan_id);
-  plan_img_id.src = "data:image/jpg;base64,"+plan_image;
+  plan_id.src = "data:image/jpg;base64,"  + plan_image;
 }
 // ホームの飲食店投稿のカードを生成する機能
 function createRestranCard(
@@ -60,6 +61,7 @@ function createRestranCard(
 function createRestranImg(restaurant_post_id, restaurant_image) {
   const img_id = document.getElementById(restaurant_post_id);
   img_id.src = "data:image/jpg;base64," + restaurant_image;
+  console.log(restaurant_image);
   // console.log(img_id);
 }
 // 観光名所投稿のカードを生成する機能
@@ -105,7 +107,7 @@ function createTouristImg(tourist_spot_id, tourist_spot_image) {
   // console.log(tourist_spot_id);
   const tourist_img_id = document.getElementById(tourist_spot_id);
   tourist_img_id.src = "data:image/jpg;base64," + tourist_spot_image;
-  // console.log(tourist_img_id);
+  console.log(tourist_img_id);
 }
 //飲食店投稿数に応じてカードを作成する関数
 function createAllRestaurantCard(container_id, post_id, title, comment) {
